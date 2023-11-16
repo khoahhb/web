@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 using Web.Domain.Context;
 using Web.Infracturre.Interfaces;
 using Web.Infracturre.Repositories;

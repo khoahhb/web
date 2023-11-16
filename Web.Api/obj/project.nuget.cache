@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vSdNwwWj1f+DdBAIcAzxL2GIF7/fMd5FcEAt1ofOBYao1/C0X2vx9XxFENot+xXCGSfOrEaaQc61qOI0HV7/Pw==",
+  "dgSpecHash": "OoFroC6E1OAbXrZT6XeGYNOQGAnPZHw/7LRb8HNKAgiyrxwS7KXwGbRH9dvEjQ+l/ogkcuRwK7/COCht2XBblA==",
   "success": true,
   "projectFilePath": "E:\\Projects\\Web\\Web.Api\\Web.Api.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.24\\microsoft.aspnetcore.authentication.jwtbearer.6.0.24.nupkg.sha512",
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.13\\microsoft.aspnetcore.cryptography.internal.7.0.13.nupkg.sha512",
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.13\\microsoft.aspnetcore.cryptography.keyderivation.7.0.13.nupkg.sha512",
+    "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.0-rc.1.21452.15\\microsoft.aspnetcore.jsonpatch.6.0.0-rc.1.21452.15.nupkg.sha512",
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\6.0.0-rc.1.21452.15\\microsoft.aspnetcore.mvc.newtonsoftjson.6.0.0-rc.1.21452.15.nupkg.sha512",

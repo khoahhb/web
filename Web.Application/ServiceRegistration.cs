@@ -17,7 +17,6 @@ namespace Web.Application
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IProfileService, ProfileService>();
 
-
             // Add validators
             services.AddValidatorsFromAssemblyContaining<CreateAvatarValidator>();
             services.AddValidatorsFromAssemblyContaining<UpdateAvatarValidator>();
@@ -28,7 +27,6 @@ namespace Web.Application
 
             services.AddValidatorsFromAssemblyContaining<CreateUserProfileValidator>();
             services.AddValidatorsFromAssemblyContaining<UpdateUserProfileValidator>();
-
 
             // Add auto mapper profile
             services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);

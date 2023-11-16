@@ -2,7 +2,6 @@
 using System.Globalization;
 using Web.Infracturre.Interfaces;
 using Web.Model.Dtos.RequestDtos.User;
-using Web.Model.Enum;
 
 namespace Web.Application.Validation.User
 {

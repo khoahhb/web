@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using Web.Domain.Context;
+using System.Security.Claims;
 using Web.Domain.Entities;
 using Web.Infracturre.Interfaces;
 
@@ -9,6 +10,8 @@ namespace Web.Infracturre
     public class Repository<T> : IRepository<T> where T : class
     {
         private readonly DbFactory _dbFactory;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
         private DbSet<T> _dbSet;
 
         protected DbSet<T> DbSet
@@ -16,23 +19,49 @@ namespace Web.Infracturre
             get => _dbSet ?? (_dbSet = _dbFactory.DbContext.Set<T>());
         }
 
-        public Repository(DbFactory dbFactory)
+        public Repository(DbFactory dbFactory, IHttpContextAccessor httpContextAccessor)
         {
             _dbFactory = dbFactory;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task Create(T entity)
         {
+            if (entity is IAuditEntity auditEntity)
+            {
+                var currentUser = GetCurrentUserName() ?? (entity as User)?.Fullname;
+
+                auditEntity.CreatedAt = DateTime.UtcNow;
+                auditEntity.UpdatedAt = DateTime.UtcNow;
+                auditEntity.CreatedBy = currentUser;
+                auditEntity.UpdatedBy = currentUser;
+            }
+
             await DbSet.AddAsync(entity);
         }
 
+
         public async Task Create(IEnumerable<T> entities)
         {
+            foreach (var entity in entities)
+            {
+                if (typeof(IAuditEntity).IsAssignableFrom(typeof(T)))
+                {
+                    ((IAuditEntity)entity).UpdatedAt = DateTime.UtcNow;
+                    ((IAuditEntity)entity).UpdatedBy = GetCurrentUserName();
+                }
+            }
+                
             await DbSet.AddRangeAsync(entities);
         }
 
         public void Update(T entity)
         {
+            if (typeof(IAuditEntity).IsAssignableFrom(typeof(T)))
+            {
+                ((IAuditEntity)entity).UpdatedAt = DateTime.UtcNow;
+                ((IAuditEntity)entity).UpdatedBy = GetCurrentUserName();
+            }
             DbSet.Update(entity);
         }
 
@@ -80,6 +109,11 @@ namespace Web.Infracturre
             foreach (var includeProperty in includeProperties)
                 query = query.Include(includeProperty);
             return await query.ToListAsync();
+        }
+
+        public string? GetCurrentUserName()
+        {
+            return _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Name)?.Value;
         }
     }
 }

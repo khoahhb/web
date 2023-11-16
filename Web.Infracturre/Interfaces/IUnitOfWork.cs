@@ -1,6 +1,4 @@
-﻿using Web.Domain.Entities;
-
-namespace Web.Infracturre.Interfaces
+﻿namespace Web.Infracturre.Interfaces
 {
     public interface IUnitOfWork
     {

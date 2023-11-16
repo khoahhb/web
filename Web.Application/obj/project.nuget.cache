@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WwIcw6ctFqEo455rh6vju5jccCnhIK8/1kKAeJ/E/2CY5nVqFSufPyl7WGs9Fd2vsZaIIsqFLZutXcErchqxQQ==",
+  "dgSpecHash": "FrussA/yv4jBs+atg3lNLx2TjQ2XL9ALP54XHC5UFRVQZvvbYc+4Bzqoq048NNr95LgpP/d7Dd5vPEMF8mBE/A==",
   "success": true,
   "projectFilePath": "E:\\Projects\\Web\\Web.Application\\Web.Application.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.24\\microsoft.aspnetcore.authentication.jwtbearer.6.0.24.nupkg.sha512",
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.13\\microsoft.aspnetcore.cryptography.internal.7.0.13.nupkg.sha512",
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.13\\microsoft.aspnetcore.cryptography.keyderivation.7.0.13.nupkg.sha512",
+    "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.13\\microsoft.entityframeworkcore.7.0.13.nupkg.sha512",

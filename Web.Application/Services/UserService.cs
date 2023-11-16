@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
-using System.Linq.Expressions;
 using System.Net;
 using System.Security.Claims;
 using Web.Application.Helpers;
@@ -19,18 +18,16 @@ namespace Web.Application.Services
         private readonly IMapper _mapper;
         private readonly IUserRepository _userRepository;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IConfiguration _configuration;
 
         private ServiceResult<T> Success<T>(T data) => new ServiceResult<T>().SuccessResult(HttpStatusCode.OK, data);
         private ServiceResult<T> Failure<T>(HttpStatusCode statusCode) => new ServiceResult<T>().Failure(statusCode);
 
-        public UserService(IMapper mapper, IUserRepository userRepository, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IConfiguration configuration)
+        public UserService(IMapper mapper, IUserRepository userRepository, IUnitOfWork unitOfWork,  IConfiguration configuration)
         {
             _mapper = mapper;
             _userRepository = userRepository;
             _unitOfWork = unitOfWork;
-            _httpContextAccessor = httpContextAccessor;
             _configuration = configuration;
         }
 
@@ -47,8 +44,6 @@ namespace Web.Application.Services
         public async Task<ServiceResult<UserResponseDto>> SignUpUser(CreateUserRequestDto signUpRequestDto)
         {
             User user = _mapper.Map<User>(signUpRequestDto);
-            user.CreatedBy = user.Fullname;
-            user.UpdatedBy = user.Fullname;
             await _userRepository.CreateUser(user);
             await _unitOfWork.CommitAsync();
             return Success(_mapper.Map<UserResponseDto>(user));
@@ -57,11 +52,6 @@ namespace Web.Application.Services
         public async Task<ServiceResult<UserResponseDto>> UpdateUser(UpdateUserRequestDTO updateUserRequestDTO)
         {
             var user = (await _userRepository.GetUserById(updateUserRequestDTO.Id, u => u.Avatar, u => u.UserProfile));
-            var currentUserName = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Name)?.Value;
-            if (!string.IsNullOrEmpty(currentUserName))
-            {
-                user.UpdatedBy = currentUserName;
-            }
             _mapper.Map(updateUserRequestDTO, user);
             _userRepository.UpdateUser(user);
             await _unitOfWork.CommitAsync();
@@ -80,7 +70,7 @@ namespace Web.Application.Services
 
         public async Task<ServiceResult<string>> DeleteUserByUsername(string username)
         {
-            var user = await _userRepository.GetUserByCondition(u => u.Username == username);
+            var user = await _userRepository.GetUserByUsername(username);
             if (user == null)
                 return Failure<string>(HttpStatusCode.NotFound);
             _userRepository.DeleteUser(user);

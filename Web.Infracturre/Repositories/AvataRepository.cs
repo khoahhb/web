@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Microsoft.AspNetCore.Http;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 using Web.Domain.Entities;
 using Web.Infracturre.Interfaces;
-using Web.Model.Enum;
 
 namespace Web.Infracturre.Repositories
 {
     public class AvataRepository : Repository<Avatar>, IAvatarRepository
     {
-        public AvataRepository(DbFactory dbFactory) : base(dbFactory) { }
+        public AvataRepository(DbFactory dbFactory, IHttpContextAccessor httpContextAccessor) : base(dbFactory, httpContextAccessor) { }
 
         public async Task<Avatar> GetAvatarByFileName(string filename)
         {

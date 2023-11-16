@@ -6,7 +6,6 @@ using Web.Model.Dtos.RequestDtos.Avatar;
 using Web.Model.Dtos.RequestDtos.User;
 using Web.Model.Dtos.RequestDtos.UserProfile;
 using Web.Model.Dtos.ResponseDtos;
-using Profile = AutoMapper.Profile;
 
 namespace Web.Application.Helpers
 {
@@ -37,8 +36,6 @@ namespace Web.Application.Helpers
 
             CreateMap<CreateUserRequestDto, User>()
                 .ForMember(dest => dest.Password, opt => opt.MapFrom(src => PasswordHandler.HashPassword(src.Password)))
-                .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => DateTime.UtcNow))
-                .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => DateTime.UtcNow))
                 .ForMember(dest => dest.DateOfBirth,
                     opt =>
                     {

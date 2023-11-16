@@ -1,13 +1,9 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Configuration;
 using System.Net;
-using System.Security.Claims;
 using Web.Application.Helpers;
 using Web.Application.Interfaces;
 using Web.Domain.Entities;
 using Web.Infracturre.Interfaces;
-using Web.Infracturre.Repositories;
 using Web.Model.Dtos.RequestDtos.UserProfile;
 using Web.Model.Dtos.ResponseDtos;
 
@@ -18,30 +14,20 @@ namespace Web.Application.Services
         private readonly IMapper _mapper;
         private readonly IUserProfileRepository _userProfileRepository;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IHttpContextAccessor _httpContextAccessor;
-        private readonly IConfiguration _configuration;
 
         private ServiceResult<T> Success<T>(T data) => new ServiceResult<T>().SuccessResult(HttpStatusCode.OK, data);
         private ServiceResult<T> Failure<T>(HttpStatusCode statusCode) => new ServiceResult<T>().Failure(statusCode);
 
-        public ProfileService(IMapper mapper, IUserProfileRepository userProfileRepository, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IConfiguration configuration)
+        public ProfileService(IMapper mapper, IUserProfileRepository userProfileRepository, IUnitOfWork unitOfWork)
         {
             _mapper = mapper;
             _userProfileRepository = userProfileRepository;
             _unitOfWork = unitOfWork;
-            _httpContextAccessor = httpContextAccessor;
-            _configuration = configuration;
         }
 
         public async Task<ServiceResult<ProfileResponseDto>> CreateProfile(CreateUserProfileRequestDto dto)
         {
             var profile = _mapper.Map<UserProfile>(dto);
-            var currentUserName = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Name)?.Value;
-            if (!string.IsNullOrEmpty(currentUserName))
-            {
-                profile.CreatedBy = currentUserName;
-                profile.UpdatedBy = currentUserName;
-            }
             await _userProfileRepository.CreateUserProfile(profile);
             await _unitOfWork.CommitAsync();
             return Success(_mapper.Map<ProfileResponseDto>(profile));
@@ -50,11 +36,6 @@ namespace Web.Application.Services
         public async Task<ServiceResult<ProfileResponseDto>> UpdateProfile(UpdateUserProfileRequestDto dto)
         {
             var profile = (await _userProfileRepository.GetUserProfileById(dto.Id));
-            var currentUserName = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Name)?.Value;
-            if (!string.IsNullOrEmpty(currentUserName))
-            {
-                profile.UpdatedBy = currentUserName;
-            }
             _mapper.Map(dto, profile);
             _userProfileRepository.UpdateUserProfile(profile);
             await _unitOfWork.CommitAsync();

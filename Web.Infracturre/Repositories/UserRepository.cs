@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using Microsoft.AspNetCore.Http;
+using System.Linq.Expressions;
 using Web.Domain.Entities;
 using Web.Infracturre.Interfaces;
 
@@ -6,7 +7,7 @@ namespace Web.Infracturre.Repositories
 {
     public class UserRepository : Repository<User>, IUserRepository
     {
-        public UserRepository(DbFactory dbFactory) : base(dbFactory) { }
+        public UserRepository(DbFactory dbFactory, IHttpContextAccessor httpContextAccessor) : base(dbFactory, httpContextAccessor) { }
 
         public Task CreateMultiple(IEnumerable<User> entities)
         {
