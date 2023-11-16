@@ -1,0 +1,85 @@
+D:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Infracturre.deps.json
+D:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Infracturre.dll
+D:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Infracturre.pdb
+D:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Domain.dll
+D:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Model.dll
+D:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Domain.pdb
+D:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Model.pdb
+D:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.csproj.AssemblyReference.cache
+D:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.AssemblyInfoInputs.cache
+D:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.AssemblyInfo.cs
+D:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.csproj.CoreCompileInputs.cache
+D:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.csproj.CopyComplete
+D:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.dll
+D:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\refint\Web.Infracturre.dll
+D:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.pdb
+D:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\ref\Web.Infracturre.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Infracturre\bin\Debug\net6.0\Web.Infracturre.deps.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Infracturre\bin\Debug\net6.0\Web.Infracturre.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Infracturre\bin\Debug\net6.0\Web.Infracturre.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Infracturre\bin\Debug\net6.0\Web.Domain.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Infracturre\bin\Debug\net6.0\Web.Model.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Infracturre\bin\Debug\net6.0\Web.Domain.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Infracturre\bin\Debug\net6.0\Web.Model.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.csproj.AssemblyReference.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.AssemblyInfoInputs.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.AssemblyInfo.cs
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.csproj.CoreCompileInputs.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.csproj.CopyComplete
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Infracturre\obj\Debug\net6.0\refint\Web.Infracturre.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Infracturre\obj\Debug\net6.0\ref\Web.Infracturre.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Infracturre.deps.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Infracturre.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Infracturre.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Domain.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Model.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Domain.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Model.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.csproj.AssemblyReference.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.AssemblyInfoInputs.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.AssemblyInfo.cs
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.csproj.CoreCompileInputs.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.csproj.CopyComplete
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Infracturre\obj\Debug\net6.0\refint\Web.Infracturre.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Infracturre\obj\Debug\net6.0\ref\Web.Infracturre.dll
+E:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Infracturre.deps.json
+E:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Infracturre.dll
+E:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Infracturre.pdb
+E:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Domain.dll
+E:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Model.dll
+E:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Domain.pdb
+E:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Model.pdb
+E:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.csproj.AssemblyReference.cache
+E:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.AssemblyInfoInputs.cache
+E:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.AssemblyInfo.cs
+E:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.csproj.CoreCompileInputs.cache
+E:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.csproj.CopyComplete
+E:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.dll
+E:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\refint\Web.Infracturre.dll
+E:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.pdb
+E:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\ref\Web.Infracturre.dll
+F:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.csproj.AssemblyReference.cache
+F:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.GeneratedMSBuildEditorConfig.editorconfig
+F:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.AssemblyInfoInputs.cache
+F:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.AssemblyInfo.cs
+F:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.csproj.CoreCompileInputs.cache
+F:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Infracturre.deps.json
+F:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Infracturre.dll
+F:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Infracturre.pdb
+F:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Domain.dll
+F:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Model.dll
+F:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Domain.pdb
+F:\Projects\Web\Web.Infracturre\bin\Debug\net6.0\Web.Model.pdb
+F:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.csproj.CopyComplete
+F:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.dll
+F:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\refint\Web.Infracturre.dll
+F:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.pdb
+F:\Projects\Web\Web.Infracturre\obj\Debug\net6.0\ref\Web.Infracturre.dll

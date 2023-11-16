@@ -1,0 +1,418 @@
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\appsettings.Development.json
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\appsettings.json
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.exe
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.deps.json
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.runtimeconfig.json
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.pdb
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.xml
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\FluentValidation.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Humanizer.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Mono.TextTemplating.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Npgsql.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Scrutor.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\System.CodeDom.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\System.Text.Json.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Application.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Domain.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Infracturre.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Model.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Application.pdb
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Domain.pdb
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Model.pdb
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Infracturre.pdb
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.csproj.AssemblyReference.cache
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.AssemblyInfoInputs.cache
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.AssemblyInfo.cs
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.csproj.CoreCompileInputs.cache
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.MvcApplicationPartsAssemblyInfo.cs
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.MvcApplicationPartsAssemblyInfo.cache
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.Web.Api.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.build.Web.Api.props
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Web.Api.props
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Web.Api.props
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets.build.json
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets.development.json
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\scopedcss\bundle\Web.Api.styles.css
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.csproj.CopyComplete
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.dll
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\refint\Web.Api.dll
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.xml
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.pdb
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.genruntimeconfig.cache
+D:\Projects\Web\Web.Api\obj\Debug\net6.0\ref\Web.Api.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\AutoMapper.dll
+D:\Projects\Web\Web.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\appsettings.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Web.Api.exe
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Web.Api.deps.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Web.Api.runtimeconfig.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Web.Api.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Web.Api.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Web.Api.xml
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Humanizer.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Npgsql.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Scrutor.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Web.Application.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Web.Domain.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Web.Infracturre.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Web.Model.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Web.Application.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Web.Domain.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Web.Model.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\bin\Debug\net6.0\Web.Infracturre.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\Web.Api.csproj.AssemblyReference.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\Web.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\Web.Api.AssemblyInfoInputs.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\Web.Api.AssemblyInfo.cs
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\Web.Api.csproj.CoreCompileInputs.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\Web.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\Web.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.Web.Api.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.build.Web.Api.props
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Web.Api.props
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Web.Api.props
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\scopedcss\bundle\Web.Api.styles.css
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\Web.Api.csproj.CopyComplete
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\Web.Api.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\refint\Web.Api.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\Web.Api.xml
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\Web.Api.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\Web.Api.genruntimeconfig.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Api\obj\Debug\net6.0\ref\Web.Api.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\appsettings.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.exe
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.deps.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.runtimeconfig.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.xml
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Humanizer.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Npgsql.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Scrutor.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Application.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Domain.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Infracturre.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Model.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Application.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Domain.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Model.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Infracturre.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.csproj.AssemblyReference.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.AssemblyInfoInputs.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.AssemblyInfo.cs
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.csproj.CoreCompileInputs.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.Web.Api.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.build.Web.Api.props
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Web.Api.props
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Web.Api.props
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\scopedcss\bundle\Web.Api.styles.css
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.csproj.CopyComplete
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\refint\Web.Api.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.xml
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.genruntimeconfig.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Api\obj\Debug\net6.0\ref\Web.Api.dll
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.csproj.AssemblyReference.cache
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.AssemblyInfoInputs.cache
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.AssemblyInfo.cs
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.csproj.CoreCompileInputs.cache
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.MvcApplicationPartsAssemblyInfo.cache
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\appsettings.Development.json
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\appsettings.json
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.exe
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.deps.json
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.runtimeconfig.json
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.pdb
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.xml
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\AutoMapper.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\FluentValidation.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Humanizer.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Mono.TextTemplating.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Newtonsoft.Json.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Npgsql.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Scrutor.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Newtonsoft.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\System.CodeDom.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\System.Text.Json.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Application.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Domain.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Infracturre.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Model.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Application.pdb
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Domain.pdb
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Model.pdb
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Infracturre.pdb
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.Web.Api.Microsoft.AspNetCore.StaticWebAssets.props
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.build.Web.Api.props
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Web.Api.props
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Web.Api.props
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets.pack.json
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets.build.json
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets.development.json
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\scopedcss\bundle\Web.Api.styles.css
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.csproj.CopyComplete
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.dll
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\refint\Web.Api.dll
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.xml
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.pdb
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.genruntimeconfig.cache
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\ref\Web.Api.dll
+E:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.MvcApplicationPartsAssemblyInfo.cs
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.csproj.AssemblyReference.cache
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.GeneratedMSBuildEditorConfig.editorconfig
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.AssemblyInfoInputs.cache
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.AssemblyInfo.cs
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.csproj.CoreCompileInputs.cache
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.MvcApplicationPartsAssemblyInfo.cache
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\appsettings.Development.json
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\appsettings.json
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.exe
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.deps.json
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.runtimeconfig.json
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.pdb
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Api.xml
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\AutoMapper.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\FluentValidation.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Humanizer.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Mono.TextTemplating.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Newtonsoft.Json.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Npgsql.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Scrutor.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Newtonsoft.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\System.CodeDom.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\System.Text.Json.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Application.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Domain.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Infracturre.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Model.dll
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Application.pdb
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Domain.pdb
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Model.pdb
+F:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Infracturre.pdb
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.Web.Api.Microsoft.AspNetCore.StaticWebAssets.props
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.build.Web.Api.props
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Web.Api.props
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Web.Api.props
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets.pack.json
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets.build.json
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\staticwebassets.development.json
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\scopedcss\bundle\Web.Api.styles.css
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.csproj.CopyComplete
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.dll
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\refint\Web.Api.dll
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.xml
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.pdb
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.genruntimeconfig.cache
+F:\Projects\Web\Web.Api\obj\Debug\net6.0\ref\Web.Api.dll

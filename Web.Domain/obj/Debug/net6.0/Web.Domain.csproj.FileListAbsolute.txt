@@ -1,0 +1,85 @@
+D:\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.deps.json
+D:\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.runtimeconfig.json
+D:\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.dll
+D:\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.pdb
+D:\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Model.dll
+D:\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Model.pdb
+D:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.csproj.AssemblyReference.cache
+D:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.AssemblyInfoInputs.cache
+D:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.AssemblyInfo.cs
+D:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.csproj.CoreCompileInputs.cache
+D:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.csproj.CopyComplete
+D:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.dll
+D:\Projects\Web\Web.Domain\obj\Debug\net6.0\refint\Web.Domain.dll
+D:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.pdb
+D:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.genruntimeconfig.cache
+D:\Projects\Web\Web.Domain\obj\Debug\net6.0\ref\Web.Domain.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.deps.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.runtimeconfig.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Domain\bin\Debug\net6.0\Web.Model.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Domain\bin\Debug\net6.0\Web.Model.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.csproj.AssemblyReference.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.AssemblyInfoInputs.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.AssemblyInfo.cs
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.csproj.CoreCompileInputs.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.csproj.CopyComplete
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Domain\obj\Debug\net6.0\refint\Web.Domain.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.genruntimeconfig.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Web\Web.Domain\obj\Debug\net6.0\ref\Web.Domain.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.deps.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.runtimeconfig.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Model.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Model.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.csproj.AssemblyReference.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.AssemblyInfoInputs.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.AssemblyInfo.cs
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.csproj.CoreCompileInputs.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.csproj.CopyComplete
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Domain\obj\Debug\net6.0\refint\Web.Domain.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.genruntimeconfig.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Domain\obj\Debug\net6.0\ref\Web.Domain.dll
+E:\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.deps.json
+E:\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.runtimeconfig.json
+E:\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.dll
+E:\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.pdb
+E:\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Model.dll
+E:\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Model.pdb
+E:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.csproj.AssemblyReference.cache
+E:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.AssemblyInfoInputs.cache
+E:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.AssemblyInfo.cs
+E:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.csproj.CoreCompileInputs.cache
+E:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.csproj.CopyComplete
+E:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.dll
+E:\Projects\Web\Web.Domain\obj\Debug\net6.0\refint\Web.Domain.dll
+E:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.pdb
+E:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.genruntimeconfig.cache
+E:\Projects\Web\Web.Domain\obj\Debug\net6.0\ref\Web.Domain.dll
+F:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.csproj.AssemblyReference.cache
+F:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.GeneratedMSBuildEditorConfig.editorconfig
+F:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.AssemblyInfoInputs.cache
+F:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.AssemblyInfo.cs
+F:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.csproj.CoreCompileInputs.cache
+F:\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.deps.json
+F:\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.runtimeconfig.json
+F:\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.dll
+F:\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Domain.pdb
+F:\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Model.dll
+F:\Projects\Web\Web.Domain\bin\Debug\net6.0\Web.Model.pdb
+F:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.csproj.CopyComplete
+F:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.dll
+F:\Projects\Web\Web.Domain\obj\Debug\net6.0\refint\Web.Domain.dll
+F:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.pdb
+F:\Projects\Web\Web.Domain\obj\Debug\net6.0\Web.Domain.genruntimeconfig.cache
+F:\Projects\Web\Web.Domain\obj\Debug\net6.0\ref\Web.Domain.dll

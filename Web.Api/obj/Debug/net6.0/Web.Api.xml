@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Web.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Web.Api.Controllers.AuthController.SignUp(Web.Model.Dtos.RequestDtos.User.CreateUserRequestDto)">
+            <summary>
+            SignUp user
+            </summary>
+        </member>
+        <member name="M:Web.Api.Controllers.AuthController.SignIn(Web.Model.Dtos.RequestDtos.User.SignInRequestDto)">
+            <summary>
+            SignIn user
+            </summary>
+        </member>
+        <member name="M:Web.Api.Controllers.AvatarController.UploadAvatar(Web.Model.Dtos.RequestDtos.Avatar.CreateAvatarRequestDto)">
+            <summary>
+            Create (upload) avatar                     (Admin, Teacher, Student)
+            </summary>
+        </member>
+        <member name="M:Web.Api.Controllers.AvatarController.UpdateAvatar(Web.Model.Dtos.RequestDtos.Avatar.UpdateAvatarRequestDto)">
+            <summary>
+            Update avatar                     (Admin, Teacher, Student)
+            </summary>
+        </member>
+        <member name="M:Web.Api.Controllers.AvatarController.DeleteAvatarById(System.Guid)">
+            <summary>
+            Delete avatar                     (Admin, Teacher)
+            </summary>
+        </member>
+        <member name="M:Web.Api.Controllers.AvatarController.GetAvatarById(System.Guid)">
+            <summary>
+            Get avatar infor                     (Admin, Teacher, Student)
+            </summary>
+        </member>
+        <member name="M:Web.Api.Controllers.AvatarController.GetAllAvatar">
+            <summary>
+            Get all avatar                     (Admin)
+            </summary>
+        </member>
+        <member name="M:Web.Api.Controllers.UserController.CreateUser(Web.Model.Dtos.RequestDtos.User.CreateUserRequestDto)">
+            <summary>
+            Create user                     (Admin)
+            </summary>
+        </member>
+        <member name="M:Web.Api.Controllers.UserController.UpdateUser(Web.Model.Dtos.RequestDtos.User.UpdateUserRequestDTO)">
+            <summary>
+            Update user                     (Admin, Teacher)
+            </summary>
+        </member>
+        <member name="M:Web.Api.Controllers.UserController.DeleteUserById(System.Guid)">
+            <summary>
+            Delete user                     (Admin) 
+            </summary>
+        </member>
+        <member name="M:Web.Api.Controllers.UserController.GetUserById(System.Guid)">
+            <summary>
+            Get user infor                     (Admin, Teacher, Student)
+            </summary>
+        </member>
+        <member name="M:Web.Api.Controllers.UserController.GetAllUsers">
+            <summary>
+            Get all user                     (Admin, Teacher)
+            </summary>
+        </member>
+        <member name="M:Web.Api.Controllers.UserProfileController.CreateProfile(Web.Model.Dtos.RequestDtos.UserProfile.CreateUserProfileRequestDto)">
+            <summary>
+            Create profile                     (Admin)
+            </summary>
+        </member>
+        <member name="M:Web.Api.Controllers.UserProfileController.UpdateProfile(Web.Model.Dtos.RequestDtos.UserProfile.UpdateUserProfileRequestDto)">
+            <summary>
+            Update Profile                     (Admin, Teacher)
+            </summary>
+        </member>
+        <member name="M:Web.Api.Controllers.UserProfileController.DeleteProfileById(System.Guid)">
+            <summary>
+            Delete Profile                     (Admin) 
+            </summary>
+        </member>
+        <member name="M:Web.Api.Controllers.UserProfileController.GetProfileById(System.Guid)">
+            <summary>
+            Get Profile infor                     (Admin, Teacher, Student) 
+            </summary>
+        </member>
+        <member name="M:Web.Api.Controllers.UserProfileController.GetAllProfile">
+            <summary>
+            Get all Profile                     (Admin)
+            </summary>
+        </member>
+    </members>
+</doc>
