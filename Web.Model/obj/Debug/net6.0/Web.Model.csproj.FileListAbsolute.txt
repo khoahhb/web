@@ -34,18 +34,6 @@ C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Model\obj\Debug\net6.
 C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Model\obj\Debug\net6.0\refint\Web.Model.dll
 C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Model\obj\Debug\net6.0\Web.Model.pdb
 C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Model\obj\Debug\net6.0\ref\Web.Model.dll
-E:\Projects\Web\Web.Model\bin\Debug\net6.0\Web.Model.deps.json
-E:\Projects\Web\Web.Model\bin\Debug\net6.0\Web.Model.dll
-E:\Projects\Web\Web.Model\bin\Debug\net6.0\Web.Model.pdb
-E:\Projects\Web\Web.Model\obj\Debug\net6.0\Web.Model.csproj.AssemblyReference.cache
-E:\Projects\Web\Web.Model\obj\Debug\net6.0\Web.Model.GeneratedMSBuildEditorConfig.editorconfig
-E:\Projects\Web\Web.Model\obj\Debug\net6.0\Web.Model.AssemblyInfoInputs.cache
-E:\Projects\Web\Web.Model\obj\Debug\net6.0\Web.Model.AssemblyInfo.cs
-E:\Projects\Web\Web.Model\obj\Debug\net6.0\Web.Model.csproj.CoreCompileInputs.cache
-E:\Projects\Web\Web.Model\obj\Debug\net6.0\Web.Model.dll
-E:\Projects\Web\Web.Model\obj\Debug\net6.0\refint\Web.Model.dll
-E:\Projects\Web\Web.Model\obj\Debug\net6.0\Web.Model.pdb
-E:\Projects\Web\Web.Model\obj\Debug\net6.0\ref\Web.Model.dll
 F:\Projects\Web\Web.Model\bin\Debug\net6.0\Web.Model.deps.json
 F:\Projects\Web\Web.Model\bin\Debug\net6.0\Web.Model.dll
 F:\Projects\Web\Web.Model\bin\Debug\net6.0\Web.Model.pdb
@@ -58,3 +46,15 @@ F:\Projects\Web\Web.Model\obj\Debug\net6.0\Web.Model.dll
 F:\Projects\Web\Web.Model\obj\Debug\net6.0\refint\Web.Model.dll
 F:\Projects\Web\Web.Model\obj\Debug\net6.0\Web.Model.pdb
 F:\Projects\Web\Web.Model\obj\Debug\net6.0\ref\Web.Model.dll
+E:\Projects\Web\Web.Model\bin\Debug\net6.0\Web.Model.deps.json
+E:\Projects\Web\Web.Model\bin\Debug\net6.0\Web.Model.dll
+E:\Projects\Web\Web.Model\bin\Debug\net6.0\Web.Model.pdb
+E:\Projects\Web\Web.Model\obj\Debug\net6.0\Web.Model.csproj.AssemblyReference.cache
+E:\Projects\Web\Web.Model\obj\Debug\net6.0\Web.Model.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\Web\Web.Model\obj\Debug\net6.0\Web.Model.AssemblyInfoInputs.cache
+E:\Projects\Web\Web.Model\obj\Debug\net6.0\Web.Model.AssemblyInfo.cs
+E:\Projects\Web\Web.Model\obj\Debug\net6.0\Web.Model.csproj.CoreCompileInputs.cache
+E:\Projects\Web\Web.Model\obj\Debug\net6.0\Web.Model.dll
+E:\Projects\Web\Web.Model\obj\Debug\net6.0\refint\Web.Model.dll
+E:\Projects\Web\Web.Model\obj\Debug\net6.0\Web.Model.pdb
+E:\Projects\Web\Web.Model\obj\Debug\net6.0\ref\Web.Model.dll

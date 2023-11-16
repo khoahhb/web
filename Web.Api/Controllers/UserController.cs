@@ -74,7 +74,7 @@ namespace Web.Api.Controllers
         /// <summary>
         /// Get user infor                     (Admin, Teacher, Student)
         /// </summary>
-        [Authorize (Roles = "Admin, Teacher, Student")]
+        [Authorize(Roles = "Admin, Teacher, Student")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserById(Guid id)
         {
@@ -90,7 +90,7 @@ namespace Web.Api.Controllers
         /// <summary>
         /// Get all user                     (Admin, Teacher)
         /// </summary>
-        [Authorize (Roles ="Admin, Teacher")]
+        [Authorize(Roles = "Admin, Teacher")]
         [HttpGet("get_all")]
         public async Task<IActionResult> GetAllUsers()
         {

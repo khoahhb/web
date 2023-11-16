@@ -18,9 +18,10 @@ namespace Web.Domain.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Add configurations
-            modelBuilder.ApplyConfiguration(new UserConfiguration());
-            modelBuilder.ApplyConfiguration(new UserProfileConfiguration());
-            modelBuilder.ApplyConfiguration(new AvatarConfiguration());
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+            //modelBuilder.ApplyConfiguration(new UserConfiguration());
+            //modelBuilder.ApplyConfiguration(new UserProfileConfiguration());
+            //modelBuilder.ApplyConfiguration(new AvatarConfiguration());
 
             //Seed data 
             new DataSeeder(modelBuilder).Seed();

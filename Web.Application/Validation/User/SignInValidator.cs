@@ -7,11 +7,11 @@ namespace Web.Application.Validation.User
     public class SignInValidator : AbstractValidator<SignInRequestDto>
     {
 
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUserRepository _userRepository;
 
-        public SignInValidator(IUnitOfWork unitOfWork)
+        public SignInValidator(IUserRepository userRepository)
         {
-            _unitOfWork = unitOfWork;
+            _userRepository = userRepository;
 
             RuleFor(x => x.Username)
                 .NotNull().WithMessage("Username is required.")
@@ -19,7 +19,7 @@ namespace Web.Application.Validation.User
                 .Length(6, 50).WithMessage("Username must be between 6 and 50 characters.")
                 .Matches("^[a-zA-Z0-9_]*$").WithMessage("Username can only have alphabets, numbers and _.")
                 .MustAsync(async (username, _) =>
-                    await _unitOfWork.RepositoryUser.GetSingleByCondition(u => u.Username == username) != null)
+                    await _userRepository.GetUserByUsername( username) != null)
                 .WithMessage("Username not exist.")
                 .When(x => !string.IsNullOrEmpty(x.Username));
 

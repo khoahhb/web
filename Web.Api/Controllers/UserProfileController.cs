@@ -20,7 +20,7 @@ namespace Web.Api.Controllers
         /// <summary>
         /// Create profile                     (Admin)
         /// </summary>
-        [Authorize (Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> CreateProfile(CreateUserProfileRequestDto dto)
         {

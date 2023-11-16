@@ -7,6 +7,7 @@ using Web.Application.Helpers;
 using Web.Application.Interfaces;
 using Web.Domain.Entities;
 using Web.Infracturre.Interfaces;
+using Web.Infracturre.Repositories;
 using Web.Model.Dtos.RequestDtos.UserProfile;
 using Web.Model.Dtos.ResponseDtos;
 
@@ -14,20 +15,22 @@ namespace Web.Application.Services
 {
     public class ProfileService : IProfileService
     {
-        private readonly IHttpContextAccessor _httpContextAccessor;
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly IConfiguration _configuration;
         private readonly IMapper _mapper;
+        private readonly IUserProfileRepository _userProfileRepository;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IConfiguration _configuration;
 
         private ServiceResult<T> Success<T>(T data) => new ServiceResult<T>().SuccessResult(HttpStatusCode.OK, data);
         private ServiceResult<T> Failure<T>(HttpStatusCode statusCode) => new ServiceResult<T>().Failure(statusCode);
 
-        public ProfileService(IHttpContextAccessor httpContextAccessor, IUnitOfWork unitOfWork, IConfiguration configuration, IMapper mapper)
+        public ProfileService(IMapper mapper, IUserProfileRepository userProfileRepository, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IConfiguration configuration)
         {
-            _httpContextAccessor = httpContextAccessor;
-            _unitOfWork = unitOfWork;
-            _configuration = configuration;
             _mapper = mapper;
+            _userProfileRepository = userProfileRepository;
+            _unitOfWork = unitOfWork;
+            _httpContextAccessor = httpContextAccessor;
+            _configuration = configuration;
         }
 
         public async Task<ServiceResult<ProfileResponseDto>> CreateProfile(CreateUserProfileRequestDto dto)
@@ -39,38 +42,38 @@ namespace Web.Application.Services
                 profile.CreatedBy = currentUserName;
                 profile.UpdatedBy = currentUserName;
             }
-            await _unitOfWork.RepositoryProfile.Insert(profile);
-            await _unitOfWork.Commit();
+            await _userProfileRepository.CreateUserProfile(profile);
+            await _unitOfWork.CommitAsync();
             return Success(_mapper.Map<ProfileResponseDto>(profile));
         }
 
         public async Task<ServiceResult<ProfileResponseDto>> UpdateProfile(UpdateUserProfileRequestDto dto)
         {
-            var profile = (await _unitOfWork.RepositoryProfile.GetSingleById(dto.Id));
+            var profile = (await _userProfileRepository.GetUserProfileById(dto.Id));
             var currentUserName = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Name)?.Value;
             if (!string.IsNullOrEmpty(currentUserName))
             {
                 profile.UpdatedBy = currentUserName;
             }
             _mapper.Map(dto, profile);
-            _unitOfWork.RepositoryProfile.Update(profile);
-            await _unitOfWork.Commit();
+            _userProfileRepository.UpdateUserProfile(profile);
+            await _unitOfWork.CommitAsync();
             return Success(_mapper.Map<ProfileResponseDto>(profile));
         }
 
         public async Task<ServiceResult<string>> DeleteProfileById(Guid id)
         {
-            var profile = (await _unitOfWork.RepositoryProfile.GetSingleById(id));
+            var profile = (await _userProfileRepository.GetUserProfileById(id));
             if (profile == null)
                 return Failure<string>(HttpStatusCode.NotFound);
-            _unitOfWork.RepositoryProfile.Delete(profile);
-            await _unitOfWork.Commit();
+            _userProfileRepository.DeleteUserProfile(profile);
+            await _unitOfWork.CommitAsync();
             return Success(profile.Id.ToString());
         }
 
         public async Task<ServiceResult<ProfileResponseDto>> GetProfileById(Guid id)
         {
-            var profile = (await _unitOfWork.RepositoryProfile.GetSingleById(id));
+            var profile = (await _userProfileRepository.GetUserProfileById(id));
             if (profile == null)
                 return Failure<ProfileResponseDto>(HttpStatusCode.NotFound);
             return Success(_mapper.Map<ProfileResponseDto>(profile));
@@ -78,7 +81,8 @@ namespace Web.Application.Services
 
         public async Task<ServiceResult<IEnumerable<ProfileResponseDto>>> GetAllProfile()
         {
-            var response = (await _unitOfWork.RepositoryProfile.GetAll()).Select(_mapper.Map<ProfileResponseDto>);
+            var profiles = await _userProfileRepository.GetAllUserProfiles();
+            var response = profiles.Select(_mapper.Map<ProfileResponseDto>);
             return Success(response);
         }
     }

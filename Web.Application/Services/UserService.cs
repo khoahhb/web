@@ -16,31 +16,31 @@ namespace Web.Application.Services
 {
     public class UserService : IUserService
     {
-        private readonly IHttpContextAccessor _httpContextAccessor;
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly IConfiguration _configuration;
         private readonly IMapper _mapper;
+        private readonly IUserRepository _userRepository;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IConfiguration _configuration;
 
         private ServiceResult<T> Success<T>(T data) => new ServiceResult<T>().SuccessResult(HttpStatusCode.OK, data);
         private ServiceResult<T> Failure<T>(HttpStatusCode statusCode) => new ServiceResult<T>().Failure(statusCode);
 
-        public UserService(IHttpContextAccessor httpContextAccessor, IUnitOfWork unitOfWork, IConfiguration configuration, IMapper mapper)
+        public UserService(IMapper mapper, IUserRepository userRepository, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IConfiguration configuration)
         {
-            _httpContextAccessor = httpContextAccessor;
-            _unitOfWork = unitOfWork;
-            _configuration = configuration;
             _mapper = mapper;
+            _userRepository = userRepository;
+            _unitOfWork = unitOfWork;
+            _httpContextAccessor = httpContextAccessor;
+            _configuration = configuration;
         }
 
         public async Task<ServiceResult<string>> SignInUser(SignInRequestDto signInRequestDto)
         {
-            var user = await _unitOfWork.RepositoryUser.GetSingleByCondition(
-                user => user.Username == signInRequestDto.Username, 
-                new Expression<Func<User, object>>[] { u => u.UserProfile });
+            var user = await _userRepository.GetUserByUsername( signInRequestDto.Username,u => u.UserProfile );
 
             if (PasswordHandler.VerifyPassword(user.Password, signInRequestDto.Password))
                 return Success(TokenHandler.CreateToken(_mapper.Map<UserResponseDto>(user), 60, _configuration));
-            
+
             return Failure<string>(HttpStatusCode.Unauthorized);
         }
 
@@ -49,59 +49,59 @@ namespace Web.Application.Services
             User user = _mapper.Map<User>(signUpRequestDto);
             user.CreatedBy = user.Fullname;
             user.UpdatedBy = user.Fullname;
-            await _unitOfWork.RepositoryUser.Insert(user);
-            await _unitOfWork.Commit();
+            await _userRepository.CreateUser(user);
+            await _unitOfWork.CommitAsync();
             return Success(_mapper.Map<UserResponseDto>(user));
         }
 
         public async Task<ServiceResult<UserResponseDto>> UpdateUser(UpdateUserRequestDTO updateUserRequestDTO)
         {
-            var user = (await _unitOfWork.RepositoryUser.GetSingleById(updateUserRequestDTO.Id));
+            var user = (await _userRepository.GetUserById(updateUserRequestDTO.Id, u => u.Avatar, u => u.UserProfile));
             var currentUserName = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Name)?.Value;
             if (!string.IsNullOrEmpty(currentUserName))
             {
                 user.UpdatedBy = currentUserName;
             }
             _mapper.Map(updateUserRequestDTO, user);
-            _unitOfWork.RepositoryUser.Update(user);
-            await _unitOfWork.Commit();
+            _userRepository.UpdateUser(user);
+            await _unitOfWork.CommitAsync();
             return Success(_mapper.Map<UserResponseDto>(user));
         }
 
         public async Task<ServiceResult<string>> DeleteUserById(Guid id)
         {
-            var user = (await _unitOfWork.RepositoryUser.GetSingleById(id));
+            var user = (await _userRepository.GetUserById(id));
             if (user == null)
                 return Failure<string>(HttpStatusCode.NotFound);
-            _unitOfWork.RepositoryUser.Delete(user);
-            await _unitOfWork.Commit();
+            _userRepository.DeleteUser(user);
+            await _unitOfWork.CommitAsync();
             return Success(user.Id.ToString());
         }
 
         public async Task<ServiceResult<string>> DeleteUserByUsername(string username)
         {
-            var user = await _unitOfWork.RepositoryUser.GetSingleByCondition(u => u.Username == username);
+            var user = await _userRepository.GetUserByCondition(u => u.Username == username);
             if (user == null)
                 return Failure<string>(HttpStatusCode.NotFound);
-            _unitOfWork.RepositoryUser.Delete(user);
-            await _unitOfWork.Commit();
+            _userRepository.DeleteUser(user);
+            await _unitOfWork.CommitAsync();
             return Success(user.Id.ToString());
         }
 
         public async Task<ServiceResult<string>> DeleteUserByEmail(string email)
         {
-            var user = await _unitOfWork.RepositoryUser.GetSingleByCondition(u => u.Email == email);
+            var user = await _userRepository.GetUserByEmail(email);
             var userId = user.Id;
             if (user == null)
                 return Failure<string>(HttpStatusCode.NotFound);
-            _unitOfWork.RepositoryUser.Delete(user);
-            await _unitOfWork.Commit();
+            _userRepository.DeleteUser(user);
+            await _unitOfWork.CommitAsync();
             return Success(user.Id.ToString());
         }
 
         public async Task<ServiceResult<UserResponseDto>> GetUserById(Guid id)
         {
-            var user = (await _unitOfWork.RepositoryUser.GetSingleById(id, new Expression<Func<User, object>>[] { u => u.UserProfile, u => u.Avatar }));
+            var user = (await _userRepository.GetUserById(id,  u => u.UserProfile, u => u.Avatar ));
             if (user == null)
                 return Failure<UserResponseDto>(HttpStatusCode.NotFound);
             return Success(_mapper.Map<UserResponseDto>(user));
@@ -109,7 +109,7 @@ namespace Web.Application.Services
 
         public async Task<ServiceResult<UserResponseDto>> GetUserByUsername(string username)
         {
-            var user = (await _unitOfWork.RepositoryUser.GetSingleByCondition(user => user.Username == username));
+            var user = (await _userRepository.GetUserByEmail( username));
             if (user == null)
                 return Failure<UserResponseDto>(HttpStatusCode.NotFound);
             return Success(_mapper.Map<UserResponseDto>(user));
@@ -117,7 +117,7 @@ namespace Web.Application.Services
 
         public async Task<ServiceResult<UserResponseDto>> GetUserByEmail(string email)
         {
-            var user = (await _unitOfWork.RepositoryUser.GetSingleByCondition(user => user.Email == email));
+            var user = (await _userRepository.GetUserByEmail(email));
             if (user == null)
                 return Failure<UserResponseDto>(HttpStatusCode.NotFound);
             return Success(_mapper.Map<UserResponseDto>(user));
@@ -125,9 +125,8 @@ namespace Web.Application.Services
 
         public async Task<ServiceResult<IEnumerable<UserResponseDto>>> GetAllUsers()
         {
-            var response = (await _unitOfWork.RepositoryUser
-                            .GetAll(new Expression<Func<User, object>>[] { u => u.UserProfile, u => u.Avatar }))
-                            .Select(_mapper.Map<UserResponseDto>);
+            var users = await _userRepository.GetAllUsers(u => u.UserProfile, u => u.Avatar);
+            var response = users.Select(_mapper.Map<UserResponseDto>);
             return Success(response);
         }
     }

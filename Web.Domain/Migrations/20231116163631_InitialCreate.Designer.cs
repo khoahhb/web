@@ -12,7 +12,7 @@ using Web.Domain.Context;
 namespace Web.Domain.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231115192153_InitialCreate")]
+    [Migration("20231116163631_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -31,28 +31,35 @@ namespace Web.Domain.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<DateTime?>("CreatedAt")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("CreatedBy")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("FileName")
+                        .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<long?>("FileSize")
+                    b.Property<long>("FileSize")
                         .HasColumnType("bigint");
 
-                    b.Property<bool?>("IsPublished")
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("IsPublished")
                         .HasColumnType("boolean");
 
                     b.Property<string>("MimeType")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("UpdatedBy")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -72,10 +79,11 @@ namespace Web.Domain.Migrations
                     b.Property<Guid?>("AvatarId")
                         .HasColumnType("uuid");
 
-                    b.Property<DateTime?>("CreatedAt")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("CreatedBy")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("DateOfBirth")
@@ -85,12 +93,17 @@ namespace Web.Domain.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Fullname")
+                        .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Gender")
+                    b.Property<int?>("Gender")
                         .HasColumnType("integer");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
                     b.Property<string>("Password")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Phone")
@@ -100,12 +113,14 @@ namespace Web.Domain.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("UpdatedBy")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<Guid>("UserProfileId")
                         .HasColumnType("uuid");
 
                     b.Property<string>("Username")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -127,6 +142,7 @@ namespace Web.Domain.Migrations
                             Email = "admin1@gmail.com",
                             Fullname = "Huynh Huu Bao Khoa",
                             Gender = 0,
+                            IsDeleted = false,
                             Password = "UhywqEJrt+FqDqbLZXUxMQ==.fzrKPpUbz3nW+vOP4db3qeUz8eBNVhzSWSXXcSHSX9M=",
                             Phone = "0372753988",
                             UpdatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
@@ -144,6 +160,7 @@ namespace Web.Domain.Migrations
                             Email = "Teacher1@gmail.com",
                             Fullname = "Le Thi Thu Hong",
                             Gender = 1,
+                            IsDeleted = false,
                             Password = "e9AkXS8u7tgxEBgkGDhHEg==.CIbRSX6JCAcaklyulng1C8FEHwkbMUmxAa0TgM14+wA=",
                             Phone = "0917437736",
                             UpdatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
@@ -161,6 +178,7 @@ namespace Web.Domain.Migrations
                             Email = "Teacher2@gmail.com",
                             Fullname = "Pham Nguyen Khang",
                             Gender = 0,
+                            IsDeleted = false,
                             Password = "YjGWyFSr3gpM8YsQMTR32w==.3WEuc4BRzEbhw5VrNC8J+d/7EGYUNvVHZXpkXtRObq8=",
                             Phone = "0917431136",
                             UpdatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
@@ -178,6 +196,7 @@ namespace Web.Domain.Migrations
                             Email = "Student1@gmail.com",
                             Fullname = "Chau Ngoc Hung",
                             Gender = 0,
+                            IsDeleted = false,
                             Password = "fBoPmwRGGn2bUgwS8C3F9g==.ucST4KNOgwC34qikVODkcgiFgeu9qAEFU2RBKZ5BkLU=",
                             Phone = "0202431136",
                             UpdatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
@@ -195,6 +214,7 @@ namespace Web.Domain.Migrations
                             Email = "Student2@gmail.com",
                             Fullname = "Ho Vinh Duy",
                             Gender = 0,
+                            IsDeleted = false,
                             Password = "4GcJL/PZJ4WGD1xD/zBh+Q==.rPW9T/NlySewoKzvuvenjHXV58chrv5VBlAHZPAv8Io=",
                             Phone = "0209831136",
                             UpdatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
@@ -210,16 +230,21 @@ namespace Web.Domain.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<DateTime?>("CreatedAt")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("CreatedBy")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Descrtiption")
                         .HasColumnType("text");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("Type")
@@ -229,6 +254,7 @@ namespace Web.Domain.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("UpdatedBy")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -242,6 +268,7 @@ namespace Web.Domain.Migrations
                             CreatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
                             CreatedBy = "Huynh Huu Bao Khoa",
                             Descrtiption = "This is profile for admin.",
+                            IsDeleted = false,
                             Name = "Admin Profile",
                             Type = 2,
                             UpdatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
@@ -253,6 +280,7 @@ namespace Web.Domain.Migrations
                             CreatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
                             CreatedBy = "Huynh Huu Bao Khoa",
                             Descrtiption = "This is profile for teacher.",
+                            IsDeleted = false,
                             Name = "Teacher Profile",
                             Type = 0,
                             UpdatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
@@ -264,6 +292,7 @@ namespace Web.Domain.Migrations
                             CreatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
                             CreatedBy = "Huynh Huu Bao Khoa",
                             Descrtiption = "This is profile for student.",
+                            IsDeleted = false,
                             Name = "Student Profile",
                             Type = 1,
                             UpdatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),

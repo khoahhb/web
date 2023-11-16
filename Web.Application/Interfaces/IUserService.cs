@@ -7,7 +7,6 @@ namespace Web.Application.Interfaces
 {
     public interface IUserService
     {
-
         public Task<ServiceResult<string>> SignInUser(SignInRequestDto signInRequestDto);
         public Task<ServiceResult<UserResponseDto>> SignUpUser(CreateUserRequestDto signUpRequestDto);
         public Task<ServiceResult<UserResponseDto>> UpdateUser(UpdateUserRequestDTO updateUserRequestDTO);

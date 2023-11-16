@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using Web.Domain.Context;
 using Web.Domain.Entities;
@@ -7,101 +6,80 @@ using Web.Infracturre.Interfaces;
 
 namespace Web.Infracturre
 {
-    public class Repository<T> : IReposiotry<T> where T : class
+    public class Repository<T> : IRepository<T> where T : class
     {
-        private ApplicationDbContext _context;
+        private readonly DbFactory _dbFactory;
+        private DbSet<T> _dbSet;
 
-        public Repository(ApplicationDbContext context)
+        protected DbSet<T> DbSet
         {
-            _context = context;
+            get => _dbSet ?? (_dbSet = _dbFactory.DbContext.Set<T>());
         }
 
-        public async Task<IEnumerable<T>> GetAll(Expression<Func<T, object>>[] includeProperties = null)
+        public Repository(DbFactory dbFactory)
         {
-            IQueryable<T> query = _context.Set<T>();
-            if (includeProperties != null)
-            {
-                foreach (var includeProperty in includeProperties)
-                    query = query.Include(includeProperty);
-            }
-            return await query.ToListAsync();
+            _dbFactory = dbFactory;
         }
 
-        public async Task<T> GetSingleById(object id, Expression<Func<T, object>>[] includeProperties = null)
+        public async Task Create(T entity)
         {
-            IQueryable<T> query = _context.Set<T>();
-            if (includeProperties != null)
-            {
-                foreach (var includeProperty in includeProperties)
-                    query = query.Include(includeProperty);
-            }
-            return await query.SingleOrDefaultAsync(e => EF.Property<object>(e, "Id").Equals(id));
+            await DbSet.AddAsync(entity);
         }
 
-        public async Task<T> GetSingleByCondition(Expression<Func<T, bool>> expression, Expression<Func<T, object>>[] includeProperties = null)
+        public async Task Create(IEnumerable<T> entities)
         {
-            IQueryable<T> query = _context.Set<T>();
-            if (includeProperties != null)
-            {
-                foreach (var includeProperty in includeProperties)
-                    query = query.Include(includeProperty);
-            }
-           
-            return await query.Where(expression).FirstOrDefaultAsync();
-        }
-
-        public async Task<IEnumerable<T>> GetByCondition(Expression<Func<T, bool>> expression)
-        {
-            return await _context.Set<T>().Where(expression).ToListAsync();
-        }
-
-        public async Task Insert(T entity)
-        {
-            await _context.Set<T>().AddAsync(entity);
-        }
-
-        public async Task Insert(IEnumerable<T> entities)
-        {
-            await _context.Set<T>().AddRangeAsync(entities);
+            await DbSet.AddRangeAsync(entities);
         }
 
         public void Update(T entity)
         {
-            _context.Set<T>().Update(entity);
+            DbSet.Update(entity);
         }
 
         public void Delete(T entity)
         {
-            _context.Set<T>().Remove(entity);
+            DbSet.Remove(entity);
         }
 
         public void Delete(Expression<Func<T, bool>> expression)
         {
-            var entities = _context.Set<T>().Where(expression).ToList();
+            var entities = DbSet.Where(expression).ToList();
             if (entities.Count > 0)
-                _context.Set<T>().RemoveRange(entities);
+                DbSet.RemoveRange(entities);
         }
-        public virtual IQueryable<T> Table => _context.Set<T>();
 
-        public IQueryable<T> GetQuery(Expression<Func<T, bool>> expression)
+        public async Task<T> GetOne(Expression<Func<T, bool>> expression, params Expression<Func<T, object>>[] includeProperties)
         {
-            IQueryable<T> query = _context.Set<T>();
-            return query.Where(expression);
+            IQueryable<T> query = DbSet;
+            foreach (var includeProperty in includeProperties)
+                query = query.Include(includeProperty);
+
+            return await query.Where(expression).FirstOrDefaultAsync();
         }
-        public IQueryable<T> GetQuery(Expression<Func<T, bool>> expression,
-            params Expression<Func<T, object>>[] includeProperties)
+
+        public async Task<T> GetOneId(object id, params Expression<Func<T, object>>[] includeProperties)
         {
-            IQueryable<T> query = _context.Set<T>();
-            query = query.Where(expression);
-            foreach (var item in includeProperties)
-            {
-                query.Include(item);
-            }
-            return query.Where(expression);
+            IQueryable<T> query = DbSet;
+            foreach (var includeProperty in includeProperties)
+                query = query.Include(includeProperty);
+            return await query.SingleOrDefaultAsync(e => EF.Property<object>(e, "Id").Equals(id));
         }
-        public async Task Commit()
+
+        public async Task<IEnumerable<T>> GetMany(Expression<Func<T, bool>> expression, params Expression<Func<T, object>>[] includeProperties)
         {
-           await _context.SaveChangesAsync();
+            IQueryable<T> query = DbSet;
+            foreach (var includeProperty in includeProperties)
+                query = query.Include(includeProperty);
+
+            return await query.Where(expression).ToListAsync();
+        }
+
+        public async Task<IEnumerable<T>> GetAll(params Expression<Func<T, object>>[] includeProperties)
+        {
+            IQueryable<T> query = DbSet;
+            foreach (var includeProperty in includeProperties)
+                query = query.Include(includeProperty);
+            return await query.ToListAsync();
         }
     }
 }

@@ -55,25 +55,6 @@ C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Application\obj\Debug
 C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Application\obj\Debug\net6.0\refint\Web.Application.dll
 C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.pdb
 C:\Users\khoa1\OneDrive - osakaka\Desktop\Projects\Web\Web.Application\obj\Debug\net6.0\ref\Web.Application.dll
-E:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.csproj.AssemblyReference.cache
-E:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.GeneratedMSBuildEditorConfig.editorconfig
-E:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.AssemblyInfoInputs.cache
-E:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.AssemblyInfo.cs
-E:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.csproj.CoreCompileInputs.cache
-E:\Projects\Web\Web.Application\bin\Debug\net6.0\Web.Application.deps.json
-E:\Projects\Web\Web.Application\bin\Debug\net6.0\Web.Application.dll
-E:\Projects\Web\Web.Application\bin\Debug\net6.0\Web.Application.pdb
-E:\Projects\Web\Web.Application\bin\Debug\net6.0\Web.Domain.dll
-E:\Projects\Web\Web.Application\bin\Debug\net6.0\Web.Infracturre.dll
-E:\Projects\Web\Web.Application\bin\Debug\net6.0\Web.Model.dll
-E:\Projects\Web\Web.Application\bin\Debug\net6.0\Web.Infracturre.pdb
-E:\Projects\Web\Web.Application\bin\Debug\net6.0\Web.Domain.pdb
-E:\Projects\Web\Web.Application\bin\Debug\net6.0\Web.Model.pdb
-E:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.csproj.CopyComplete
-E:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.dll
-E:\Projects\Web\Web.Application\obj\Debug\net6.0\refint\Web.Application.dll
-E:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.pdb
-E:\Projects\Web\Web.Application\obj\Debug\net6.0\ref\Web.Application.dll
 F:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.csproj.AssemblyReference.cache
 F:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.GeneratedMSBuildEditorConfig.editorconfig
 F:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.AssemblyInfoInputs.cache
@@ -93,3 +74,22 @@ F:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.dll
 F:\Projects\Web\Web.Application\obj\Debug\net6.0\refint\Web.Application.dll
 F:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.pdb
 F:\Projects\Web\Web.Application\obj\Debug\net6.0\ref\Web.Application.dll
+E:\Projects\Web\Web.Application\bin\Debug\net6.0\Web.Application.deps.json
+E:\Projects\Web\Web.Application\bin\Debug\net6.0\Web.Application.dll
+E:\Projects\Web\Web.Application\bin\Debug\net6.0\Web.Application.pdb
+E:\Projects\Web\Web.Application\bin\Debug\net6.0\Web.Domain.dll
+E:\Projects\Web\Web.Application\bin\Debug\net6.0\Web.Infracturre.dll
+E:\Projects\Web\Web.Application\bin\Debug\net6.0\Web.Model.dll
+E:\Projects\Web\Web.Application\bin\Debug\net6.0\Web.Infracturre.pdb
+E:\Projects\Web\Web.Application\bin\Debug\net6.0\Web.Domain.pdb
+E:\Projects\Web\Web.Application\bin\Debug\net6.0\Web.Model.pdb
+E:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.csproj.AssemblyReference.cache
+E:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.AssemblyInfoInputs.cache
+E:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.AssemblyInfo.cs
+E:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.csproj.CoreCompileInputs.cache
+E:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.csproj.CopyComplete
+E:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.dll
+E:\Projects\Web\Web.Application\obj\Debug\net6.0\refint\Web.Application.dll
+E:\Projects\Web\Web.Application\obj\Debug\net6.0\Web.Application.pdb
+E:\Projects\Web\Web.Application\obj\Debug\net6.0\ref\Web.Application.dll

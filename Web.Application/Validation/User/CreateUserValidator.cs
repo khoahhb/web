@@ -8,11 +8,15 @@ namespace Web.Application.Validation.User
 {
     public class CreateUserValidator : AbstractValidator<CreateUserRequestDto>
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUserRepository _userRepository;
+        private readonly IUserProfileRepository _userProfileRepository;
+        private readonly IAvatarRepository _avatarRepository;
 
-        public CreateUserValidator(IUnitOfWork unitOfWork)
+        public CreateUserValidator(IUserRepository userRepository, IUserProfileRepository userProfileRepository, IAvatarRepository avatarRepository)
         {
-            _unitOfWork = unitOfWork;
+            _userRepository = userRepository;
+            _userProfileRepository = userProfileRepository;
+            _avatarRepository = avatarRepository;
 
             RuleFor(x => x.Username)
                 .NotNull().WithMessage("Username is required.")
@@ -20,7 +24,7 @@ namespace Web.Application.Validation.User
                 .Length(6, 50).WithMessage("Username must be between 6 and 50 characters.")
                 .Matches("^[a-zA-Z0-9_]*$").WithMessage("Username can only have alphabets, numbers and _.")
                 .MustAsync(async (username, _) =>
-                    !(await _unitOfWork.RepositoryUser.GetSingleByCondition(u => u.Username == username) != null))
+                    !(await _userRepository.GetUserByUsername(username) != null))
                 .WithMessage("Username existed.")
                 .When(x => !string.IsNullOrEmpty(x.Username));
 
@@ -57,14 +61,14 @@ namespace Web.Application.Validation.User
                 .Length(12, 255).WithMessage("Email must be between 12 and 255 characters.")
                 .EmailAddress().WithMessage("Email is not a valid email address.")
                 .MustAsync(async (email, _) =>
-                    !(await _unitOfWork.RepositoryUser.GetSingleByCondition(u => u.Email == email) != null))
+                    !(await _userRepository.GetUserByEmail(email) != null))
                 .WithMessage("Email existed.")
                 .When(x => !string.IsNullOrEmpty(x.Email));
 
             RuleFor(x => x.AvatarId)
                 .MustAsync(async (id, _) =>
                 {
-                    return await _unitOfWork.RepositoryAvatar.GetSingleById(id) != null;
+                    return await _avatarRepository.GetAvatarById(id) != null;
                 })
                 .WithMessage("Avatar do not exist.")
                 .When(x => x.AvatarId != null && x.AvatarId != Guid.Empty);
@@ -74,7 +78,7 @@ namespace Web.Application.Validation.User
                 .NotEmpty().WithMessage("UserProfile is required.")
                 .MustAsync(async (id, _) =>
                 {
-                    return id != null ? await _unitOfWork.RepositoryProfile.GetSingleById(id) != null : false;
+                    return id != null ? await _userProfileRepository.GetUserProfileById(id) != null : false;
                 })
                 .WithMessage("UserProfile do not exist.")
                 .When(x => x.UserProfileId != null || x.UserProfileId != Guid.Empty);

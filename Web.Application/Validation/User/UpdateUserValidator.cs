@@ -12,11 +12,15 @@ namespace Web.Application.Validation.User
 
         private Guid userId;
 
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUserRepository _userRepository;
+        private readonly IUserProfileRepository _userProfileRepository;
+        private readonly IAvatarRepository _avatarRepository;
 
-        public UpdateUserValidator(IUnitOfWork unitOfWork)
+        public UpdateUserValidator(IUserRepository userRepository, IUserProfileRepository userProfileRepository, IAvatarRepository avatarRepository)
         {
-            _unitOfWork = unitOfWork;
+            _userRepository = userRepository;
+            _userProfileRepository = userProfileRepository;
+            _avatarRepository = avatarRepository;
 
             RuleFor(x => x.Id)
                 .NotNull().WithMessage("Id is required.")
@@ -24,7 +28,7 @@ namespace Web.Application.Validation.User
                 .MustAsync(async (id, _) =>
                 {
                     userId = id;
-                    return await _unitOfWork.RepositoryUser.GetSingleById(id) != null;
+                    return await _userRepository.GetUserById(id) != null;
                 })
                 .WithMessage("User id do not exist.");
 
@@ -58,7 +62,7 @@ namespace Web.Application.Validation.User
                 .EmailAddress().WithMessage("Email is not a valid email address.")
                 .MustAsync(async (email, _) =>
                 {
-                    var user = await _unitOfWork.RepositoryUser.GetSingleByCondition(u => u.Email == email);
+                    var user = await _userRepository.GetUserByEmail(email);
                     if (user != null)
                     {
                         return user.Id == userId;
@@ -71,7 +75,7 @@ namespace Web.Application.Validation.User
             RuleFor(x => x.AvatarId)
                .MustAsync(async (id, _) =>
                {
-                   return await _unitOfWork.RepositoryAvatar.GetSingleByCondition(
+                   return await _avatarRepository.GetAvatarByCondition(
                        prof => prof.Id == id && prof.IsPublished == true) != null;
                })
                .WithMessage("Avatar Id is not published or do not exist.")
@@ -80,7 +84,7 @@ namespace Web.Application.Validation.User
             RuleFor(x => x.UserProfileId)
                 .MustAsync(async (id, _) =>
                 {
-                    return id != null ? await _unitOfWork.RepositoryProfile.GetSingleById(id) != null : false;
+                    return id != null ? await _userProfileRepository.GetUserProfileById(id) != null : false;
                 })
                 .WithMessage("UserProfileId do not exist.")
                 .When(x => x.UserProfileId != null && x.UserProfileId != Guid.Empty);

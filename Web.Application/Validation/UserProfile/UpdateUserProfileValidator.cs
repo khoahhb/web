@@ -7,18 +7,18 @@ namespace Web.Application.Validation.UserProfile
     public class UpdateUserProfileValidator : AbstractValidator<UpdateUserProfileRequestDto>
     {
 
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUserProfileRepository _userProfileRepository;
 
-        public UpdateUserProfileValidator(IUnitOfWork unitOfWork)
+        public UpdateUserProfileValidator(IUserProfileRepository userProfileRepository)
         {
-            _unitOfWork = unitOfWork;
+            _userProfileRepository = userProfileRepository;
 
             RuleFor(x => x.Id)
                 .NotNull().WithMessage("Id is required.")
                 .NotEmpty().WithMessage("Id is required.")
                 .MustAsync(async (id, _) =>
                 {
-                    return await _unitOfWork.RepositoryProfile.GetSingleById(id) != null;
+                    return await _userProfileRepository.GetUserProfileById(id) != null;
                 })
                 .WithMessage("Profile id do not exist.");
 

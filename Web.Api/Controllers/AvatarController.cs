@@ -41,7 +41,7 @@ namespace Web.Api.Controllers
         /// </summary>
         [Authorize]
         [HttpPut]
-        public async Task<IActionResult> UpdateAvatar([FromForm]  UpdateAvatarRequestDto dto)
+        public async Task<IActionResult> UpdateAvatar([FromForm] UpdateAvatarRequestDto dto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);

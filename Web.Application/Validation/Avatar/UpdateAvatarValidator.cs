@@ -9,19 +9,19 @@ namespace Web.Application.Validation.Avatar
     {
         private readonly PhotoSettings _settings;
 
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IAvatarRepository _avatarRepository;
 
-        public UpdateAvatarValidator(IUnitOfWork unitOfWork)
+        public UpdateAvatarValidator(IAvatarRepository avatarRepository)
         {
             _settings = new PhotoSettings() { MaxBytes = 2048000 };
 
-            _unitOfWork = unitOfWork;
+            _avatarRepository = avatarRepository;
 
             RuleFor(x => x.Id)
                 .NotEmpty().WithMessage("Avatar Id is required.")
                 .MustAsync(async (id, _) =>
                 {
-                    return await _unitOfWork.RepositoryAvatar.GetSingleById(id) != null;
+                    return await _avatarRepository.GetAvatarById(id) != null;
                 })
                 .WithMessage("Avatar id do not exist.");
 

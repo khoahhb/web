@@ -1,16 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Web.Domain.Test.Context;
+using Web.Domain.Context;
 
-namespace Web.Infracturre.Test
+namespace Web.Infracturre
 {
-    public class DbFactoryTest : IDisposable
+    public class DbFactory : IDisposable
     {
         private bool _disposed;
-        private Func<AppDbContext> _instanceFunc;
+        private Func<ApplicationDbContext> _instanceFunc;
         private DbContext _dbContext;
         public DbContext DbContext => _dbContext ?? (_dbContext = _instanceFunc.Invoke());
 
-        public DbFactoryTest(Func<AppDbContext> dbContextFactory)
+        public DbFactory(Func<ApplicationDbContext> dbContextFactory)
         {
             _instanceFunc = dbContextFactory;
         }

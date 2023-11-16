@@ -7,6 +7,7 @@ using Web.Application.Helpers;
 using Web.Application.Interfaces;
 using Web.Domain.Entities;
 using Web.Infracturre.Interfaces;
+using Web.Infracturre.Repositories;
 using Web.Model.Dtos.RequestDtos.Avatar;
 using Web.Model.Dtos.ResponseDtos;
 
@@ -14,20 +15,22 @@ namespace Web.Application.Services
 {
     public class AvatarService : IAvatarService
     {
-        private readonly IHttpContextAccessor _httpContextAccessor;
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly IConfiguration _configuration;
         private readonly IMapper _mapper;
+        private readonly IAvatarRepository _avatarRepository;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IConfiguration _configuration;
 
         private ServiceResult<T> Success<T>(T data) => new ServiceResult<T>().SuccessResult(HttpStatusCode.OK, data);
         private ServiceResult<T> Failure<T>(HttpStatusCode statusCode) => new ServiceResult<T>().Failure(statusCode);
 
-        public AvatarService(IHttpContextAccessor httpContextAccessor, IUnitOfWork unitOfWork, IConfiguration configuration, IMapper mapper)
+        public AvatarService(IMapper mapper, IAvatarRepository avatarRepository, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IConfiguration configuration)
         {
-            _httpContextAccessor = httpContextAccessor;
-            _unitOfWork = unitOfWork;
-            _configuration = configuration;
             _mapper = mapper;
+            _avatarRepository = avatarRepository;
+            _unitOfWork = unitOfWork;
+            _httpContextAccessor = httpContextAccessor;
+            _configuration = configuration;
         }
 
         public async Task<ServiceResult<AvatarResponseDto>> CreateAvatar(CreateAvatarRequestDto dto)
@@ -40,38 +43,38 @@ namespace Web.Application.Services
                 avatar.CreatedBy = currentUserName;
                 avatar.UpdatedBy = currentUserName;
             }
-            await _unitOfWork.RepositoryAvatar.Insert(avatar);
-            await _unitOfWork.Commit();
+            await _avatarRepository.CreateAvatar(avatar);
+            await _unitOfWork.CommitAsync();
             return Success(_mapper.Map<AvatarResponseDto>(avatar));
         }
 
         public async Task<ServiceResult<AvatarResponseDto>> UpdateAvatar(UpdateAvatarRequestDto dto)
         {
-            var avatar = (await _unitOfWork.RepositoryAvatar.GetSingleById(dto.Id));
+            var avatar = (await _avatarRepository.GetAvatarById(dto.Id));
             var currentUserName = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Name)?.Value;
             if (!string.IsNullOrEmpty(currentUserName))
             {
                 avatar.UpdatedBy = currentUserName;
             }
             _mapper.Map(dto, avatar);
-            _unitOfWork.RepositoryAvatar.Update(avatar);
-            await _unitOfWork.Commit();
+            _avatarRepository.UpdateAvatar(avatar);
+            await _unitOfWork.CommitAsync();
             return Success(_mapper.Map<AvatarResponseDto>(avatar));
         }
 
         public async Task<ServiceResult<string>> DeleteAvatarById(Guid id)
         {
-            var avatar = (await _unitOfWork.RepositoryAvatar.GetSingleById(id));
+            var avatar = (await _avatarRepository.GetAvatarById(id));
             if (avatar == null)
                 return Failure<string>(HttpStatusCode.NotFound);
-            _unitOfWork.RepositoryAvatar.Delete(avatar);
-            await _unitOfWork.Commit();
+            _avatarRepository.DeleteAvatar(avatar);
+            await _unitOfWork.CommitAsync();
             return Success(avatar.Id.ToString());
         }
 
         public async Task<ServiceResult<AvatarResponseDto>> GetAvatarById(Guid id)
         {
-            var avatar = (await _unitOfWork.RepositoryAvatar.GetSingleById(id));
+            var avatar = (await _avatarRepository.GetAvatarById(id));
             if (avatar == null)
                 return Failure<AvatarResponseDto>(HttpStatusCode.NotFound);
             return Success(_mapper.Map<AvatarResponseDto>(avatar));
@@ -79,7 +82,8 @@ namespace Web.Application.Services
 
         public async Task<ServiceResult<IEnumerable<AvatarResponseDto>>> GetAllAvatar()
         {
-            var response = (await _unitOfWork.RepositoryAvatar.GetAll()).Select(_mapper.Map<AvatarResponseDto>);
+            var avatars = await _avatarRepository.GetAllAvatars();
+            var response = avatars.Select(_mapper.Map<AvatarResponseDto>);
             return Success(response);
         }
     }
