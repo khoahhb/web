@@ -62,14 +62,14 @@ namespace Web.Domain.Context
                      UpdatedBy = id4,
                  }
             );
-            var test = new DateTime(2001, 11, 02, 0, 0, 0, DateTimeKind.Utc);
+            var test = new DateTime(2001, 11, 02, 12, 0, 0, DateTimeKind.Utc);
 
             modelBuilder.Entity<User>().HasData(
                 new User
                 {
                     Id = id4,
                     Username = "admin1",
-                    Password = "UhywqEJrt+FqDqbLZXUxMQ==.fzrKPpUbz3nW+vOP4db3qeUz8eBNVhzSWSXXcSHSX9M=",
+                    Password = "JqUI1dEGEKTvyxJ8T6rK4w==.tx3AE07BC5n6jkF70x7odozYEejXNkjqEU9DFmpNxfA=",
                     Fullname = "Huynh Huu Bao Khoa",
                     Gender = GenderType.Male,
                     DateOfBirth = test,
@@ -86,7 +86,7 @@ namespace Web.Domain.Context
                 {
                     Id = id5,
                     Username = "Teacher1",
-                    Password = "e9AkXS8u7tgxEBgkGDhHEg==.CIbRSX6JCAcaklyulng1C8FEHwkbMUmxAa0TgM14+wA=",
+                    Password = "JqUI1dEGEKTvyxJ8T6rK4w==.tx3AE07BC5n6jkF70x7odozYEejXNkjqEU9DFmpNxfA=",
                     Fullname = "Le Thi Thu Hong",
                     Gender = GenderType.Female,
                     DateOfBirth = test,
@@ -103,7 +103,7 @@ namespace Web.Domain.Context
                 {
                     Id = id7,
                     Username = "Teacher2",
-                    Password = "YjGWyFSr3gpM8YsQMTR32w==.3WEuc4BRzEbhw5VrNC8J+d/7EGYUNvVHZXpkXtRObq8=",
+                    Password = "JqUI1dEGEKTvyxJ8T6rK4w==.tx3AE07BC5n6jkF70x7odozYEejXNkjqEU9DFmpNxfA=",
                     Fullname = "Pham Nguyen Khang",
                     Gender = GenderType.Male,
                     DateOfBirth = test,
@@ -120,7 +120,7 @@ namespace Web.Domain.Context
                 {
                     Id = id8,
                     Username = "Student1",
-                    Password = "fBoPmwRGGn2bUgwS8C3F9g==.ucST4KNOgwC34qikVODkcgiFgeu9qAEFU2RBKZ5BkLU=",
+                    Password = "JqUI1dEGEKTvyxJ8T6rK4w==.tx3AE07BC5n6jkF70x7odozYEejXNkjqEU9DFmpNxfA=",
                     Fullname = "Chau Ngoc Hung",
                     Gender = GenderType.Male,
                     DateOfBirth = test,
@@ -137,7 +137,7 @@ namespace Web.Domain.Context
                 {
                     Id = id9,
                     Username = "Student2",
-                    Password = "4GcJL/PZJ4WGD1xD/zBh+Q==.rPW9T/NlySewoKzvuvenjHXV58chrv5VBlAHZPAv8Io=",
+                    Password = "JqUI1dEGEKTvyxJ8T6rK4w==.tx3AE07BC5n6jkF70x7odozYEejXNkjqEU9DFmpNxfA=",
                     Fullname = "Ho Vinh Duy",
                     Gender = GenderType.Male,
                     DateOfBirth = test,

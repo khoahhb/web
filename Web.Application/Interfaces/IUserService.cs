@@ -9,6 +9,7 @@ namespace Web.Application.Interfaces
     {
         public Task<ServiceResult<string>> SignInUser(SignInRequestDto signInRequestDto);
         public Task<ServiceResult<UserResponseDto>> SignUpUser(CreateUserRequestDto signUpRequestDto);
+        public Task<ServiceResult<string>> LogoutUser();
         public Task<ServiceResult<UserResponseDto>> UpdateUser(UpdateUserRequestDTO updateUserRequestDTO);
         public Task<ServiceResult<string>> DeleteUserById(Guid id);
         public Task<ServiceResult<string>> DeleteUserByUsername(string username);

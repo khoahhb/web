@@ -14,6 +14,11 @@
             SignIn user
             </summary>
         </member>
+        <member name="M:Web.Api.Controllers.AuthController.Logout">
+            <summary>
+            Logout    (All)
+            </summary>
+        </member>
         <member name="M:Web.Api.Controllers.AvatarController.UploadAvatar(Web.Model.Dtos.Avatar.Request.CreateAvatarRequestDto)">
             <summary>
             Create (upload) avatar                     (Admin, Teacher, Student)

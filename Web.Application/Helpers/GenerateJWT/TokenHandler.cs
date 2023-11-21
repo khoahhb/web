@@ -9,7 +9,7 @@ namespace Web.Application.Helpers.GenerateJWT
 {
     public class TokenHandler
     {
-        public static string CreateToken(UserResponseDto userResponseDto, int expireDate, IConfiguration configuration)
+        public static string CreateToken(UserResponseDto userResponseDto, IConfiguration configuration)
         {
             var claims = new[]
             {
@@ -27,7 +27,7 @@ namespace Web.Application.Helpers.GenerateJWT
                 issuer: configuration["Jwt:Issuer"],
                 audience: configuration["Jwt:Audience"],
                 claims: claims,
-                expires: DateTime.UtcNow.AddDays(expireDate),
+                expires: DateTime.UtcNow.AddHours(Double.Parse(configuration["Jwt:ExpireTime"])),
                 notBefore: DateTime.UtcNow,
                 signingCredentials: new SigningCredentials(
                     new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"])),

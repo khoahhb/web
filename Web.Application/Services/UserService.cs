@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using System.Net;
 using Web.Application.Helpers.APIResponseCustom;
@@ -6,6 +7,7 @@ using Web.Application.Helpers.GenerateJWT;
 using Web.Application.Helpers.GeneratePassword;
 using Web.Application.Interfaces;
 using Web.Domain.Entities;
+using Web.Infracturre.Repositories.CredentialRepo;
 using Web.Infracturre.Repositories.UserRepo;
 using Web.Infracturre.UnitOfWorks;
 using Web.Model.Dtos.User.Request;
@@ -17,18 +19,23 @@ namespace Web.Application.Services
     {
         private readonly IMapper _mapper;
         private readonly IUserRepository _userRepository;
+        private readonly ICredentialRepository _credentialRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IConfiguration _configuration;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
         private ServiceResult<T> Success<T>(T data) => new ServiceResult<T>().SuccessResult(HttpStatusCode.OK, data);
         private ServiceResult<T> Failure<T>(HttpStatusCode statusCode) => new ServiceResult<T>().Failure(statusCode);
 
-        public UserService(IMapper mapper, IUserRepository userRepository, IUnitOfWork unitOfWork, IConfiguration configuration)
+        public UserService(IMapper mapper, IUserRepository userRepository, ICredentialRepository credentialRepository, 
+            IUnitOfWork unitOfWork, IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
         {
             _mapper = mapper;
             _userRepository = userRepository;
+            _credentialRepository = credentialRepository;
             _unitOfWork = unitOfWork;
             _configuration = configuration;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<ServiceResult<string>> SignInUser(SignInRequestDto signInRequestDto)
@@ -36,7 +43,12 @@ namespace Web.Application.Services
             var user = await _userRepository.GetUserByUsername(signInRequestDto.Username, u => u.UserProfile);
 
             if (PasswordHandler.VerifyPassword(user.Password, signInRequestDto.Password))
-                return Success(TokenHandler.CreateToken(_mapper.Map<UserResponseDto>(user), 1, _configuration));
+            {
+                var token = TokenHandler.CreateToken(_mapper.Map<UserResponseDto>(user), _configuration);
+                await _credentialRepository.Create(new Credential() {Token= token, UserId = user.Id });
+                await _unitOfWork.CommitAsync();
+                return Success(token);
+            }
 
             return Failure<string>(HttpStatusCode.Unauthorized);
         }
@@ -49,6 +61,21 @@ namespace Web.Application.Services
             var response = _mapper.Map<UserResponseDto>(user);
             await SetFullNamesForUserAndRelatedEntities(response);
             return Success(response);
+        }
+
+        public async Task<ServiceResult<string>> LogoutUser()
+        {
+            var authorizationHeader = _httpContextAccessor.HttpContext.Request.Headers["Authorization"].FirstOrDefault();
+
+            var token = authorizationHeader.Substring("Bearer ".Length).Trim();
+            var credential = await _credentialRepository.GetOne(cre => cre.Token == token, cre => cre.User);
+            if (credential == null)
+                return Failure<string>(HttpStatusCode.NotFound);
+
+            _credentialRepository.Delete(credential);
+            await _unitOfWork.CommitAsync();
+
+            return Success<string>(credential.User.Fullname);
         }
 
         public async Task<ServiceResult<UserResponseDto>> UpdateUser(UpdateUserRequestDTO updateUserRequestDTO)

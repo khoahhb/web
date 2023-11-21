@@ -11,6 +11,11 @@ namespace Web.Domain.Context.Config
             builder
                 .HasKey(u => u.Id);
 
+            builder
+                .HasMany(u => u.Credentials)
+                .WithOne(cre => cre.User)
+                .HasForeignKey(cre => cre.UserId)
+                .IsRequired(false);
         }
     }
 }

@@ -108,21 +108,28 @@ namespace Web.Infracturre.Repositories.BaseRepo
 
             if (entity is IAuditEntity auditEntity)
             {
-                var currentUserId = GetCurrentUserId() ?? baseEntity.Id;
-                if (isUpdate)
+                var currentUserId = GetCurrentUserId() ?? baseEntity?.Id ?? Guid.Empty;
+                auditEntity.UpdatedAt = DateTime.UtcNow;
+                auditEntity.UpdatedBy = currentUserId;
+
+                if (!isUpdate)
                 {
-                    auditEntity.UpdatedAt = DateTime.UtcNow;
-                    auditEntity.UpdatedBy = auditEntity.UpdatedBy = currentUserId;
+                    auditEntity.CreatedAt = auditEntity.UpdatedAt;
+                    auditEntity.CreatedBy = currentUserId;
                 }
-                else
+
+                if (entity is Credential credential)
                 {
-                    auditEntity.CreatedAt = DateTime.UtcNow;
-                    auditEntity.CreatedBy = auditEntity.UpdatedBy = currentUserId;
-                    auditEntity.UpdatedAt = DateTime.UtcNow;
-                    auditEntity.UpdatedBy = auditEntity.UpdatedBy = currentUserId;
+                    credential.UpdatedBy = credential.UserId;
+
+                    if (!isUpdate)
+                    {
+                        credential.CreatedBy = credential.UserId;
+                    }
                 }
             }
         }
+
 
         private Guid? GetCurrentUserId()
         {
