@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using Web.Infracturre.Interfaces;
-using Web.Model.Enum;
-using System.Reflection.Metadata.Ecma335;
-using Web.Model.Dtos.RequestDtos.User;
 using System.Globalization;
+using Web.Infracturre.Repositories.AvatarRepo;
+using Web.Infracturre.Repositories.UserProfileRepo;
+using Web.Infracturre.Repositories.UserRepo;
+using Web.Model.Dtos.User.Request;
 
 namespace Web.Application.Validation.User
 {
@@ -28,9 +28,20 @@ namespace Web.Application.Validation.User
                 .MustAsync(async (id, _) =>
                 {
                     userId = id;
-                    return await _userRepository.GetUserById(id) != null;
+                    return await _userRepository.GetOneById(id) != null;
                 })
                 .WithMessage("User id do not exist.");
+
+            RuleFor(x => x.Username)
+                .MustAsync(async (username, _) =>
+                {
+                    //var user = await _userRepository.GetUserByUsername(username);
+                    //return user == null;  
+                    return false;
+                })
+                //.WithMessage("Username existed.")
+                .WithMessage("Username cannot be updated.")
+                .When(x => !string.IsNullOrEmpty(x.Username));
 
             RuleFor(x => x.Password)
                 .Length(6, 100).WithMessage("Password must be between 6 and 100 characters.")
@@ -63,11 +74,8 @@ namespace Web.Application.Validation.User
                 .MustAsync(async (email, _) =>
                 {
                     var user = await _userRepository.GetUserByEmail(email);
-                    if (user != null)
-                    {
-                        return user.Id == userId;
-                    }
-                    return true;
+                    return user == null;
+
                 })
                 .WithMessage("Email existed.")
                 .When(x => !string.IsNullOrEmpty(x.Email));
@@ -75,7 +83,7 @@ namespace Web.Application.Validation.User
             RuleFor(x => x.AvatarId)
                .MustAsync(async (id, _) =>
                {
-                   return await _avatarRepository.GetAvatarByCondition(
+                   return await _avatarRepository.GetOne(
                        prof => prof.Id == id && prof.IsPublished == true) != null;
                })
                .WithMessage("Avatar Id is not published or do not exist.")
@@ -84,7 +92,7 @@ namespace Web.Application.Validation.User
             RuleFor(x => x.UserProfileId)
                 .MustAsync(async (id, _) =>
                 {
-                    return id != null ? await _userProfileRepository.GetUserProfileById(id) != null : false;
+                    return id != null ? await _userProfileRepository.GetOneById(id) != null : false;
                 })
                 .WithMessage("UserProfileId do not exist.")
                 .When(x => x.UserProfileId != null && x.UserProfileId != Guid.Empty);

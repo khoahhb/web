@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using Web.Application.Interfaces;
-using Web.Model.Dtos.RequestDtos.UserProfile;
+using Web.Model.Dtos.UserProfile.Request;
 
 namespace Web.Api.Controllers
 {

@@ -1,5 +1,6 @@
 ﻿using Swashbuckle.AspNetCore.Filters;
-using Web.Model.Dtos.RequestDtos.User;
+using Web.Model.Dtos.User.Request;
+using Web.Model.EnumerationTypes;
 
 namespace Web.Api.Filters
 {
@@ -10,9 +11,10 @@ namespace Web.Api.Filters
             return new UpdateUserRequestDTO()
             {
                 Id = Guid.Parse("dbd1fe78-8d41-407b-b05c-f7a56fd22558"),
+                Username = "username1",
                 Password = "Password@1",
                 Fullname = "Nguyen Van A",
-                Gender = Model.Enum.GenderType.Male,
+                Gender = GenderType.Male,
                 DateOfBirth = "14/10/2001",
                 Phone = "0392954288",
                 Email = "username1@gmail.com",

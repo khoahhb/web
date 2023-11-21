@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Web.Application.Helpers;
-using Web.Infracturre.Interfaces;
-using Web.Model.Dtos.RequestDtos.Avatar;
+using Web.Infracturre.Repositories.AvatarRepo;
+using Web.Model.Dtos.Avatar.Request;
 
 namespace Web.Application.Validation.Avatar
 {
@@ -21,7 +21,7 @@ namespace Web.Application.Validation.Avatar
                 .NotEmpty().WithMessage("Avatar Id is required.")
                 .MustAsync(async (id, _) =>
                 {
-                    return await _avatarRepository.GetAvatarById(id) != null;
+                    return await _avatarRepository.GetOneById(id) != null;
                 })
                 .WithMessage("Avatar id do not exist.");
 

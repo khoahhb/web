@@ -2,26 +2,23 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
-using Newtonsoft.Json;
 using Swashbuckle.AspNetCore.Filters;
-using System.ComponentModel;
 using System.Reflection;
 using System.Text;
 using System.Text.Json.Serialization;
 using Web.Api.Filters;
 using Web.Api.Middlewares;
 using Web.Application;
-using Web.Application.Helpers;
 using Web.Domain.Context;
 using Web.Infracturre;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<StartupBase>());
+builder.Services.AddControllers().AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()); });
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(config =>
 {
@@ -60,30 +57,30 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 
 builder.Services.AddAuthorization();
 
-builder.Services.AddInfractureLayer(builder.Configuration);
-builder.Services.AddApplicationLayer();
+#region Add Infrastructure layer
+builder.Services.AddDatabase(builder.Configuration)
+                .AddInfrastuctures();
+#endregion
 
-builder.Services.AddControllers().AddJsonOptions(options =>
-{
-    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-});
+#region Add Application layer
+builder.Services.AddApplicationServices()
+                .AddValidatorsFromAppServices()
+                .AddAutoMapperFromAppServices();
+#endregion
 
 var app = builder.Build();
-
-app.UseStaticFiles(new StaticFileOptions
-{
-    FileProvider = new PhysicalFileProvider(
-           Path.Combine(Directory.GetCurrentDirectory(), "Uploads")),
-    RequestPath = "/assets"
-});
 
 app.UseSwagger();
 
 app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
+app.UseStaticFiles(new StaticFileOptions { FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Uploads")), RequestPath = "/assets" });
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
+
+app.Migrate();
+
+app.UseHttpsRedirection();
 
 app.UseAuthentication();
 

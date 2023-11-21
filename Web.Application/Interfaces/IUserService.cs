@@ -1,7 +1,7 @@
-﻿using Web.Application.Helpers;
+﻿using Web.Application.Helpers.APIResponseCustom;
 using Web.Domain.Entities;
-using Web.Model.Dtos.RequestDtos.User;
-using Web.Model.Dtos.ResponseDtos;
+using Web.Model.Dtos.User.Request;
+using Web.Model.Dtos.User.Response;
 
 namespace Web.Application.Interfaces
 {

@@ -1,7 +1,9 @@
 ﻿using FluentValidation;
 using System.Globalization;
-using Web.Infracturre.Interfaces;
-using Web.Model.Dtos.RequestDtos.User;
+using Web.Infracturre.Repositories.AvatarRepo;
+using Web.Infracturre.Repositories.UserProfileRepo;
+using Web.Infracturre.Repositories.UserRepo;
+using Web.Model.Dtos.User.Request;
 
 namespace Web.Application.Validation.User
 {
@@ -67,7 +69,7 @@ namespace Web.Application.Validation.User
             RuleFor(x => x.AvatarId)
                 .MustAsync(async (id, _) =>
                 {
-                    return await _avatarRepository.GetAvatarById(id) != null;
+                    return await _avatarRepository.GetOneById(id) != null;
                 })
                 .WithMessage("Avatar do not exist.")
                 .When(x => x.AvatarId != null && x.AvatarId != Guid.Empty);
@@ -77,7 +79,7 @@ namespace Web.Application.Validation.User
                 .NotEmpty().WithMessage("UserProfile is required.")
                 .MustAsync(async (id, _) =>
                 {
-                    return id != null ? await _userProfileRepository.GetUserProfileById(id) != null : false;
+                    return id != null ? await _userProfileRepository.GetOneById(id) != null : false;
                 })
                 .WithMessage("UserProfile do not exist.")
                 .When(x => x.UserProfileId != null || x.UserProfileId != Guid.Empty);

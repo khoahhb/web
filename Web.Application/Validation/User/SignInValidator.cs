@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
-using Web.Infracturre.Interfaces;
-using Web.Model.Dtos.RequestDtos.User;
+using Web.Infracturre.Repositories.UserRepo;
+using Web.Model.Dtos.User.Request;
 
 namespace Web.Application.Validation.User
 {
@@ -19,7 +19,7 @@ namespace Web.Application.Validation.User
                 .Length(6, 50).WithMessage("Username must be between 6 and 50 characters.")
                 .Matches("^[a-zA-Z0-9_]*$").WithMessage("Username can only have alphabets, numbers and _.")
                 .MustAsync(async (username, _) =>
-                    await _userRepository.GetUserByUsername( username) != null)
+                    await _userRepository.GetUserByUsername(username) != null)
                 .WithMessage("Username not exist.")
                 .When(x => !string.IsNullOrEmpty(x.Username));
 

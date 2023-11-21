@@ -416,3 +416,5 @@ E:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.xml
 E:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.pdb
 E:\Projects\Web\Web.Api\obj\Debug\net6.0\Web.Api.genruntimeconfig.cache
 E:\Projects\Web\Web.Api\obj\Debug\net6.0\ref\Web.Api.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\TimeZoneConverter.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\TimeZoneNames.dll

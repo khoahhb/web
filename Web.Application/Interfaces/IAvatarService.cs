@@ -1,6 +1,6 @@
-﻿using Web.Application.Helpers;
-using Web.Model.Dtos.RequestDtos.Avatar;
-using Web.Model.Dtos.ResponseDtos;
+﻿using Web.Application.Helpers.APIResponseCustom;
+using Web.Model.Dtos.Avatar.Request;
+using Web.Model.Dtos.Avatar.Response;
 
 namespace Web.Application.Interfaces
 {

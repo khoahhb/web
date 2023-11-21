@@ -5,20 +5,23 @@ namespace Web.Domain.Context
 {
     public class ApplicationDbContext : DbContext
     {
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
-        { }
-        
+        {
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+        }
+
         public DbSet<User> Users { get; set; }
         public DbSet<UserProfile> Profiles { get; set; }
         public DbSet<Avatar> Avatars { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //Add configurations
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
 
-            //Seed data 
             new DataSeeder(modelBuilder).Seed();
         }
 

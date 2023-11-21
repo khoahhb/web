@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using Web.Application.Helpers;
-using Web.Model.Dtos.RequestDtos.Avatar;
+using Web.Model.Dtos.Avatar.Request;
 
 namespace Web.Application.Validation.Avatar
 {

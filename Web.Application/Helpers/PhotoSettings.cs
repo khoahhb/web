@@ -1,9 +1,4 @@
 ﻿using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Web.Application.Helpers
 {
@@ -14,8 +9,8 @@ namespace Web.Application.Helpers
 
         public PhotoSettings()
         {
-            MaxBytes = 20048000; 
-            AllowedFileTypes = new string[] { ".jpg", ".jpeg", ".png",".webp" };
+            MaxBytes = 20048000;
+            AllowedFileTypes = new string[] { ".jpg", ".jpeg", ".png", ".webp" };
         }
 
         public bool IsSupported(string fileName)
@@ -26,7 +21,7 @@ namespace Web.Application.Helpers
 
         public static async void SaveAvatarToUploads(IFormFile file)
         {
-   
+
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Uploads", file.FileName);
 
             using (var stream = new FileStream(filePath, FileMode.Create))
