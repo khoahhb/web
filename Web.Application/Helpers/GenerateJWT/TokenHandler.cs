@@ -27,7 +27,7 @@ namespace Web.Application.Helpers.GenerateJWT
                 issuer: configuration["Jwt:Issuer"],
                 audience: configuration["Jwt:Audience"],
                 claims: claims,
-                expires: DateTime.UtcNow.AddHours(Double.Parse(configuration["Jwt:ExpireTime"])),
+                expires: DateTime.UtcNow.AddMinutes(Double.Parse(configuration["Jwt:ExpireTime"])),
                 notBefore: DateTime.UtcNow,
                 signingCredentials: new SigningCredentials(
                     new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"])),

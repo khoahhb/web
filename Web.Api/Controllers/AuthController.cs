@@ -20,19 +20,17 @@ namespace Web.Api.Controllers
         }
 
         /// <summary>
-        /// SignUp user
+        /// Logout    (All)
         /// </summary>
-        [HttpPost("signup")]
-        public async Task<IActionResult> SignUp(CreateUserRequestDto signUpDto)
+        [Authorize]
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout()
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            var result = await _userService.SignUpUser(signUpDto);
-
+            var result = await _userService.LogoutUser();
             return result.StatusCode switch
             {
-                HttpStatusCode.OK => StatusCode((int)HttpStatusCode.OK, result.SuccessData),
+                HttpStatusCode.OK => StatusCode((int)HttpStatusCode.OK, $"You ({result.SuccessData}) is logged out."),
+                HttpStatusCode.NotFound => StatusCode((int)HttpStatusCode.NotFound, "Your token is not valid (Not found in credential list)."),
                 _ => StatusCode((int)HttpStatusCode.ServiceUnavailable, "Service Unavailable.")
             };
         }
@@ -57,17 +55,19 @@ namespace Web.Api.Controllers
         }
 
         /// <summary>
-        /// Logout    (All)
+        /// SignUp user
         /// </summary>
-        [Authorize]
-        [HttpPost("logout")]
-        public async Task<IActionResult> Logout()
+        [HttpPost("signup")]
+        public async Task<IActionResult> SignUp(CreateUserRequestDto signUpDto)
         {
-            var result = await _userService.LogoutUser();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var result = await _userService.SignUpUser(signUpDto);
+
             return result.StatusCode switch
             {
-                HttpStatusCode.OK => StatusCode((int)HttpStatusCode.OK, $"You ({result.SuccessData}) is logged out."),
-                HttpStatusCode.NotFound => StatusCode((int)HttpStatusCode.NotFound, "Your token is not valid (Not found in credential list)."),
+                HttpStatusCode.OK => StatusCode((int)HttpStatusCode.OK, result.SuccessData),
                 _ => StatusCode((int)HttpStatusCode.ServiceUnavailable, "Service Unavailable.")
             };
         }

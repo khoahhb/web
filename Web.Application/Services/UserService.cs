@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using System.Net;
+using System.Security.Claims;
 using Web.Application.Helpers.APIResponseCustom;
 using Web.Application.Helpers.GenerateJWT;
 using Web.Application.Helpers.GeneratePassword;
@@ -12,6 +13,7 @@ using Web.Infracturre.Repositories.UserRepo;
 using Web.Infracturre.UnitOfWorks;
 using Web.Model.Dtos.User.Request;
 using Web.Model.Dtos.User.Response;
+using Web.Model.EnumerationTypes;
 
 namespace Web.Application.Services
 {
@@ -27,7 +29,7 @@ namespace Web.Application.Services
         private ServiceResult<T> Success<T>(T data) => new ServiceResult<T>().SuccessResult(HttpStatusCode.OK, data);
         private ServiceResult<T> Failure<T>(HttpStatusCode statusCode) => new ServiceResult<T>().Failure(statusCode);
 
-        public UserService(IMapper mapper, IUserRepository userRepository, ICredentialRepository credentialRepository, 
+        public UserService(IMapper mapper, IUserRepository userRepository, ICredentialRepository credentialRepository,
             IUnitOfWork unitOfWork, IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
         {
             _mapper = mapper;
@@ -45,7 +47,7 @@ namespace Web.Application.Services
             if (PasswordHandler.VerifyPassword(user.Password, signInRequestDto.Password))
             {
                 var token = TokenHandler.CreateToken(_mapper.Map<UserResponseDto>(user), _configuration);
-                await _credentialRepository.Create(new Credential() {Token= token, UserId = user.Id });
+                await _credentialRepository.Create(new Credential() { Token = token, UserId = user.Id });
                 await _unitOfWork.CommitAsync();
                 return Success(token);
             }
@@ -80,14 +82,13 @@ namespace Web.Application.Services
 
         public async Task<ServiceResult<UserResponseDto>> UpdateUser(UpdateUserRequestDTO updateUserRequestDTO)
         {
-            var user = (await _userRepository.GetOneById(updateUserRequestDTO.Id, u => u.Avatar, u => u.UserProfile));
+            var user = await _userRepository.GetOneById(updateUserRequestDTO.Id, u => u.Avatar, u => u.UserProfile);
             _mapper.Map(updateUserRequestDTO, user);
             _userRepository.Update(user);
             await _unitOfWork.CommitAsync();
             var response = _mapper.Map<UserResponseDto>(user);
             await SetFullNamesForUserAndRelatedEntities(response);
             return Success(response);
-
         }
 
         public async Task<ServiceResult<string>> DeleteUserById(Guid id)
@@ -123,7 +124,7 @@ namespace Web.Application.Services
 
         public async Task<ServiceResult<UserResponseDto>> GetUserById(Guid id)
         {
-            var user = (await _userRepository.GetOneById(id, u => u.UserProfile, u => u.Avatar));
+            var user = await _userRepository.GetOneById(id, u => u.UserProfile, u => u.Avatar);
             if (user == null)
                 return Failure<UserResponseDto>(HttpStatusCode.NotFound);
             var response = _mapper.Map<UserResponseDto>(user);
@@ -153,12 +154,18 @@ namespace Web.Application.Services
 
         public async Task<ServiceResult<IEnumerable<UserResponseDto>>> GetAllUsers()
         {
-            var users = await _userRepository.GetAll(u => u.UserProfile, u => u.Avatar);
+            var id = Guid.Parse(_httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+            var authorizedUser = await _userRepository.GetOneById(id, u => u.UserProfile, u => u.Avatar);
+
+            var users = await _userRepository.GetMany(u => u.Id == id || u.UserProfile.Type > authorizedUser.UserProfile.Type, u => u.UserProfile, u => u.Avatar);
+
+            if (authorizedUser.UserProfile.Type == ProfileType.Admin)
+                users = await _userRepository.GetAll(u => u.UserProfile, u => u.Avatar);
+
             var response = users.Select(u => _mapper.Map<UserResponseDto>(u)).ToList();
             foreach (var user in response)
                 await SetFullNamesForUserAndRelatedEntities(user);
             return Success(response.AsEnumerable());
-
         }
 
         private async Task SetFullNamesForUserAndRelatedEntities(UserResponseDto userResponse)

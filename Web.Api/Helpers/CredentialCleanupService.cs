@@ -10,12 +10,11 @@ namespace Web.Api.Helpers
         private readonly TimeSpan _checkInterval;
         private readonly IConfiguration _configuration;
 
-
         public CredentialCleanupService(IServiceProvider serviceProvider, IConfiguration configuration)
         {
             _serviceProvider = serviceProvider;
-            _checkInterval = TimeSpan.FromMinutes(1);
             _configuration = configuration;
+            _checkInterval = TimeSpan.FromMinutes(Double.Parse(_configuration["CleanupIntervalMinute"]));
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -34,7 +33,7 @@ namespace Web.Api.Helpers
                 var credentialRepository = scope.ServiceProvider.GetRequiredService<ICredentialRepository>();
                 var unitOfWork = scope.ServiceProvider.GetRequiredService<IUnitOfWork>();
 
-                var expiredCredentials = await credentialRepository.GetMany(cre => cre.CreatedAt.AddMinutes(Double.Parse(_configuration["CleanupIntervalMinute"])) < DateTime.UtcNow);
+                var expiredCredentials = await credentialRepository.GetMany(cre => DateTime.Compare(cre.CreatedAt.AddMinutes(Double.Parse(_configuration["Jwt:ExpireTime"])), DateTime.UtcNow) < 0);
 
                 foreach (var credential in expiredCredentials)
                 {

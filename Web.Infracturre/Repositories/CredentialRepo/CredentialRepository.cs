@@ -19,7 +19,7 @@ namespace Web.Infracturre.Repositories.CredentialRepo
         public async Task<bool> IsValid(string token)
         {
             var credential = await this.GetOne(cre => cre.Token == token);
-            return credential != null ? credential.CreatedAt.AddHours(Double.Parse(_configuration["Jwt:ExpireTime"])) > DateTime.UtcNow : false;
+            return credential != null ? credential.CreatedAt.AddMinutes(Double.Parse(_configuration["Jwt:ExpireTime"])) > DateTime.UtcNow : false;
         }
     }
 }

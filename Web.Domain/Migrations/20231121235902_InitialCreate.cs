@@ -116,9 +116,9 @@ namespace Web.Domain.Migrations
                 columns: new[] { "Id", "CreatedAt", "CreatedBy", "Descrtiption", "IsDeleted", "Name", "Type", "UpdatedAt", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { new Guid("33fb0ec0-6aac-4f83-98bb-5d948e165aa3"), new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc), new Guid("7e42633e-d714-406f-98d6-81909a4502c9"), "This is profile for admin.", false, "Admin Profile", 2, new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc), new Guid("7e42633e-d714-406f-98d6-81909a4502c9") },
-                    { new Guid("6eca6833-37a2-4404-8152-a6b39289a05a"), new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc), new Guid("7e42633e-d714-406f-98d6-81909a4502c9"), "This is profile for teacher.", false, "Teacher Profile", 0, new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc), new Guid("7e42633e-d714-406f-98d6-81909a4502c9") },
-                    { new Guid("7284e6bc-5913-4dcf-8229-b86a5f52b565"), new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc), new Guid("7e42633e-d714-406f-98d6-81909a4502c9"), "This is profile for student.", false, "Student Profile", 1, new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc), new Guid("7e42633e-d714-406f-98d6-81909a4502c9") }
+                    { new Guid("33fb0ec0-6aac-4f83-98bb-5d948e165aa3"), new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc), new Guid("7e42633e-d714-406f-98d6-81909a4502c9"), "This is profile for admin.", false, "Admin Profile", 0, new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc), new Guid("7e42633e-d714-406f-98d6-81909a4502c9") },
+                    { new Guid("6eca6833-37a2-4404-8152-a6b39289a05a"), new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc), new Guid("7e42633e-d714-406f-98d6-81909a4502c9"), "This is profile for teacher.", false, "Teacher Profile", 1, new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc), new Guid("7e42633e-d714-406f-98d6-81909a4502c9") },
+                    { new Guid("7284e6bc-5913-4dcf-8229-b86a5f52b565"), new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc), new Guid("7e42633e-d714-406f-98d6-81909a4502c9"), "This is profile for student.", false, "Student Profile", 2, new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc), new Guid("7e42633e-d714-406f-98d6-81909a4502c9") }
                 });
 
             migrationBuilder.InsertData(

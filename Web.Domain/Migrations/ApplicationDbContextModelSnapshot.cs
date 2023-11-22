@@ -296,7 +296,7 @@ namespace Web.Domain.Migrations
                             Descrtiption = "This is profile for admin.",
                             IsDeleted = false,
                             Name = "Admin Profile",
-                            Type = 2,
+                            Type = 0,
                             UpdatedAt = new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
                             UpdatedBy = new Guid("7e42633e-d714-406f-98d6-81909a4502c9")
                         },
@@ -308,7 +308,7 @@ namespace Web.Domain.Migrations
                             Descrtiption = "This is profile for teacher.",
                             IsDeleted = false,
                             Name = "Teacher Profile",
-                            Type = 0,
+                            Type = 1,
                             UpdatedAt = new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
                             UpdatedBy = new Guid("7e42633e-d714-406f-98d6-81909a4502c9")
                         },
@@ -320,7 +320,7 @@ namespace Web.Domain.Migrations
                             Descrtiption = "This is profile for student.",
                             IsDeleted = false,
                             Name = "Student Profile",
-                            Type = 1,
+                            Type = 2,
                             UpdatedAt = new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
                             UpdatedBy = new Guid("7e42633e-d714-406f-98d6-81909a4502c9")
                         });
