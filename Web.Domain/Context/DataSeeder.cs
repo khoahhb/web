@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Web.Domain.Entities;
-using Web.Model.Enum;
+using Web.Model.EnumerationTypes;
 
 namespace Web.Domain.Context
 {
@@ -15,8 +15,7 @@ namespace Web.Domain.Context
 
         public void Seed()
         {
-            var adminName = "Huynh Huu Bao Khoa";
-            var dateC = new DateTime(2023, 11, 02, 12, 12, 12, DateTimeKind.Utc);
+            var dateC = new DateTime(2023, 11, 02, 12, 00, 00, DateTimeKind.Utc);
 
             var id1 = Guid.Parse("33fb0ec0-6aac-4f83-98bb-5d948e165aa3");
             var id2 = Guid.Parse("6eca6833-37a2-4404-8152-a6b39289a05a");
@@ -37,8 +36,8 @@ namespace Web.Domain.Context
                     Descrtiption = "This is profile for admin.",
                     CreatedAt = dateC,
                     UpdatedAt = dateC,
-                    CreatedBy = adminName,
-                    UpdatedBy = adminName,
+                    CreatedBy = id4,
+                    UpdatedBy = id4,
                 },
                  new UserProfile
                  {
@@ -48,8 +47,8 @@ namespace Web.Domain.Context
                      Descrtiption = "This is profile for teacher.",
                      CreatedAt = dateC,
                      UpdatedAt = dateC,
-                     CreatedBy = adminName,
-                     UpdatedBy = adminName,
+                     CreatedBy = id4,
+                     UpdatedBy = id4,
                  },
                  new UserProfile
                  {
@@ -59,96 +58,96 @@ namespace Web.Domain.Context
                      Descrtiption = "This is profile for student.",
                      CreatedAt = dateC,
                      UpdatedAt = dateC,
-                     CreatedBy = adminName,
-                     UpdatedBy = adminName,
+                     CreatedBy = id4,
+                     UpdatedBy = id4,
                  }
             );
-            var test = new DateTime(2001, 11, 02, 0,0,0, DateTimeKind.Utc);
+            var test = new DateTime(2001, 11, 02, 12, 0, 0, DateTimeKind.Utc);
 
             modelBuilder.Entity<User>().HasData(
                 new User
                 {
                     Id = id4,
                     Username = "admin1",
-                    Password = "UhywqEJrt+FqDqbLZXUxMQ==.fzrKPpUbz3nW+vOP4db3qeUz8eBNVhzSWSXXcSHSX9M=",
+                    Password = "JqUI1dEGEKTvyxJ8T6rK4w==.tx3AE07BC5n6jkF70x7odozYEejXNkjqEU9DFmpNxfA=",
                     Fullname = "Huynh Huu Bao Khoa",
                     Gender = GenderType.Male,
-                    DateOfBirth = new DateTime(2001, 11, 02, 12, 12, 12, DateTimeKind.Utc),
+                    DateOfBirth = test,
                     Phone = "0372753988",
                     Email = "admin1@gmail.com",
                     Address = "Hau Giang",
                     CreatedAt = dateC,
                     UpdatedAt = dateC,
-                    CreatedBy = adminName,
-                    UpdatedBy = adminName,
+                    CreatedBy = id4,
+                    UpdatedBy = id4,
                     UserProfileId = id1,
                 },
                 new User
                 {
                     Id = id5,
                     Username = "Teacher1",
-                    Password = "e9AkXS8u7tgxEBgkGDhHEg==.CIbRSX6JCAcaklyulng1C8FEHwkbMUmxAa0TgM14+wA=",
+                    Password = "JqUI1dEGEKTvyxJ8T6rK4w==.tx3AE07BC5n6jkF70x7odozYEejXNkjqEU9DFmpNxfA=",
                     Fullname = "Le Thi Thu Hong",
                     Gender = GenderType.Female,
-                    DateOfBirth = new DateTime(2001, 11, 02, 12, 12, 12, DateTimeKind.Utc),
+                    DateOfBirth = test,
                     Phone = "0917437736",
                     Email = "Teacher1@gmail.com",
                     Address = "2, Cai Tac",
                     CreatedAt = dateC,
                     UpdatedAt = dateC,
-                    CreatedBy = adminName,
-                    UpdatedBy = adminName,
+                    CreatedBy = id4,
+                    UpdatedBy = id4,
                     UserProfileId = id2,
                 },
                 new User
                 {
                     Id = id7,
                     Username = "Teacher2",
-                    Password = "YjGWyFSr3gpM8YsQMTR32w==.3WEuc4BRzEbhw5VrNC8J+d/7EGYUNvVHZXpkXtRObq8=",
+                    Password = "JqUI1dEGEKTvyxJ8T6rK4w==.tx3AE07BC5n6jkF70x7odozYEejXNkjqEU9DFmpNxfA=",
                     Fullname = "Pham Nguyen Khang",
                     Gender = GenderType.Male,
-                    DateOfBirth = new DateTime(2001, 11, 02, 12, 12, 12, DateTimeKind.Utc),
+                    DateOfBirth = test,
                     Phone = "0917431136",
                     Email = "Teacher2@gmail.com",
                     Address = "Hau Giang",
                     CreatedAt = dateC,
                     UpdatedAt = dateC,
-                    CreatedBy = adminName,
-                    UpdatedBy = adminName,
+                    CreatedBy = id4,
+                    UpdatedBy = id4,
                     UserProfileId = id2,
                 },
                 new User
                 {
                     Id = id8,
                     Username = "Student1",
-                    Password = "fBoPmwRGGn2bUgwS8C3F9g==.ucST4KNOgwC34qikVODkcgiFgeu9qAEFU2RBKZ5BkLU=",
+                    Password = "JqUI1dEGEKTvyxJ8T6rK4w==.tx3AE07BC5n6jkF70x7odozYEejXNkjqEU9DFmpNxfA=",
                     Fullname = "Chau Ngoc Hung",
                     Gender = GenderType.Male,
-                    DateOfBirth = new DateTime(2001, 11, 02, 12, 12, 12, DateTimeKind.Utc),
+                    DateOfBirth = test,
                     Phone = "0202431136",
                     Email = "Student1@gmail.com",
                     Address = "Hau Giang",
                     CreatedAt = dateC,
                     UpdatedAt = dateC,
-                    CreatedBy = adminName,
-                    UpdatedBy = adminName,
+                    CreatedBy = id4,
+                    UpdatedBy = id4,
                     UserProfileId = id3,
                 },
                 new User
                 {
                     Id = id9,
                     Username = "Student2",
-                    Password = "4GcJL/PZJ4WGD1xD/zBh+Q==.rPW9T/NlySewoKzvuvenjHXV58chrv5VBlAHZPAv8Io=",
+                    Password = "JqUI1dEGEKTvyxJ8T6rK4w==.tx3AE07BC5n6jkF70x7odozYEejXNkjqEU9DFmpNxfA=",
                     Fullname = "Ho Vinh Duy",
                     Gender = GenderType.Male,
-                    DateOfBirth = new DateTime(2001, 11, 02, 12, 12, 12, DateTimeKind.Utc),
+                    DateOfBirth = test,
                     Phone = "0209831136",
                     Email = "Student2@gmail.com",
                     Address = "Sai Gon",
                     CreatedAt = dateC,
                     UpdatedAt = dateC,
-                    CreatedBy = adminName,
-                    UpdatedBy = adminName,
+                    CreatedBy = id4,
+                    UpdatedBy = id4,
                     UserProfileId = id3,
                 }
             );

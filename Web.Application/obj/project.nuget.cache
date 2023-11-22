@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FrussA/yv4jBs+atg3lNLx2TjQ2XL9ALP54XHC5UFRVQZvvbYc+4Bzqoq048NNr95LgpP/d7Dd5vPEMF8mBE/A==",
+  "dgSpecHash": "7ZqKmS7rs0k/eDuWaYeLGrSTGqtahqT3H3E3T/SnC1m0T5ADNWJh+OJ39yqTyUB9Hmu867PFFEigZHsD/CdzKw==",
   "success": true,
   "projectFilePath": "E:\\Projects\\Web\\Web.Application\\Web.Application.csproj",
   "expectedPackageFiles": [
@@ -47,7 +47,9 @@
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512",
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
-    "C:\\Users\\KhoaHuynh\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
+    "C:\\Users\\KhoaHuynh\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
+    "C:\\Users\\KhoaHuynh\\.nuget\\packages\\timezoneconverter\\6.0.1\\timezoneconverter.6.0.1.nupkg.sha512",
+    "C:\\Users\\KhoaHuynh\\.nuget\\packages\\timezonenames\\6.0.0\\timezonenames.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

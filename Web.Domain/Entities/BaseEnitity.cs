@@ -20,13 +20,13 @@ namespace Web.Domain.Entities
     public interface IAuditEntity
     {
         DateTime CreatedAt { get; set; }
-        string CreatedBy { get; set; }
-        DateTime? UpdatedAt { get; set; }
-        string UpdatedBy { get; set; }
+        Guid CreatedBy { get; set; }
+        DateTime UpdatedAt { get; set; }
+        Guid UpdatedBy { get; set; }
     }
-    public interface IAuditEntity<TKey> : IAuditEntity, IDeleteEntity<TKey>
-    {
-    }
+
+    public interface IAuditEntity<TKey> : IAuditEntity, IDeleteEntity<TKey> { }
+
     public abstract class BaseEntity<TKey> : IBaseEntity<TKey>
     {
         [Key]
@@ -42,8 +42,8 @@ namespace Web.Domain.Entities
     public abstract class AuditEntity<TKey> : DeleteEntity<TKey>, IAuditEntity<TKey>
     {
         public DateTime CreatedAt { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime? UpdatedAt { get; set; }
-        public string UpdatedBy { get; set; }
+        public Guid CreatedBy { get; set; }
+        public DateTime UpdatedAt { get; set; }
+        public Guid UpdatedBy { get; set; }
     }
 }

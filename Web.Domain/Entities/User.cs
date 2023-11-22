@@ -1,4 +1,4 @@
-﻿using Web.Model.Enum;
+﻿using Web.Model.EnumerationTypes;
 
 namespace Web.Domain.Entities
 {
@@ -16,11 +16,10 @@ namespace Web.Domain.Entities
         public string? Phone { get; set; }
         public string? Email { get; set; }
         public string? Address { get; set; }
-
         public Guid? AvatarId { get; set; }
         public virtual Avatar? Avatar { get; set; }
         public Guid UserProfileId { get; set; }
         public virtual UserProfile UserProfile { get; set; }
-
+        public virtual ICollection<Credential> Credentials { get; set; }
     }
 }

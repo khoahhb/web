@@ -1,7 +1,7 @@
-﻿using Web.Model.Enum;
+﻿using Web.Model.EnumerationTypes;
 
 namespace Web.Domain.Entities
-{ 
+{
     public partial class UserProfile : AuditEntity<Guid>
     {
         public UserProfile()

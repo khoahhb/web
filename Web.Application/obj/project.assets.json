@@ -735,11 +735,41 @@
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
       },
+      "TimeZoneConverter/6.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/TimeZoneConverter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/TimeZoneConverter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "TimeZoneNames/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "TimeZoneConverter": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0/TimeZoneNames.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/TimeZoneNames.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Web.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "7.0.13",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.EntityFrameworkCore": "7.0.13",
           "Microsoft.EntityFrameworkCore.Design": "7.0.13",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.13",
@@ -1899,6 +1929,42 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "TimeZoneConverter/6.0.1": {
+      "sha512": "vvhLOgRSOvfq5fBv0/Dd1S3N7K2ibO5wp06B5AkuxUpXkgv2aDHw9jB5ZvPg83y9sy+jF9qE7qWybMK46BXBuw==",
+      "type": "package",
+      "path": "timezoneconverter/6.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/TimeZoneConverter.dll",
+        "lib/net462/TimeZoneConverter.xml",
+        "lib/net6.0/TimeZoneConverter.dll",
+        "lib/net6.0/TimeZoneConverter.xml",
+        "lib/netstandard2.0/TimeZoneConverter.dll",
+        "lib/netstandard2.0/TimeZoneConverter.xml",
+        "timezoneconverter.6.0.1.nupkg.sha512",
+        "timezoneconverter.nuspec"
+      ]
+    },
+    "TimeZoneNames/6.0.0": {
+      "sha512": "Y7lqtnJpDwFR24mb+bJRdBMZja170QZZjVC35rUIVDYAEUoP9phbE2txBCJHenr60ojqnTsLtCxDeC2TemwXNw==",
+      "type": "package",
+      "path": "timezonenames/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/TimeZoneNames.dll",
+        "lib/net462/TimeZoneNames.xml",
+        "lib/net6.0/TimeZoneNames.dll",
+        "lib/net6.0/TimeZoneNames.xml",
+        "lib/netstandard2.0/TimeZoneNames.dll",
+        "lib/netstandard2.0/TimeZoneNames.xml",
+        "lib/netstandard2.1/TimeZoneNames.dll",
+        "lib/netstandard2.1/TimeZoneNames.xml",
+        "timezonenames.6.0.0.nupkg.sha512",
+        "timezonenames.nuspec"
+      ]
+    },
     "Web.Domain/1.0.0": {
       "type": "project",
       "path": "../Web.Domain/Web.Domain.csproj",
@@ -1920,6 +1986,7 @@
       "FluentValidation.AspNetCore >= 10.4.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.24",
       "System.IdentityModel.Tokens.Jwt >= 6.10.0",
+      "TimeZoneNames >= 6.0.0",
       "Web.Infracturre >= 1.0.0"
     ]
   },
@@ -1977,6 +2044,10 @@
           "System.IdentityModel.Tokens.Jwt": {
             "target": "Package",
             "version": "[6.10.0, )"
+          },
+          "TimeZoneNames": {
+            "target": "Package",
+            "version": "[6.0.0, )"
           }
         },
         "imports": [

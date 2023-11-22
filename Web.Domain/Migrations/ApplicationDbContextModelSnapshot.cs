@@ -29,11 +29,10 @@ namespace Web.Domain.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uuid");
 
                     b.Property<string>("FileName")
                         .IsRequired()
@@ -52,16 +51,50 @@ namespace Web.Domain.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("UpdatedBy")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<Guid>("UpdatedBy")
+                        .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
                     b.ToTable("Avatars");
+                });
+
+            modelBuilder.Entity("Web.Domain.Entities.Credential", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uuid");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<Guid>("UpdatedBy")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Credentials");
                 });
 
             modelBuilder.Entity("Web.Domain.Entities.User", b =>
@@ -77,14 +110,13 @@ namespace Web.Domain.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uuid");
 
                     b.Property<DateTime?>("DateOfBirth")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Email")
                         .HasColumnType("text");
@@ -106,12 +138,11 @@ namespace Web.Domain.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("UpdatedBy")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<Guid>("UpdatedBy")
+                        .HasColumnType("uuid");
 
                     b.Property<Guid>("UserProfileId")
                         .HasColumnType("uuid");
@@ -133,17 +164,17 @@ namespace Web.Domain.Migrations
                         {
                             Id = new Guid("7e42633e-d714-406f-98d6-81909a4502c9"),
                             Address = "Hau Giang",
-                            CreatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
-                            CreatedBy = "Huynh Huu Bao Khoa",
-                            DateOfBirth = new DateTime(2001, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
+                            CreatedAt = new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = new Guid("7e42633e-d714-406f-98d6-81909a4502c9"),
+                            DateOfBirth = new DateTime(2001, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
                             Email = "admin1@gmail.com",
                             Fullname = "Huynh Huu Bao Khoa",
                             Gender = 0,
                             IsDeleted = false,
-                            Password = "UhywqEJrt+FqDqbLZXUxMQ==.fzrKPpUbz3nW+vOP4db3qeUz8eBNVhzSWSXXcSHSX9M=",
+                            Password = "JqUI1dEGEKTvyxJ8T6rK4w==.tx3AE07BC5n6jkF70x7odozYEejXNkjqEU9DFmpNxfA=",
                             Phone = "0372753988",
-                            UpdatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
-                            UpdatedBy = "Huynh Huu Bao Khoa",
+                            UpdatedAt = new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
+                            UpdatedBy = new Guid("7e42633e-d714-406f-98d6-81909a4502c9"),
                             UserProfileId = new Guid("33fb0ec0-6aac-4f83-98bb-5d948e165aa3"),
                             Username = "admin1"
                         },
@@ -151,17 +182,17 @@ namespace Web.Domain.Migrations
                         {
                             Id = new Guid("3583a3a3-5016-4cdc-a794-619e013ca0fc"),
                             Address = "2, Cai Tac",
-                            CreatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
-                            CreatedBy = "Huynh Huu Bao Khoa",
-                            DateOfBirth = new DateTime(2001, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
+                            CreatedAt = new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = new Guid("7e42633e-d714-406f-98d6-81909a4502c9"),
+                            DateOfBirth = new DateTime(2001, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
                             Email = "Teacher1@gmail.com",
                             Fullname = "Le Thi Thu Hong",
                             Gender = 1,
                             IsDeleted = false,
-                            Password = "e9AkXS8u7tgxEBgkGDhHEg==.CIbRSX6JCAcaklyulng1C8FEHwkbMUmxAa0TgM14+wA=",
+                            Password = "JqUI1dEGEKTvyxJ8T6rK4w==.tx3AE07BC5n6jkF70x7odozYEejXNkjqEU9DFmpNxfA=",
                             Phone = "0917437736",
-                            UpdatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
-                            UpdatedBy = "Huynh Huu Bao Khoa",
+                            UpdatedAt = new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
+                            UpdatedBy = new Guid("7e42633e-d714-406f-98d6-81909a4502c9"),
                             UserProfileId = new Guid("6eca6833-37a2-4404-8152-a6b39289a05a"),
                             Username = "Teacher1"
                         },
@@ -169,17 +200,17 @@ namespace Web.Domain.Migrations
                         {
                             Id = new Guid("41ec17a9-bc09-4f92-983f-04ca1a0acb4f"),
                             Address = "Hau Giang",
-                            CreatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
-                            CreatedBy = "Huynh Huu Bao Khoa",
-                            DateOfBirth = new DateTime(2001, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
+                            CreatedAt = new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = new Guid("7e42633e-d714-406f-98d6-81909a4502c9"),
+                            DateOfBirth = new DateTime(2001, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
                             Email = "Teacher2@gmail.com",
                             Fullname = "Pham Nguyen Khang",
                             Gender = 0,
                             IsDeleted = false,
-                            Password = "YjGWyFSr3gpM8YsQMTR32w==.3WEuc4BRzEbhw5VrNC8J+d/7EGYUNvVHZXpkXtRObq8=",
+                            Password = "JqUI1dEGEKTvyxJ8T6rK4w==.tx3AE07BC5n6jkF70x7odozYEejXNkjqEU9DFmpNxfA=",
                             Phone = "0917431136",
-                            UpdatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
-                            UpdatedBy = "Huynh Huu Bao Khoa",
+                            UpdatedAt = new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
+                            UpdatedBy = new Guid("7e42633e-d714-406f-98d6-81909a4502c9"),
                             UserProfileId = new Guid("6eca6833-37a2-4404-8152-a6b39289a05a"),
                             Username = "Teacher2"
                         },
@@ -187,17 +218,17 @@ namespace Web.Domain.Migrations
                         {
                             Id = new Guid("5b7742bd-3b3d-478f-90d5-9e1d590f14a9"),
                             Address = "Hau Giang",
-                            CreatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
-                            CreatedBy = "Huynh Huu Bao Khoa",
-                            DateOfBirth = new DateTime(2001, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
+                            CreatedAt = new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = new Guid("7e42633e-d714-406f-98d6-81909a4502c9"),
+                            DateOfBirth = new DateTime(2001, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
                             Email = "Student1@gmail.com",
                             Fullname = "Chau Ngoc Hung",
                             Gender = 0,
                             IsDeleted = false,
-                            Password = "fBoPmwRGGn2bUgwS8C3F9g==.ucST4KNOgwC34qikVODkcgiFgeu9qAEFU2RBKZ5BkLU=",
+                            Password = "JqUI1dEGEKTvyxJ8T6rK4w==.tx3AE07BC5n6jkF70x7odozYEejXNkjqEU9DFmpNxfA=",
                             Phone = "0202431136",
-                            UpdatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
-                            UpdatedBy = "Huynh Huu Bao Khoa",
+                            UpdatedAt = new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
+                            UpdatedBy = new Guid("7e42633e-d714-406f-98d6-81909a4502c9"),
                             UserProfileId = new Guid("7284e6bc-5913-4dcf-8229-b86a5f52b565"),
                             Username = "Student1"
                         },
@@ -205,17 +236,17 @@ namespace Web.Domain.Migrations
                         {
                             Id = new Guid("1a51b9bd-340a-4b6f-add7-3b5f27fc2387"),
                             Address = "Sai Gon",
-                            CreatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
-                            CreatedBy = "Huynh Huu Bao Khoa",
-                            DateOfBirth = new DateTime(2001, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
+                            CreatedAt = new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = new Guid("7e42633e-d714-406f-98d6-81909a4502c9"),
+                            DateOfBirth = new DateTime(2001, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
                             Email = "Student2@gmail.com",
                             Fullname = "Ho Vinh Duy",
                             Gender = 0,
                             IsDeleted = false,
-                            Password = "4GcJL/PZJ4WGD1xD/zBh+Q==.rPW9T/NlySewoKzvuvenjHXV58chrv5VBlAHZPAv8Io=",
+                            Password = "JqUI1dEGEKTvyxJ8T6rK4w==.tx3AE07BC5n6jkF70x7odozYEejXNkjqEU9DFmpNxfA=",
                             Phone = "0209831136",
-                            UpdatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
-                            UpdatedBy = "Huynh Huu Bao Khoa",
+                            UpdatedAt = new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
+                            UpdatedBy = new Guid("7e42633e-d714-406f-98d6-81909a4502c9"),
                             UserProfileId = new Guid("7284e6bc-5913-4dcf-8229-b86a5f52b565"),
                             Username = "Student2"
                         });
@@ -228,11 +259,10 @@ namespace Web.Domain.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<Guid>("CreatedBy")
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Descrtiption")
                         .HasColumnType("text");
@@ -247,12 +277,11 @@ namespace Web.Domain.Migrations
                     b.Property<int>("Type")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("UpdatedBy")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<Guid>("UpdatedBy")
+                        .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
@@ -262,39 +291,48 @@ namespace Web.Domain.Migrations
                         new
                         {
                             Id = new Guid("33fb0ec0-6aac-4f83-98bb-5d948e165aa3"),
-                            CreatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
-                            CreatedBy = "Huynh Huu Bao Khoa",
+                            CreatedAt = new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = new Guid("7e42633e-d714-406f-98d6-81909a4502c9"),
                             Descrtiption = "This is profile for admin.",
                             IsDeleted = false,
                             Name = "Admin Profile",
-                            Type = 2,
-                            UpdatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
-                            UpdatedBy = "Huynh Huu Bao Khoa"
+                            Type = 0,
+                            UpdatedAt = new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
+                            UpdatedBy = new Guid("7e42633e-d714-406f-98d6-81909a4502c9")
                         },
                         new
                         {
                             Id = new Guid("6eca6833-37a2-4404-8152-a6b39289a05a"),
-                            CreatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
-                            CreatedBy = "Huynh Huu Bao Khoa",
+                            CreatedAt = new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = new Guid("7e42633e-d714-406f-98d6-81909a4502c9"),
                             Descrtiption = "This is profile for teacher.",
                             IsDeleted = false,
                             Name = "Teacher Profile",
-                            Type = 0,
-                            UpdatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
-                            UpdatedBy = "Huynh Huu Bao Khoa"
+                            Type = 1,
+                            UpdatedAt = new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
+                            UpdatedBy = new Guid("7e42633e-d714-406f-98d6-81909a4502c9")
                         },
                         new
                         {
                             Id = new Guid("7284e6bc-5913-4dcf-8229-b86a5f52b565"),
-                            CreatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
-                            CreatedBy = "Huynh Huu Bao Khoa",
+                            CreatedAt = new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
+                            CreatedBy = new Guid("7e42633e-d714-406f-98d6-81909a4502c9"),
                             Descrtiption = "This is profile for student.",
                             IsDeleted = false,
                             Name = "Student Profile",
-                            Type = 1,
-                            UpdatedAt = new DateTime(2023, 11, 2, 12, 12, 12, 0, DateTimeKind.Utc),
-                            UpdatedBy = "Huynh Huu Bao Khoa"
+                            Type = 2,
+                            UpdatedAt = new DateTime(2023, 11, 2, 12, 0, 0, 0, DateTimeKind.Utc),
+                            UpdatedBy = new Guid("7e42633e-d714-406f-98d6-81909a4502c9")
                         });
+                });
+
+            modelBuilder.Entity("Web.Domain.Entities.Credential", b =>
+                {
+                    b.HasOne("Web.Domain.Entities.User", "User")
+                        .WithMany("Credentials")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Web.Domain.Entities.User", b =>
@@ -315,6 +353,11 @@ namespace Web.Domain.Migrations
             modelBuilder.Entity("Web.Domain.Entities.Avatar", b =>
                 {
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("Web.Domain.Entities.User", b =>
+                {
+                    b.Navigation("Credentials");
                 });
 
             modelBuilder.Entity("Web.Domain.Entities.UserProfile", b =>

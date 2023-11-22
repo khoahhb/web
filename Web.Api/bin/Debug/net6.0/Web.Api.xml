@@ -4,22 +4,27 @@
         <name>Web.Api</name>
     </assembly>
     <members>
-        <member name="M:Web.Api.Controllers.AuthController.SignUp(Web.Model.Dtos.RequestDtos.User.CreateUserRequestDto)">
+        <member name="M:Web.Api.Controllers.AuthController.Logout">
             <summary>
-            SignUp user
+            Logout    (All)
             </summary>
         </member>
-        <member name="M:Web.Api.Controllers.AuthController.SignIn(Web.Model.Dtos.RequestDtos.User.SignInRequestDto)">
+        <member name="M:Web.Api.Controllers.AuthController.SignIn(Web.Model.Dtos.User.Request.SignInRequestDto)">
             <summary>
             SignIn user
             </summary>
         </member>
-        <member name="M:Web.Api.Controllers.AvatarController.UploadAvatar(Web.Model.Dtos.RequestDtos.Avatar.CreateAvatarRequestDto)">
+        <member name="M:Web.Api.Controllers.AuthController.SignUp(Web.Model.Dtos.User.Request.CreateUserRequestDto)">
+            <summary>
+            SignUp user
+            </summary>
+        </member>
+        <member name="M:Web.Api.Controllers.AvatarController.UploadAvatar(Web.Model.Dtos.Avatar.Request.CreateAvatarRequestDto)">
             <summary>
             Create (upload) avatar                     (Admin, Teacher, Student)
             </summary>
         </member>
-        <member name="M:Web.Api.Controllers.AvatarController.UpdateAvatar(Web.Model.Dtos.RequestDtos.Avatar.UpdateAvatarRequestDto)">
+        <member name="M:Web.Api.Controllers.AvatarController.UpdateAvatar(Web.Model.Dtos.Avatar.Request.UpdateAvatarRequestDto)">
             <summary>
             Update avatar                     (Admin, Teacher, Student)
             </summary>
@@ -39,12 +44,12 @@
             Get all avatar                     (Admin)
             </summary>
         </member>
-        <member name="M:Web.Api.Controllers.UserController.CreateUser(Web.Model.Dtos.RequestDtos.User.CreateUserRequestDto)">
+        <member name="M:Web.Api.Controllers.UserController.CreateUser(Web.Model.Dtos.User.Request.CreateUserRequestDto)">
             <summary>
             Create user                     (Admin)
             </summary>
         </member>
-        <member name="M:Web.Api.Controllers.UserController.UpdateUser(Web.Model.Dtos.RequestDtos.User.UpdateUserRequestDTO)">
+        <member name="M:Web.Api.Controllers.UserController.UpdateUser(Web.Model.Dtos.User.Request.UpdateUserRequestDTO)">
             <summary>
             Update user                     (Admin, Teacher)
             </summary>
@@ -64,12 +69,12 @@
             Get all user                     (Admin, Teacher)
             </summary>
         </member>
-        <member name="M:Web.Api.Controllers.UserProfileController.CreateProfile(Web.Model.Dtos.RequestDtos.UserProfile.CreateUserProfileRequestDto)">
+        <member name="M:Web.Api.Controllers.UserProfileController.CreateProfile(Web.Model.Dtos.UserProfile.Request.CreateUserProfileRequestDto)">
             <summary>
             Create profile                     (Admin)
             </summary>
         </member>
-        <member name="M:Web.Api.Controllers.UserProfileController.UpdateProfile(Web.Model.Dtos.RequestDtos.UserProfile.UpdateUserProfileRequestDto)">
+        <member name="M:Web.Api.Controllers.UserProfileController.UpdateProfile(Web.Model.Dtos.UserProfile.Request.UpdateUserProfileRequestDto)">
             <summary>
             Update Profile                     (Admin, Teacher)
             </summary>

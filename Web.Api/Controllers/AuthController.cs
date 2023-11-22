@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using Web.Application.Interfaces;
-using Web.Model.Dtos.RequestDtos.User;
+using Web.Application.Services;
+using Web.Model.Dtos.User.Request;
 
 namespace Web.Api.Controllers
 {
@@ -18,19 +20,17 @@ namespace Web.Api.Controllers
         }
 
         /// <summary>
-        /// SignUp user
+        /// Logout    (All)
         /// </summary>
-        [HttpPost("signup")]
-        public async Task<IActionResult> SignUp(CreateUserRequestDto signUpDto)
+        [Authorize]
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout()
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            var result = await _userService.SignUpUser(signUpDto);
-
+            var result = await _userService.LogoutUser();
             return result.StatusCode switch
             {
-                HttpStatusCode.OK => StatusCode((int)HttpStatusCode.OK, result.SuccessData),
+                HttpStatusCode.OK => StatusCode((int)HttpStatusCode.OK, $"You ({result.SuccessData}) is logged out."),
+                HttpStatusCode.NotFound => StatusCode((int)HttpStatusCode.NotFound, "Your token is not valid (Not found in credential list)."),
                 _ => StatusCode((int)HttpStatusCode.ServiceUnavailable, "Service Unavailable.")
             };
         }
@@ -49,7 +49,25 @@ namespace Web.Api.Controllers
             return result.StatusCode switch
             {
                 HttpStatusCode.OK => StatusCode((int)HttpStatusCode.OK, result.SuccessData),
-                HttpStatusCode.Unauthorized => StatusCode((int)HttpStatusCode.Unauthorized, "Password do not match."),
+                HttpStatusCode.Unauthorized => StatusCode((int)HttpStatusCode.Unauthorized, "Your password do not match."),
+                _ => StatusCode((int)HttpStatusCode.ServiceUnavailable, "Service Unavailable.")
+            };
+        }
+
+        /// <summary>
+        /// SignUp user
+        /// </summary>
+        [HttpPost("signup")]
+        public async Task<IActionResult> SignUp(CreateUserRequestDto signUpDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var result = await _userService.SignUpUser(signUpDto);
+
+            return result.StatusCode switch
+            {
+                HttpStatusCode.OK => StatusCode((int)HttpStatusCode.OK, result.SuccessData),
                 _ => StatusCode((int)HttpStatusCode.ServiceUnavailable, "Service Unavailable.")
             };
         }

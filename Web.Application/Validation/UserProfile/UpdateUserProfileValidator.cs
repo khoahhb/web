@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
-using Web.Infracturre.Interfaces;
-using Web.Model.Dtos.RequestDtos.UserProfile;
+using Web.Infracturre.Repositories.UserProfileRepo;
+using Web.Model.Dtos.UserProfile.Request;
 
 namespace Web.Application.Validation.UserProfile
 {
@@ -18,7 +18,7 @@ namespace Web.Application.Validation.UserProfile
                 .NotEmpty().WithMessage("Id is required.")
                 .MustAsync(async (id, _) =>
                 {
-                    return await _userProfileRepository.GetUserProfileById(id) != null;
+                    return await _userProfileRepository.GetOneById(id) != null;
                 })
                 .WithMessage("Profile id do not exist.");
 

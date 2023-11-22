@@ -1,7 +1,7 @@
-﻿using Web.Application.Helpers;
+﻿using Web.Application.Helpers.APIResponseCustom;
 using Web.Domain.Entities;
-using Web.Model.Dtos.RequestDtos.User;
-using Web.Model.Dtos.ResponseDtos;
+using Web.Model.Dtos.User.Request;
+using Web.Model.Dtos.User.Response;
 
 namespace Web.Application.Interfaces
 {
@@ -9,6 +9,7 @@ namespace Web.Application.Interfaces
     {
         public Task<ServiceResult<string>> SignInUser(SignInRequestDto signInRequestDto);
         public Task<ServiceResult<UserResponseDto>> SignUpUser(CreateUserRequestDto signUpRequestDto);
+        public Task<ServiceResult<string>> LogoutUser();
         public Task<ServiceResult<UserResponseDto>> UpdateUser(UpdateUserRequestDTO updateUserRequestDTO);
         public Task<ServiceResult<string>> DeleteUserById(Guid id);
         public Task<ServiceResult<string>> DeleteUserByUsername(string username);

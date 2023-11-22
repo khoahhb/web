@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using Web.Model.Dtos.RequestDtos.UserProfile;
+using Web.Model.Dtos.UserProfile.Request;
 
 namespace Web.Application.Validation.UserProfile
 {

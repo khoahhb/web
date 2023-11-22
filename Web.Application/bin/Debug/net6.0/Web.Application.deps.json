@@ -11,6 +11,7 @@
           "FluentValidation.AspNetCore": "10.4.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.24",
           "System.IdentityModel.Tokens.Jwt": "6.10.0",
+          "TimeZoneNames": "6.0.0",
           "Web.Infracturre": "1.0.0"
         },
         "runtime": {
@@ -446,9 +447,29 @@
           }
         }
       },
+      "TimeZoneConverter/6.0.1": {
+        "runtime": {
+          "lib/net6.0/TimeZoneConverter.dll": {
+            "assemblyVersion": "6.0.1.0",
+            "fileVersion": "6.0.1.0"
+          }
+        }
+      },
+      "TimeZoneNames/6.0.0": {
+        "dependencies": {
+          "TimeZoneConverter": "6.0.1"
+        },
+        "runtime": {
+          "lib/net6.0/TimeZoneNames.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.0.0"
+          }
+        }
+      },
       "Web.Domain/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "7.0.13",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.EntityFrameworkCore": "7.0.13",
           "Microsoft.EntityFrameworkCore.Design": "7.0.13",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.13",
@@ -794,6 +815,20 @@
       "sha512": "sha512-DaGSsVqKsn/ia6RG8frjwmJonfos0srquhw09TlT8KRw5I43E+4gs+/bZj4K0vShJ5H9imCuXupb4RmS+dBy3w==",
       "path": "system.text.json/7.0.0",
       "hashPath": "system.text.json.7.0.0.nupkg.sha512"
+    },
+    "TimeZoneConverter/6.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vvhLOgRSOvfq5fBv0/Dd1S3N7K2ibO5wp06B5AkuxUpXkgv2aDHw9jB5ZvPg83y9sy+jF9qE7qWybMK46BXBuw==",
+      "path": "timezoneconverter/6.0.1",
+      "hashPath": "timezoneconverter.6.0.1.nupkg.sha512"
+    },
+    "TimeZoneNames/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Y7lqtnJpDwFR24mb+bJRdBMZja170QZZjVC35rUIVDYAEUoP9phbE2txBCJHenr60ojqnTsLtCxDeC2TemwXNw==",
+      "path": "timezonenames/6.0.0",
+      "hashPath": "timezonenames.6.0.0.nupkg.sha512"
     },
     "Web.Domain/1.0.0": {
       "type": "project",

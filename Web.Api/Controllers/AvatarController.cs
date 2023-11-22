@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 using Web.Application.Interfaces;
-using Web.Model.Dtos.RequestDtos.Avatar;
+using Web.Model.Dtos.Avatar.Request;
 
 namespace Web.Api.Controllers
 {

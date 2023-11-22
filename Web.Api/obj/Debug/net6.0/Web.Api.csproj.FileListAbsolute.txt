@@ -385,6 +385,8 @@ E:\Projects\Web\Web.Api\bin\Debug\net6.0\System.CodeDom.dll
 E:\Projects\Web\Web.Api\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 E:\Projects\Web\Web.Api\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 E:\Projects\Web\Web.Api\bin\Debug\net6.0\System.Text.Json.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\TimeZoneConverter.dll
+E:\Projects\Web\Web.Api\bin\Debug\net6.0\TimeZoneNames.dll
 E:\Projects\Web\Web.Api\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 E:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Application.dll
 E:\Projects\Web\Web.Api\bin\Debug\net6.0\Web.Domain.dll

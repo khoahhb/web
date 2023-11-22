@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nrQOHpmuNxVS6HnpYvaSjID3L3jHjcEwoKW0yBIuwCU5kQvT8sAZhTplu6s/DNb9Q1nBtxZ6rmUMQ5xs9jsW2w==",
+  "dgSpecHash": "8d8zJY6U/mvr9UOWYlzLEz3SImN02pmr36eGOiLdFBBXXJCpmHKmurt9BoXNhdqghL2Vz19S2aIVZYZ7kZJZiA==",
   "success": true,
   "projectFilePath": "E:\\Projects\\Web\\Web.Domain\\Web.Domain.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.13\\microsoft.aspnetcore.cryptography.internal.7.0.13.nupkg.sha512",
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.13\\microsoft.aspnetcore.cryptography.keyderivation.7.0.13.nupkg.sha512",
+    "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.13\\microsoft.entityframeworkcore.7.0.13.nupkg.sha512",
