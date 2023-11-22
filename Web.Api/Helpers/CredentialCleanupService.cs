@@ -33,7 +33,7 @@ namespace Web.Api.Helpers
                 var credentialRepository = scope.ServiceProvider.GetRequiredService<ICredentialRepository>();
                 var unitOfWork = scope.ServiceProvider.GetRequiredService<IUnitOfWork>();
 
-                var expiredCredentials = await credentialRepository.GetMany(cre => DateTime.Compare(cre.CreatedAt.AddMinutes(Double.Parse(_configuration["Jwt:ExpireTime"])), DateTime.UtcNow) < 0);
+                var expiredCredentials = credentialRepository.GetMany(cre => DateTime.Compare(cre.CreatedAt.AddMinutes(Double.Parse(_configuration["Jwt:ExpireTime"])), DateTime.UtcNow) < 0);
 
                 foreach (var credential in expiredCredentials)
                 {

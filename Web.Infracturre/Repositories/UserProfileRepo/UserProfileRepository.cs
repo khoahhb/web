@@ -10,14 +10,9 @@ namespace Web.Infracturre.Repositories.UserProfileRepo
     {
         public UserProfileRepository(DbFactory dbFactory, IHttpContextAccessor httpContextAccessor) : base(dbFactory, httpContextAccessor) { }
 
-        public async Task<UserProfile> GetUserProfileByName(string name)
+        public List<UserProfile> GetUserProfileByType(ProfileType type)
         {
-            return await GetOne(u => u.Name == name);
-        }
-
-        public async Task<UserProfile> GetUserProfileByType(ProfileType type)
-        {
-            return await GetOne(u => u.Type == type);
+            return this.GetMany(prty => prty.Type == type).ToList();
         }
     }
 }

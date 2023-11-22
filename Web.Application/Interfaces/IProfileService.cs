@@ -9,7 +9,7 @@ namespace Web.Application.Interfaces
         public Task<ServiceResult<UserProfileResponseDto>> CreateProfile(CreateUserProfileRequestDto dto);
         public Task<ServiceResult<UserProfileResponseDto>> UpdateProfile(UpdateUserProfileRequestDto dto);
         public Task<ServiceResult<string>> DeleteProfileById(Guid id);
-        public Task<ServiceResult<UserProfileResponseDto>> GetProfileById(Guid id);
-        public Task<ServiceResult<IEnumerable<UserProfileResponseDto>>> GetAllProfile();
+        public ServiceResult<UserProfileResponseDto> GetProfileById(Guid id);
+        public ServiceResult<List<UserProfileResponseDto>> GetAllProfile();
     }
 }

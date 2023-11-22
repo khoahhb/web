@@ -18,14 +18,17 @@ namespace Web.Application.Validation.User
                 .NotEmpty().WithMessage("Username is required.")
                 .Length(6, 50).WithMessage("Username must be between 6 and 50 characters.")
                 .Matches("^[a-zA-Z0-9_]*$").WithMessage("Username can only have alphabets, numbers and _.")
-                .MustAsync(async (username, _) =>
-                    await _userRepository.GetUserByUsername(username) != null)
+                .Must(CheckUsernameExist)
                 .WithMessage("Username not exist.")
                 .When(x => !string.IsNullOrEmpty(x.Username));
 
             RuleFor(x => x.Password)
                 .NotNull().WithMessage("Password is required.")
                 .NotEmpty().WithMessage("Password is required.");
+        }
+        private bool CheckUsernameExist(string value)
+        {
+            return _userRepository.GetByUsername(value) != null;
         }
     }
 }

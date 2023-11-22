@@ -25,15 +25,15 @@ namespace Web.Infracturre
 
         public static IServiceCollection AddInfrastuctures(this IServiceCollection services)
         {
-            services.AddScoped<Func<ApplicationDbContext>>((provider) => () => provider.GetService<ApplicationDbContext>());
-            services.AddScoped<DbFactory>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<Func<ApplicationDbContext>>((provider) => () => provider.GetService<ApplicationDbContext>());
+            services.AddTransient<DbFactory>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
             services
-                .AddScoped(typeof(IRepository<>), typeof(Repository<>))
-                .AddScoped<IUserProfileRepository, UserProfileRepository>()
-                .AddScoped<IUserRepository, UserRepository>()
-                .AddScoped<IAvatarRepository, AvataRepository>()
-                .AddScoped<ICredentialRepository, CredentialRepository>();
+                .AddTransient(typeof(IRepository<>), typeof(Repository<>))
+                .AddTransient<IUserProfileRepository, UserProfileRepository>()
+                .AddTransient<IUserRepository, UserRepository>()
+                .AddTransient<IAvatarRepository, AvataRepository>()
+                .AddTransient<ICredentialRepository, CredentialRepository>();
 
             return services;
         }

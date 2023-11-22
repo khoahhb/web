@@ -7,6 +7,5 @@ namespace Web.Infracturre.Repositories.CredentialRepo
     public interface ICredentialRepository : IRepository<Credential>
     {
         public Task<bool> IsValid(string token);
-
     }
 }

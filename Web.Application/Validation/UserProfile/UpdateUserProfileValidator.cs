@@ -16,10 +16,7 @@ namespace Web.Application.Validation.UserProfile
             RuleFor(x => x.Id)
                 .NotNull().WithMessage("Id is required.")
                 .NotEmpty().WithMessage("Id is required.")
-                .MustAsync(async (id, _) =>
-                {
-                    return await _userProfileRepository.GetOneById(id) != null;
-                })
+                .Must(CheckProfileExist)
                 .WithMessage("Profile id do not exist.");
 
             RuleFor(x => x.Name)
@@ -28,5 +25,10 @@ namespace Web.Application.Validation.UserProfile
             RuleFor(x => x.Descrtiption)
                 .Length(6, 50).WithMessage("Descrtiption must be between 6 and 1000 characters.");
         }
+        private bool CheckProfileExist(Guid value)
+        {
+            return _userProfileRepository.GetOneById(value) != null;
+        }
+
     }
 }

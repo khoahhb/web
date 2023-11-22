@@ -35,7 +35,6 @@ namespace Web.Domain.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("FileName")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<long>("FileSize")
@@ -48,7 +47,6 @@ namespace Web.Domain.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<string>("MimeType")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime>("UpdatedAt")
@@ -78,7 +76,6 @@ namespace Web.Domain.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<string>("Token")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime>("UpdatedAt")
@@ -122,7 +119,6 @@ namespace Web.Domain.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Fullname")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int?>("Gender")
@@ -132,7 +128,6 @@ namespace Web.Domain.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Phone")
@@ -148,7 +143,6 @@ namespace Web.Domain.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("Username")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -271,7 +265,6 @@ namespace Web.Domain.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("Type")
