@@ -20,5 +20,6 @@ namespace Web.Domain.Entities
         public virtual Avatar? Avatar { get; set; }
         public Guid UserProfileId { get; set; }
         public virtual UserProfile UserProfile { get; set; }
+        public virtual ICollection<Credential> Credentials { get; set; }
     }
 }

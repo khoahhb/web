@@ -5,6 +5,7 @@ using Web.Domain.Context;
 using Web.Infracturre.DbFactories;
 using Web.Infracturre.Repositories.AvatarRepo;
 using Web.Infracturre.Repositories.BaseRepo;
+using Web.Infracturre.Repositories.CredentialRepo;
 using Web.Infracturre.Repositories.UserProfileRepo;
 using Web.Infracturre.Repositories.UserRepo;
 using Web.Infracturre.UnitOfWorks;
@@ -31,7 +32,8 @@ namespace Web.Infracturre
                 .AddScoped(typeof(IRepository<>), typeof(Repository<>))
                 .AddScoped<IUserProfileRepository, UserProfileRepository>()
                 .AddScoped<IUserRepository, UserRepository>()
-                .AddScoped<IAvatarRepository, AvataRepository>();
+                .AddScoped<IAvatarRepository, AvataRepository>()
+                .AddScoped<ICredentialRepository, CredentialRepository>();
 
             return services;
         }

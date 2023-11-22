@@ -2,9 +2,9 @@
 {
     public enum ProfileType
     {
+        Admin,
         Teacher,
         Student,
-        Admin,
         None,
     }
 }

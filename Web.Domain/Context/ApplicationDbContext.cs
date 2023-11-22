@@ -15,6 +15,7 @@ namespace Web.Domain.Context
         public DbSet<User> Users { get; set; }
         public DbSet<UserProfile> Profiles { get; set; }
         public DbSet<Avatar> Avatars { get; set; }
+        public DbSet<Credential> Credentials { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

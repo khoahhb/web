@@ -2,7 +2,7 @@
 using Web.Model.Dtos.User.Request;
 using Web.Model.EnumerationTypes;
 
-namespace Web.Api.Filters
+namespace Web.Api.SwaggerExamples
 {
     public class UpdateUserExample : IExamplesProvider<UpdateUserRequestDTO>
     {

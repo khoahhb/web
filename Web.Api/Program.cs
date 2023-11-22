@@ -8,8 +8,9 @@ using Swashbuckle.AspNetCore.Filters;
 using System.Reflection;
 using System.Text;
 using System.Text.Json.Serialization;
-using Web.Api.Filters;
+using Web.Api.Helpers;
 using Web.Api.Middlewares;
+using Web.Api.SwaggerExamples;
 using Web.Application;
 using Web.Domain.Context;
 using Web.Infracturre;
@@ -41,19 +42,22 @@ builder.Services.AddSwaggerGen(config =>
 builder.Services.AddSwaggerExamplesFromAssemblyOf<CreateUserExample>();
 builder.Services.AddSwaggerExamplesFromAssemblyOf<UpdateUserExample>();
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
-{
-    options.TokenValidationParameters = new TokenValidationParameters()
+builder.Services.AddTransient<TokenValidationHandler>();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddScheme<JwtBearerOptions, TokenValidationHandler>(JwtBearerDefaults.AuthenticationScheme, options =>
     {
-        ValidateActor = true,
-        ValidateAudience = true,
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true,
-        ValidIssuer = builder.Configuration["Jwt:Issuer"],
-        ValidAudience = builder.Configuration["Jwt:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
-    };
-});
+        options.TokenValidationParameters = new TokenValidationParameters()
+        {
+            ValidateActor = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+        };
+    });
 
 builder.Services.AddAuthorization();
 
@@ -67,6 +71,8 @@ builder.Services.AddApplicationServices()
                 .AddValidatorsFromAppServices()
                 .AddAutoMapperFromAppServices();
 #endregion
+
+builder.Services.AddHostedService<CredentialCleanupService>();
 
 var app = builder.Build();
 
