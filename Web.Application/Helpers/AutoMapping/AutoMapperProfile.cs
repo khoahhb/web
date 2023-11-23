@@ -29,10 +29,30 @@ namespace Web.Application.Helpers.AutoMapping
             CreateMap<CreateUserProfileRequestDto, UserProfile>();
 
             CreateMap<UpdateAvatarRequestDto, Avatar>()
-                .ForMember(dest => dest.FileName, opt => opt.MapFrom(src => src.File.FileName))
-                .ForMember(dest => dest.MimeType, opt => opt.MapFrom(src => src.File.ContentType))
-                .ForMember(dest => dest.FileSize, opt => opt.MapFrom(src => src.File.Length))
-                .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
+                .ForMember(dest => dest.FileName,
+                    opt =>
+                    {
+                        opt.Condition(src => src.File != null);
+                        opt.MapFrom(src => src.File.FileName);
+                    })
+                .ForMember(dest => dest.MimeType,
+                    opt =>
+                    {
+                        opt.Condition(src => src.File != null);
+                        opt.MapFrom(src => src.File.ContentType);
+                    })
+                .ForMember(dest => dest.FileSize,
+                    opt =>
+                    {
+                        opt.Condition(src => src.File != null);
+                        opt.MapFrom(src => src.File.Length);
+                    })
+                .ForMember(dest => dest.IsPublished,
+                    opt =>
+                    {
+                        opt.Condition(src => src.IsPublished != null);
+                        opt.MapFrom(src => src.IsPublished);
+                    });
 
             CreateMap<UpdateUserRequestDTO, User>()
                 .ForMember(dest => dest.Username,

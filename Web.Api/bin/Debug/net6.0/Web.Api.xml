@@ -41,7 +41,7 @@
         </member>
         <member name="M:Web.Api.Controllers.AvatarController.GetAllAvatar">
             <summary>
-            Get all avatar                     (Admin)
+            Get all avatar                     (Admin, Teacher)
             </summary>
         </member>
         <member name="M:Web.Api.Controllers.UserController.CreateUser(Web.Model.Dtos.User.Request.CreateUserRequestDto)">
