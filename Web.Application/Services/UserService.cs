@@ -8,6 +8,7 @@ using Web.Application.Helpers.GenerateJWT;
 using Web.Application.Helpers.GeneratePassword;
 using Web.Application.Interfaces;
 using Web.Domain.Entities;
+using Web.Infracturre.AuthenService;
 using Web.Infracturre.Repositories.CredentialRepo;
 using Web.Infracturre.Repositories.UserRepo;
 using Web.Infracturre.UnitOfWorks;

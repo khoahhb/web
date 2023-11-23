@@ -19,15 +19,12 @@ namespace Web.Application.Helpers
             return AllowedFileTypes.Contains(fileExtension);
         }
 
-        public static async void SaveAvatarToUploads(IFormFile file)
+        public static async Task SaveAvatarToUploads(IFormFile file)
         {
-
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Uploads", file.FileName);
-
-            using (var stream = new FileStream(filePath, FileMode.Create))
-            {
-                await file.CopyToAsync(stream);
-            }
+            var stream = new FileStream(filePath, FileMode.Create);
+            await file.CopyToAsync(stream);
+            stream.Close();
         }
     }
 

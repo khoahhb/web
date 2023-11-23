@@ -73,10 +73,10 @@ namespace Web.Application.Services
 
         public  ServiceResult<List<UserProfileResponseDto>> GetAllProfile()
         {
-            var profiles = _userProfileRepository.GetAll().ToList();
+            var profiles = _userProfileRepository.GetAll();
 
 
-            List<UserProfileResponseDto> response = profiles
+            List<UserProfileResponseDto> response = profiles.AsEnumerable()
                                 .Select(u =>
                                 {
                                     var profile = new UserProfileResponseDto() 

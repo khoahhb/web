@@ -14,7 +14,6 @@ namespace Web.Application
             services.AddTransient<IAvatarService, AvatarService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IProfileService, ProfileService>();
-            services.AddTransient<IAuthorizedUserService, AuthorizedUserService>();
             return services;
         }
 

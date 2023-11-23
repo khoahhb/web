@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using System.Security.Claims;
 using Web.Domain.Entities;
+using Web.Infracturre.AuthenService;
 using Web.Infracturre.DbFactories;
 
 namespace Web.Infracturre.Repositories.BaseRepo
@@ -10,7 +11,7 @@ namespace Web.Infracturre.Repositories.BaseRepo
     public class Repository<T> : IRepository<T> where T : class
     {
         private readonly DbFactory _dbFactory;
-        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IAuthorizedUserService _authorizedUserService;
 
         private DbSet<T> _dbSet;
 
@@ -22,10 +23,10 @@ namespace Web.Infracturre.Repositories.BaseRepo
         {
             return DbSet.AsNoTracking();
         }
-        public Repository(DbFactory dbFactory, IHttpContextAccessor httpContextAccessor)
+        public Repository(DbFactory dbFactory, IAuthorizedUserService authorizedUserService)
         {
             _dbFactory = dbFactory;
-            _httpContextAccessor = httpContextAccessor;
+            _authorizedUserService = authorizedUserService;
         }
 
         public T GetOneById(object Id, params Expression<Func<T, object>>[] includeProperties)
@@ -91,7 +92,7 @@ namespace Web.Infracturre.Repositories.BaseRepo
                 ((IBaseEntity<Guid>)entity).Id = Guid.NewGuid();
             }
             var baseEntity = (IBaseEntity<Guid>)entity;
-            var currentUserId = GetCurrentUserId() ?? baseEntity.Id;
+            var currentUserId = _authorizedUserService.GetUserId() ?? baseEntity.Id;
             if (typeof(IAuditEntity).IsAssignableFrom(typeof(T)))
             {
                 ((IAuditEntity)entity).CreatedAt = DateTime.UtcNow;
@@ -109,7 +110,7 @@ namespace Web.Infracturre.Repositories.BaseRepo
 
         public void Update(T entity)
         {
-            var currentUserId = GetCurrentUserId();
+            var currentUserId = _authorizedUserService.GetUserId();
             if (typeof(IAuditEntity).IsAssignableFrom(typeof(T)))
             {
                 ((IAuditEntity)entity).UpdatedAt = DateTime.UtcNow;
@@ -121,13 +122,6 @@ namespace Web.Infracturre.Repositories.BaseRepo
         public void Delete(T entity)
         {
             DbSet.Remove(entity);
-        }
-
-        private Guid? GetCurrentUserId()
-        {
-            return _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value != null
-                   ? Guid.Parse(_httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value)
-                   : null;
         }
     }
 }
