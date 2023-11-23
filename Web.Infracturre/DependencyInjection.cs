@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Web.Domain.Context;
+using Web.Infracturre.AuthenService;
 using Web.Infracturre.DbFactories;
 using Web.Infracturre.Repositories.AvatarRepo;
 using Web.Infracturre.Repositories.BaseRepo;
@@ -25,15 +26,16 @@ namespace Web.Infracturre
 
         public static IServiceCollection AddInfrastuctures(this IServiceCollection services)
         {
-            services.AddScoped<Func<ApplicationDbContext>>((provider) => () => provider.GetService<ApplicationDbContext>());
-            services.AddScoped<DbFactory>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<Func<ApplicationDbContext>>((provider) => () => provider.GetService<ApplicationDbContext>());
+            services.AddTransient<IAuthorizedUserService, AuthorizedUserService>();
+            services.AddTransient<DbFactory>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
             services
-                .AddScoped(typeof(IRepository<>), typeof(Repository<>))
-                .AddScoped<IUserProfileRepository, UserProfileRepository>()
-                .AddScoped<IUserRepository, UserRepository>()
-                .AddScoped<IAvatarRepository, AvataRepository>()
-                .AddScoped<ICredentialRepository, CredentialRepository>();
+                    .AddTransient(typeof(IRepository<>), typeof(Repository<>))
+                    .AddTransient<IUserProfileRepository, UserProfileRepository>()
+                    .AddTransient<IUserRepository, UserRepository>()
+                    .AddTransient<IAvatarRepository, AvataRepository>()
+                    .AddTransient<ICredentialRepository, CredentialRepository>();
 
             return services;
         }

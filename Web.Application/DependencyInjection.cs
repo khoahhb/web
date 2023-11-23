@@ -11,9 +11,9 @@ namespace Web.Application
 
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
-            services.AddScoped<IAvatarService, AvatarService>();
-            services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IProfileService, ProfileService>();
+            services.AddTransient<IAvatarService, AvatarService>();
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IProfileService, ProfileService>();
             return services;
         }
 

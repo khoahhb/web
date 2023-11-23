@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using System.Globalization;
+using System.Reflection.Metadata.Ecma335;
 using Web.Infracturre.Repositories.AvatarRepo;
 using Web.Infracturre.Repositories.UserProfileRepo;
 using Web.Infracturre.Repositories.UserRepo;
@@ -9,9 +10,6 @@ namespace Web.Application.Validation.User
 {
     public class UpdateUserValidator : AbstractValidator<UpdateUserRequestDTO>
     {
-
-        private Guid userId;
-
         private readonly IUserRepository _userRepository;
         private readonly IUserProfileRepository _userProfileRepository;
         private readonly IAvatarRepository _avatarRepository;
@@ -25,21 +23,11 @@ namespace Web.Application.Validation.User
             RuleFor(x => x.Id)
                 .NotNull().WithMessage("Id is required.")
                 .NotEmpty().WithMessage("Id is required.")
-                .MustAsync(async (id, _) =>
-                {
-                    userId = id;
-                    return await _userRepository.GetOneById(id) != null;
-                })
+                .Must(CheckValidUserId)
                 .WithMessage("User id do not exist.");
 
             RuleFor(x => x.Username)
-                .MustAsync(async (username, _) =>
-                {
-                    //var user = await _userRepository.GetUserByUsername(username);
-                    //return user == null;  
-                    return false;
-                })
-                //.WithMessage("Username existed.")
+                .Must(u => false)
                 .WithMessage("Username cannot be updated.")
                 .When(x => !string.IsNullOrEmpty(x.Username));
 
@@ -58,9 +46,9 @@ namespace Web.Application.Validation.User
                 .WithMessage("Fullname must be between 6 and 255 characters.");
 
             RuleFor(x => x.DateOfBirth)
-                .Must(BeAValidDate).WithMessage("Date of Birth must be in the format dd/MM/yyyy")
+                .Must(CheckDateFormat).WithMessage("Date of Birth must be in the format dd/MM/yyyy")
                 .When(x => !string.IsNullOrEmpty(x.DateOfBirth))
-                .Must(BeWithinAgeLimit).WithMessage("Age must be between 18 and 100")
+                .Must(CheckDateOfBirth).WithMessage("Age must be between 18 and 100")
                 .When(x => !string.IsNullOrEmpty(x.DateOfBirth));
 
             RuleFor(x => x.Phone)
@@ -71,38 +59,48 @@ namespace Web.Application.Validation.User
             RuleFor(x => x.Email)
                 .Length(12, 255).WithMessage("Email must be between 12 and 255 characters.")
                 .EmailAddress().WithMessage("Email is not a valid email address.")
-                .MustAsync(async (email, _) =>
-                {
-                    var user = await _userRepository.GetUserByEmail(email);
-                    return user == null;
-
-                })
+                .Must(CheckEmailExist)
                 .WithMessage("Email existed.")
                 .When(x => !string.IsNullOrEmpty(x.Email));
 
             RuleFor(x => x.AvatarId)
-               .MustAsync(async (id, _) =>
-               {
-                   return await _avatarRepository.GetOne(
-                       prof => prof.Id == id && prof.IsPublished == true) != null;
-               })
+               .Must(CheckAvatarValid)
                .WithMessage("Avatar Id is not published or do not exist.")
                .When(x => x.AvatarId != null && x.AvatarId != Guid.Empty);
 
             RuleFor(x => x.UserProfileId)
-                .MustAsync(async (id, _) =>
-                {
-                    return id != null ? await _userProfileRepository.GetOneById(id) != null : false;
-                })
+                .Must(CheckProfileExist)
                 .WithMessage("UserProfileId do not exist.")
                 .When(x => x.UserProfileId != null && x.UserProfileId != Guid.Empty);
         }
-        private bool BeAValidDate(string value)
+        private bool CheckValidUserId(Guid value)
+        {
+            return _userRepository.GetOneById(value) != null;
+        }
+
+        private bool CheckEmailExist(string value)
+        {
+            var users = _userRepository.GetMany(u => u.Email == value);
+
+            return users.Count() <= 1;
+        }
+
+        private bool CheckAvatarValid(Guid? value)
+        {
+            return _avatarRepository.GetOne(a => a.Id == value && a.IsPublished == true) != null;
+        }
+
+        private bool CheckProfileExist(Guid? value)
+        {
+            return _userProfileRepository.GetOneById(value) != null;
+        }
+
+        private bool CheckDateFormat(string value)
         {
             return DateTime.TryParseExact(value, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out _);
         }
 
-        private bool BeWithinAgeLimit(string value)
+        private bool CheckDateOfBirth(string value)
         {
             if (DateTime.TryParseExact(value, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dateOfBirth))
             {

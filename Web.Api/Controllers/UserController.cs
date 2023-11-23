@@ -76,9 +76,9 @@ namespace Web.Api.Controllers
         /// </summary>
         [Authorize(Roles = "Admin, Teacher, Student")]
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetUserById(Guid id)
+        public IActionResult GetUserById(Guid id)
         {
-            var result = await _userService.GetUserById(id);
+            var result = _userService.GetUserById(id);
             return result.StatusCode switch
             {
                 HttpStatusCode.OK => StatusCode((int)HttpStatusCode.OK, result.SuccessData),
@@ -92,9 +92,9 @@ namespace Web.Api.Controllers
         /// </summary>
         [Authorize(Roles = "Admin, Teacher")]
         [HttpGet("get_all")]
-        public async Task<IActionResult> GetAllUsers()
+        public IActionResult GetAllUsers()
         {
-            var result = await _userService.GetAllUsers();
+            var result = _userService.GetAllUsers();
             return result.StatusCode switch
             {
                 HttpStatusCode.OK => StatusCode((int)HttpStatusCode.OK, result.SuccessData),

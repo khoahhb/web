@@ -5,8 +5,6 @@ namespace Web.Infracturre.Repositories.AvatarRepo
 {
     public interface IAvatarRepository : IRepository<Avatar>
     {
-        public Task<Avatar> GetAvatarByFileName(string filename);
-        public Task<IEnumerable<Avatar>> GetAvatarsByPublishStatus(bool status);
-        public Task<IEnumerable<Avatar>> GetAvatarsByMimeType(string mime);
+        public List<Avatar> GetAvatarsByPublishStatus(bool status);
     }
 }

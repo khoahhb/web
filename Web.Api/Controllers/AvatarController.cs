@@ -77,9 +77,9 @@ namespace Web.Api.Controllers
         /// </summary>
         [Authorize(Roles = "Admin, Teacher, Student")]
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetAvatarById(Guid id)
+        public  IActionResult GetAvatarById(Guid id)
         {
-            var result = await _avatarService.GetAvatarById(id);
+            var result = _avatarService.GetAvatarById(id);
             return result.StatusCode switch
             {
                 HttpStatusCode.OK => StatusCode((int)HttpStatusCode.OK, result.SuccessData),
@@ -90,17 +90,16 @@ namespace Web.Api.Controllers
         /// <summary>
         /// Get all avatar                     (Admin)
         /// </summary>
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Teacher")]
         [HttpGet("get_all")]
-        public async Task<IActionResult> GetAllAvatar()
+        public IActionResult GetAllAvatar()
         {
-            var result = await _avatarService.GetAllAvatar();
+            var result =  _avatarService.GetAllAvatar();
             return result.StatusCode switch
             {
                 HttpStatusCode.OK => StatusCode((int)HttpStatusCode.OK, result.SuccessData),
                 _ => StatusCode((int)HttpStatusCode.ServiceUnavailable, "Service Unavailable.")
             };
         }
-
     }
 }

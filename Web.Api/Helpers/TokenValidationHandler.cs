@@ -33,7 +33,7 @@ namespace Web.Api.Middlewares
             }
 
             var token = authorizationHeader["Bearer ".Length..].Trim();
-            if (!await _credentialRepository.IsValid(token))
+            if (!await _credentialRepository.IsValidAsync(token))
             {
                 return AuthenticateResult.Fail("Your token is not valid (Not found in credential list).");
             }

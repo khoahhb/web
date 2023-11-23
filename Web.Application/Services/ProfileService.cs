@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using System.Net;
 using Web.Application.Helpers.APIResponseCustom;
+using Web.Application.Helpers.DateTimeHandlers;
 using Web.Application.Interfaces;
 using Web.Domain.Entities;
 using Web.Infracturre.Repositories.UserProfileRepo;
@@ -32,27 +33,27 @@ namespace Web.Application.Services
         public async Task<ServiceResult<UserProfileResponseDto>> CreateProfile(CreateUserProfileRequestDto dto)
         {
             var profile = _mapper.Map<UserProfile>(dto);
-            await _userProfileRepository.Create(profile);
+            _userProfileRepository.Add(profile);
             await _unitOfWork.CommitAsync();
             var response = _mapper.Map<UserProfileResponseDto>(profile);
-            await SetFullNamesForUserAndRelatedEntities(response); ;
+            SetFullNamesForUserAndRelatedEntities(response); ;
             return Success(response);
         }
 
         public async Task<ServiceResult<UserProfileResponseDto>> UpdateProfile(UpdateUserProfileRequestDto dto)
         {
-            var profile = (await _userProfileRepository.GetOneById(dto.Id));
+            var profile = _userProfileRepository.GetOneById(dto.Id);
             _mapper.Map(dto, profile);
             _userProfileRepository.Update(profile);
             await _unitOfWork.CommitAsync();
             var response = _mapper.Map<UserProfileResponseDto>(profile);
-            await SetFullNamesForUserAndRelatedEntities(response); ;
+            SetFullNamesForUserAndRelatedEntities(response); ;
             return Success(response);
         }
 
         public async Task<ServiceResult<string>> DeleteProfileById(Guid id)
         {
-            var profile = (await _userProfileRepository.GetOneById(id));
+            var profile =  _userProfileRepository.GetOneById(id);
             if (profile == null)
                 return Failure<string>(HttpStatusCode.NotFound);
             _userProfileRepository.Delete(profile);
@@ -60,38 +61,53 @@ namespace Web.Application.Services
             return Success(profile.Id.ToString());
         }
 
-        public async Task<ServiceResult<UserProfileResponseDto>> GetProfileById(Guid id)
+        public ServiceResult<UserProfileResponseDto> GetProfileById(Guid id)
         {
-            var profile = (await _userProfileRepository.GetOneById(id));
+            var profile =  _userProfileRepository.GetOneById(id);
             if (profile == null)
                 return Failure<UserProfileResponseDto>(HttpStatusCode.NotFound);
             var response = _mapper.Map<UserProfileResponseDto>(profile);
-            await SetFullNamesForUserAndRelatedEntities(response); ;
+            SetFullNamesForUserAndRelatedEntities(response); ;
             return Success(response);
         }
 
-        public async Task<ServiceResult<IEnumerable<UserProfileResponseDto>>> GetAllProfile()
+        public  ServiceResult<List<UserProfileResponseDto>> GetAllProfile()
         {
-            var profiles = await _userProfileRepository.GetAll();
-            var responses = profiles.Select(p => _mapper.Map<UserProfileResponseDto>(p)).ToList();
-            foreach (var response in responses)
-            {
-                await SetFullNamesForUserAndRelatedEntities(response);
-            }
-            return Success(responses.AsEnumerable());
+            var profiles = _userProfileRepository.GetAll();
+
+
+            List<UserProfileResponseDto> response = profiles.AsEnumerable()
+                                .Select(u =>
+                                {
+                                    var profile = new UserProfileResponseDto() 
+                                    { 
+                                        Id = u.Id,
+                                        Name = u.Name,
+                                        Type = u.Type,
+                                        Descrtiption = u.Descrtiption,
+                                        CreatedAt = u.CreatedAt.ToFormattedString(TimeZoneInfo.Local.Id, false, "dd/MM/yyyy h:mm:ss tt"),
+                                        UpdatedAt = u.UpdatedAt.ToFormattedString(TimeZoneInfo.Local.Id, false, "dd/MM/yyyy h:mm:ss tt"),
+                                        CreatedBy = u.CreatedBy.ToString(),
+                                        UpdatedBy = u.UpdatedBy.ToString(),
+                                    };
+
+                                    SetFullNamesForUserAndRelatedEntities(profile);
+                                    return profile;
+                                }).ToList();
+
+            return Success(response);
         }
 
-        private async Task SetFullNamesForUserAndRelatedEntities(UserProfileResponseDto userResponse)
+        private void SetFullNamesForUserAndRelatedEntities(UserProfileResponseDto re)
         {
-            (userResponse.CreatedBy, userResponse.UpdatedBy) = await GetUserFullnames(Guid.Parse(userResponse.CreatedBy), Guid.Parse(userResponse.UpdatedBy));
+            re.CreatedBy = GetUserFullname(Guid.Parse(re.CreatedBy));
+            re.UpdatedBy = GetUserFullname(Guid.Parse(re.UpdatedBy));
         }
 
-        public async Task<(string CreatedFullName, string UpdatedFullName)> GetUserFullnames(Guid createdBy, Guid updatedBy)
+        public string GetUserFullname(Guid id)
         {
-            var createdUser = await _userRepository.GetOneById(createdBy);
-            var updatedUser = await _userRepository.GetOneById(updatedBy);
-
-            return (createdUser.Fullname, updatedUser.Fullname);
+            var user = _userRepository.GetOneById(id);
+            return user.Fullname;
         }
     }
 }

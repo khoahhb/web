@@ -77,9 +77,9 @@ namespace Web.Api.Controllers
         /// </summary>
         [Authorize(Roles = "Admin, Teacher, Student")]
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetProfileById(Guid id)
+        public IActionResult GetProfileById(Guid id)
         {
-            var result = await _profileService.GetProfileById(id);
+            var result =  _profileService.GetProfileById(id);
             return result.StatusCode switch
             {
                 HttpStatusCode.OK => StatusCode((int)HttpStatusCode.OK, result.SuccessData),
@@ -92,9 +92,9 @@ namespace Web.Api.Controllers
         /// </summary>
         [Authorize(Roles = "Admin")]
         [HttpGet("get_all")]
-        public async Task<IActionResult> GetAllProfile()
+        public IActionResult GetAllProfile()
         {
-            var result = await _profileService.GetAllProfile();
+            var result = _profileService.GetAllProfile();
             return result.StatusCode switch
             {
                 HttpStatusCode.OK => StatusCode((int)HttpStatusCode.OK, result.SuccessData),

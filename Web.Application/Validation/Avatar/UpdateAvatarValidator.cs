@@ -19,10 +19,7 @@ namespace Web.Application.Validation.Avatar
 
             RuleFor(x => x.Id)
                 .NotEmpty().WithMessage("Avatar Id is required.")
-                .MustAsync(async (id, _) =>
-                {
-                    return await _avatarRepository.GetOneById(id) != null;
-                })
+                .Must(CheckAvatarExist)
                 .WithMessage("Avatar id do not exist.");
 
             RuleFor(x => x.File.Length)
@@ -34,6 +31,11 @@ namespace Web.Application.Validation.Avatar
                 .Must(_settings.IsSupported)
                 .WithMessage("Unsupported avatar type.")
                 .When(f => f.File != null);
+        }
+
+        private bool CheckAvatarExist(Guid id)
+        {
+            return _avatarRepository.GetOneById(id) != null;
         }
     }
 

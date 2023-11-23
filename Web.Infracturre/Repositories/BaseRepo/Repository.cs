@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using System.Security.Claims;
 using Web.Domain.Entities;
+using Web.Infracturre.AuthenService;
 using Web.Infracturre.DbFactories;
 
 namespace Web.Infracturre.Repositories.BaseRepo
@@ -10,7 +11,7 @@ namespace Web.Infracturre.Repositories.BaseRepo
     public class Repository<T> : IRepository<T> where T : class
     {
         private readonly DbFactory _dbFactory;
-        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IAuthorizedUserService _authorizedUserService;
 
         private DbSet<T> _dbSet;
 
@@ -18,124 +19,109 @@ namespace Web.Infracturre.Repositories.BaseRepo
         {
             get => _dbSet ?? (_dbSet = _dbFactory.DbContext.Set<T>());
         }
-
-        public Repository(DbFactory dbFactory, IHttpContextAccessor httpContextAccessor)
+        public IQueryable<T> GetQuery()
+        {
+            return DbSet.AsNoTracking();
+        }
+        public Repository(DbFactory dbFactory, IAuthorizedUserService authorizedUserService)
         {
             _dbFactory = dbFactory;
-            _httpContextAccessor = httpContextAccessor;
+            _authorizedUserService = authorizedUserService;
         }
 
-        public async Task Create(T entity)
+        public T GetOneById(object Id, params Expression<Func<T, object>>[] includeProperties)
         {
-            SetIdAndAuditInfo(entity);
+            var result = DbSet;
 
-            await DbSet.AddAsync(entity);
+            foreach (var property in includeProperties)
+                result.Include(property).Load();
+
+            return result.Find(Id);
         }
 
-
-        public async Task Create(IEnumerable<T> entities)
+        public async Task<T> GetOneByIdAsync(object Id)
         {
-            foreach (var entity in entities)
+            return await DbSet.FindAsync(Id);
+        }
+
+        public T GetOne(Expression<Func<T, bool>> expression,
+            params Expression<Func<T, object>>[] includeProperties)
+        {
+            var result = DbSet;
+
+            foreach (var property in includeProperties)
+                result.Include(property).Load();
+
+            return result.FirstOrDefault(expression);
+        }
+
+        public async Task<T> GetOneAsync(Expression<Func<T, bool>> expression, params Expression<Func<T, object>>[] includeProperties)
+        {
+            var result = DbSet;
+
+            foreach (var property in includeProperties)
+                result.Include(property).Load();
+
+            return await result.FirstOrDefaultAsync(expression);
+        }
+
+        public IQueryable<T> GetAll(params Expression<Func<T, object>>[] includeProperties)
+        {
+            var result = DbSet;
+
+            foreach (var property in includeProperties)
+                result.Include(property).Load();
+
+            return result;
+        }
+
+        public IQueryable<T> GetMany(Expression<Func<T, bool>> expression, params Expression<Func<T, object>>[] includeProperties)
+        {
+            var result = DbSet.Where(expression);
+
+            foreach (var property in includeProperties)
+                result.Include(property).Load();
+
+            return result;
+        }
+
+        public void Add(T entity)
+        {
+            if (typeof(IBaseEntity<Guid>).IsAssignableFrom(typeof(T)))
             {
-                SetIdAndAuditInfo(entity);
+                ((IBaseEntity<Guid>)entity).Id = Guid.NewGuid();
             }
-
-            await DbSet.AddRangeAsync(entities);
+            var baseEntity = (IBaseEntity<Guid>)entity;
+            var currentUserId = _authorizedUserService.GetUserId() ?? baseEntity.Id;
+            if (typeof(IAuditEntity).IsAssignableFrom(typeof(T)))
+            {
+                ((IAuditEntity)entity).CreatedAt = DateTime.UtcNow;
+                ((IAuditEntity)entity).UpdatedAt = DateTime.UtcNow;
+                ((IAuditEntity)entity).CreatedBy = currentUserId;
+                ((IAuditEntity)entity).UpdatedBy = currentUserId;
+                if (entity is Credential credential)
+                {
+                    credential.CreatedBy = credential.UserId;
+                    credential.UpdatedBy = credential.UserId;
+                }
+            }
+            DbSet.Add(entity);
         }
 
         public void Update(T entity)
         {
-            SetIdAndAuditInfo(entity, true);
+            var currentUserId = _authorizedUserService.GetUserId();
+            if (typeof(IAuditEntity).IsAssignableFrom(typeof(T)))
+            {
+                ((IAuditEntity)entity).UpdatedAt = DateTime.UtcNow;
+                ((IAuditEntity)entity).UpdatedBy = (Guid )currentUserId;
+            }
             DbSet.Update(entity);
         }
 
         public void Delete(T entity)
         {
             DbSet.Remove(entity);
-        }
-
-        public void Delete(Expression<Func<T, bool>> expression)
-        {
-            var entities = DbSet.Where(expression).ToList();
-            if (entities.Count > 0)
-                DbSet.RemoveRange(entities);
-        }
-
-        public async Task<T> GetOne(Expression<Func<T, bool>> expression, params Expression<Func<T, object>>[] includeProperties)
-        {
-            IQueryable<T> query = DbSet;
-            foreach (var includeProperty in includeProperties)
-                query = query.Include(includeProperty);
-
-            return await query.Where(expression).FirstOrDefaultAsync();
-        }
-
-        public async Task<T> GetOneById(object id, params Expression<Func<T, object>>[] includeProperties)
-        {
-            IQueryable<T> query = DbSet;
-            foreach (var includeProperty in includeProperties)
-                query = query.Include(includeProperty);
-            return await query.SingleOrDefaultAsync(e => EF.Property<object>(e, "Id").Equals(id));
-        }
-
-        public async Task<IEnumerable<T>> GetMany(Expression<Func<T, bool>> expression, params Expression<Func<T, object>>[] includeProperties)
-        {
-            IQueryable<T> query = DbSet;
-            foreach (var includeProperty in includeProperties)
-                query = query.Include(includeProperty);
-
-            return await query.Where(expression).ToListAsync();
-        }
-
-        public async Task<IEnumerable<T>> GetAll(params Expression<Func<T, object>>[] includeProperties)
-        {
-            IQueryable<T> query = DbSet;
-            foreach (var includeProperty in includeProperties)
-                query = query.Include(includeProperty);
-            return await query.ToListAsync();
-        }
-
-        public string? GetCurrentUserName()
-        {
-            var response = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            return response;
-        }
-
-        private void SetIdAndAuditInfo(T entity, bool isUpdate = false)
-        {
-            var baseEntity = (IBaseEntity<Guid>)entity;
-            baseEntity.Id = baseEntity.Id != null && baseEntity.Id != Guid.Empty ? baseEntity.Id : Guid.NewGuid();
-
-            if (entity is IAuditEntity auditEntity)
-            {
-                var currentUserId = GetCurrentUserId() ?? baseEntity?.Id ?? Guid.Empty;
-                auditEntity.UpdatedAt = DateTime.UtcNow;
-                auditEntity.UpdatedBy = currentUserId;
-
-                if (!isUpdate)
-                {
-                    auditEntity.CreatedAt = auditEntity.UpdatedAt;
-                    auditEntity.CreatedBy = currentUserId;
-                }
-
-                if (entity is Credential credential)
-                {
-                    credential.UpdatedBy = credential.UserId;
-
-                    if (!isUpdate)
-                    {
-                        credential.CreatedBy = credential.UserId;
-                    }
-                }
-            }
-        }
-
-
-        private Guid? GetCurrentUserId()
-        {
-            return _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value != null
-                   ? Guid.Parse(_httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value)
-                   : null;
         }
     }
 }

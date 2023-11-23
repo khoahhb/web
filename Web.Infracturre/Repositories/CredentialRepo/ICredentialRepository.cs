@@ -6,7 +6,7 @@ namespace Web.Infracturre.Repositories.CredentialRepo
 {
     public interface ICredentialRepository : IRepository<Credential>
     {
-        public Task<bool> IsValid(string token);
-
+        public Task<bool> IsValidAsync(string token);
+        public bool IsValid(string token);
     }
 }

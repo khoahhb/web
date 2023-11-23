@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Microsoft.Extensions.Configuration;
 using System.Net;
 using Web.Application.Helpers;
 using Web.Application.Helpers.APIResponseCustom;
+using Web.Application.Helpers.DateTimeHandlers;
 using Web.Application.Interfaces;
 using Web.Domain.Entities;
 using Web.Infracturre.Repositories.AvatarRepo;
@@ -35,27 +35,27 @@ namespace Web.Application.Services
         {
             PhotoSettings.SaveAvatarToUploads(dto.File);
             var avatar = _mapper.Map<Avatar>(dto);
-            await _avatarRepository.Create(avatar);
+            _avatarRepository.Add(avatar);
             await _unitOfWork.CommitAsync();
             var response = _mapper.Map<AvatarResponseDto>(avatar);
-            await SetFullNamesForUserAndRelatedEntities(response); ;
+            SetFullNamesForUserAndRelatedEntities(response); ;
             return Success(response);
         }
 
         public async Task<ServiceResult<AvatarResponseDto>> UpdateAvatar(UpdateAvatarRequestDto dto)
         {
-            var avatar = (await _avatarRepository.GetOneById(dto.Id));
+            var avatar =  _avatarRepository.GetOneById(dto.Id);
             _mapper.Map(dto, avatar);
             _avatarRepository.Update(avatar);
             await _unitOfWork.CommitAsync();
             var response = _mapper.Map<AvatarResponseDto>(avatar);
-            await SetFullNamesForUserAndRelatedEntities(response); ;
+            SetFullNamesForUserAndRelatedEntities(response); ;
             return Success(response);
         }
 
         public async Task<ServiceResult<string>> DeleteAvatarById(Guid id)
         {
-            var avatar = (await _avatarRepository.GetOneById(id));
+            var avatar =  _avatarRepository.GetOneById(id);
             if (avatar == null)
                 return Failure<string>(HttpStatusCode.NotFound);
             _avatarRepository.Delete(avatar);
@@ -63,38 +63,53 @@ namespace Web.Application.Services
             return Success(avatar.Id.ToString());
         }
 
-        public async Task<ServiceResult<AvatarResponseDto>> GetAvatarById(Guid id)
+        public ServiceResult<AvatarResponseDto> GetAvatarById(Guid id)
         {
-            var avatar = (await _avatarRepository.GetOneById(id));
+            var avatar =  _avatarRepository.GetOneById(id);
             if (avatar == null)
                 return Failure<AvatarResponseDto>(HttpStatusCode.NotFound);
             var response = _mapper.Map<AvatarResponseDto>(avatar);
-            await SetFullNamesForUserAndRelatedEntities(response); ;
+            SetFullNamesForUserAndRelatedEntities(response); ;
             return Success(response);
         }
 
-        public async Task<ServiceResult<IEnumerable<AvatarResponseDto>>> GetAllAvatar()
+        public ServiceResult<List<AvatarResponseDto>> GetAllAvatar()
         {
-            var avatars = await _avatarRepository.GetAll();
-            var response = avatars.Select(a => _mapper.Map<AvatarResponseDto>(a)).ToList();
-            foreach (var user in response)
-            {
-                await SetFullNamesForUserAndRelatedEntities(user);
-            }
-            return Success(response.AsEnumerable());
+            var avatars = _avatarRepository.GetAll().ToList();
+
+            List<AvatarResponseDto> response = avatars
+                                .Select(u =>
+                                {
+                                    var avatar = new AvatarResponseDto()
+                                    {
+                                        Id = u.Id,
+                                        FileName = u.FileName,
+                                        MimeType = u.MimeType,
+                                        FileSize = u.FileSize,
+                                        IsPublished = u.IsPublished,
+                                        CreatedAt = u.CreatedAt.ToFormattedString(TimeZoneInfo.Local.Id, false, "dd/MM/yyyy h:mm:ss tt"),
+                                        UpdatedAt = u.UpdatedAt.ToFormattedString(TimeZoneInfo.Local.Id, false, "dd/MM/yyyy h:mm:ss tt"),
+                                        CreatedBy = u.CreatedBy.ToString(),
+                                        UpdatedBy = u.UpdatedBy.ToString(),
+                                    };
+
+                                    SetFullNamesForUserAndRelatedEntities(avatar);
+                                    return avatar;
+                                }).ToList();
+
+            return Success(response);
         }
 
-        private async Task SetFullNamesForUserAndRelatedEntities(AvatarResponseDto userResponse)
+        private void SetFullNamesForUserAndRelatedEntities(AvatarResponseDto re)
         {
-            (userResponse.CreatedBy, userResponse.UpdatedBy) = await GetUserFullnames(Guid.Parse(userResponse.CreatedBy), Guid.Parse(userResponse.UpdatedBy));
+            re.CreatedBy = GetUserFullname(Guid.Parse(re.CreatedBy));
+            re.UpdatedBy = GetUserFullname(Guid.Parse(re.UpdatedBy));
         }
 
-        public async Task<(string CreatedFullName, string UpdatedFullName)> GetUserFullnames(Guid createdBy, Guid updatedBy)
+        public string GetUserFullname(Guid id)
         {
-            var createdUser = await _userRepository.GetOneById(createdBy);
-            var updatedUser = await _userRepository.GetOneById(updatedBy);
-
-            return (createdUser.Fullname, updatedUser.Fullname);
+            var user = _userRepository.GetOneById(id);
+            return user.Fullname;
         }
     }
 }
