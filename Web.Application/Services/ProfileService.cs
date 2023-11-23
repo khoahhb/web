@@ -73,10 +73,10 @@ namespace Web.Application.Services
 
         public  ServiceResult<List<UserProfileResponseDto>> GetAllProfile()
         {
-            var profiles = _userProfileRepository.GetAll();
+            var profiles = _userProfileRepository.GetAll().ToList();
 
 
-            List<UserProfileResponseDto> response = profiles.AsEnumerable()
+            var response = profiles
                                 .Select(u =>
                                 {
                                     var profile = new UserProfileResponseDto() 
@@ -93,7 +93,7 @@ namespace Web.Application.Services
 
                                     SetFullNamesForUserAndRelatedEntities(profile);
                                     return profile;
-                                }).ToList();
+                                });
 
             return Success(response);
         }
