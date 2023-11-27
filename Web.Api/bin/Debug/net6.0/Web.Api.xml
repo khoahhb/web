@@ -4,19 +4,24 @@
         <name>Web.Api</name>
     </assembly>
     <members>
-        <member name="M:Web.Api.Controllers.AuthController.Logout">
+        <member name="M:Web.Api.Controllers.AuthController.SignOutUser">
             <summary>
-            Logout    (All)
+            Sign Out    (All)
             </summary>
         </member>
         <member name="M:Web.Api.Controllers.AuthController.SignIn(Web.Model.Dtos.User.Request.SignInRequestDto)">
             <summary>
-            SignIn user
+            Sign In user
             </summary>
         </member>
         <member name="M:Web.Api.Controllers.AuthController.SignUp(Web.Model.Dtos.User.Request.CreateUserRequestDto)">
             <summary>
-            SignUp user
+            Sign Up user
+            </summary>
+        </member>
+        <member name="M:Web.Api.Controllers.AuthController.GetCurrentUserInfo">
+            <summary>
+            Get current user info (All)
             </summary>
         </member>
         <member name="M:Web.Api.Controllers.AvatarController.UploadAvatar(Web.Model.Dtos.Avatar.Request.CreateAvatarRequestDto)">

@@ -20,13 +20,13 @@ namespace Web.Api.Controllers
         }
 
         /// <summary>
-        /// Logout    (All)
+        /// Sign Out    (All)
         /// </summary>
         [Authorize]
-        [HttpPost("logout")]
-        public async Task<IActionResult> Logout()
+        [HttpPost("signout")]
+        public async Task<IActionResult> SignOutUser()
         {
-            var result = await _userService.LogoutUser();
+            var result = await _userService.SignOutUser();
             return result.StatusCode switch
             {
                 HttpStatusCode.OK => StatusCode((int)HttpStatusCode.OK, $"You ({result.SuccessData}) is logged out."),
@@ -36,7 +36,7 @@ namespace Web.Api.Controllers
         }
 
         /// <summary>
-        /// SignIn user
+        /// Sign In user
         /// </summary>
         [HttpPost("signin")]
         public async Task<IActionResult> SignIn([FromBody] SignInRequestDto signInDto)
@@ -55,7 +55,7 @@ namespace Web.Api.Controllers
         }
 
         /// <summary>
-        /// SignUp user
+        /// Sign Up user
         /// </summary>
         [HttpPost("signup")]
         public async Task<IActionResult> SignUp(CreateUserRequestDto signUpDto)
@@ -68,6 +68,22 @@ namespace Web.Api.Controllers
             return result.StatusCode switch
             {
                 HttpStatusCode.OK => StatusCode((int)HttpStatusCode.OK, result.SuccessData),
+                _ => StatusCode((int)HttpStatusCode.ServiceUnavailable, "Service Unavailable.")
+            };
+        }
+
+        /// <summary>
+        /// Get current user info (All)
+        /// </summary>
+        [Authorize]
+        [HttpPost]
+        public IActionResult GetCurrentUserInfo()
+        {
+            var result = _userService.GetCurrentUserInfo();
+            return result.StatusCode switch
+            {
+                HttpStatusCode.OK => StatusCode((int)HttpStatusCode.OK, result.SuccessData),
+                HttpStatusCode.NotFound => StatusCode((int)HttpStatusCode.NotFound, "User not found."),
                 _ => StatusCode((int)HttpStatusCode.ServiceUnavailable, "Service Unavailable.")
             };
         }

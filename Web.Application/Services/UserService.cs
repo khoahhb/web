@@ -68,7 +68,7 @@ namespace Web.Application.Services
             return Success(response);
         }
 
-        public async Task<ServiceResult<string>> LogoutUser()
+        public async Task<ServiceResult<string>> SignOutUser()
         {
             var token = _authorizedUserService.GetToken();
             var credential = _credentialRepository.GetOne(cre => cre.Token == token, cre => cre.User);
@@ -124,6 +124,17 @@ namespace Web.Application.Services
 
         public ServiceResult<UserResponseDto> GetUserById(Guid id)
         {
+            var user = _userRepository.GetOneById(id, u => u.UserProfile, u => u.Avatar);
+            if (user == null)
+                return Failure<UserResponseDto>(HttpStatusCode.NotFound);
+            var response = _mapper.Map<UserResponseDto>(user);
+            SetFullNamesForUserAndRelatedEntities(response);
+            return Success(response);
+        }
+
+        public ServiceResult<UserResponseDto> GetCurrentUserInfo()
+        {
+            var id = _authorizedUserService.GetUserId();
             var user = _userRepository.GetOneById(id, u => u.UserProfile, u => u.Avatar);
             if (user == null)
                 return Failure<UserResponseDto>(HttpStatusCode.NotFound);

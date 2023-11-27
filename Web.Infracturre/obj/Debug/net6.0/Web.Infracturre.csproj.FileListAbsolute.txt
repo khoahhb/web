@@ -100,3 +100,20 @@ D:\Projects\Main\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.dll
 D:\Projects\Main\Web\Web.Infracturre\obj\Debug\net6.0\refint\Web.Infracturre.dll
 D:\Projects\Main\Web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.pdb
 D:\Projects\Main\Web\Web.Infracturre\obj\Debug\net6.0\ref\Web.Infracturre.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Infracturre\bin\Debug\net6.0\Web.Infracturre.deps.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Infracturre\bin\Debug\net6.0\Web.Infracturre.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Infracturre\bin\Debug\net6.0\Web.Infracturre.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Infracturre\bin\Debug\net6.0\Web.Domain.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Infracturre\bin\Debug\net6.0\Web.Model.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Infracturre\bin\Debug\net6.0\Web.Domain.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Infracturre\bin\Debug\net6.0\Web.Model.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.csproj.AssemblyReference.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.AssemblyInfoInputs.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.AssemblyInfo.cs
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.csproj.CoreCompileInputs.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.csproj.CopyComplete
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Infracturre\obj\Debug\net6.0\refint\Web.Infracturre.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Infracturre\obj\Debug\net6.0\Web.Infracturre.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Infracturre\obj\Debug\net6.0\ref\Web.Infracturre.dll

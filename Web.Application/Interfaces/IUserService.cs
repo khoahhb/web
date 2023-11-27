@@ -9,10 +9,11 @@ namespace Web.Application.Interfaces
     {
         public Task<ServiceResult<string>> SignInUser(SignInRequestDto signInRequestDto);
         public Task<ServiceResult<UserResponseDto>> SignUpUser(CreateUserRequestDto signUpRequestDto);
-        public Task<ServiceResult<string>> LogoutUser();
+        public Task<ServiceResult<string>> SignOutUser();
         public Task<ServiceResult<UserResponseDto>> UpdateUser(UpdateUserRequestDTO updateUserRequestDTO);
         public Task<ServiceResult<string>> DeleteUserById(Guid id);
         public ServiceResult<UserResponseDto> GetUserById(Guid id);
+        public ServiceResult<UserResponseDto> GetCurrentUserInfo();
         public ServiceResult<List<UserResponseDto>> GetAllUsers();
     }
 }

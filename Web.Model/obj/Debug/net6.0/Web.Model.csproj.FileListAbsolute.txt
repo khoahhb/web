@@ -70,3 +70,15 @@ D:\Projects\Main\Web\Web.Model\obj\Debug\net6.0\Web.Model.dll
 D:\Projects\Main\Web\Web.Model\obj\Debug\net6.0\refint\Web.Model.dll
 D:\Projects\Main\Web\Web.Model\obj\Debug\net6.0\Web.Model.pdb
 D:\Projects\Main\Web\Web.Model\obj\Debug\net6.0\ref\Web.Model.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Model\bin\Debug\net6.0\Web.Model.deps.json
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Model\bin\Debug\net6.0\Web.Model.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Model\bin\Debug\net6.0\Web.Model.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Model\obj\Debug\net6.0\Web.Model.csproj.AssemblyReference.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Model\obj\Debug\net6.0\Web.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Model\obj\Debug\net6.0\Web.Model.AssemblyInfoInputs.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Model\obj\Debug\net6.0\Web.Model.AssemblyInfo.cs
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Model\obj\Debug\net6.0\Web.Model.csproj.CoreCompileInputs.cache
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Model\obj\Debug\net6.0\Web.Model.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Model\obj\Debug\net6.0\refint\Web.Model.dll
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Model\obj\Debug\net6.0\Web.Model.pdb
+C:\Users\khoa1\OneDrive - osakaka\Desktop\Work\web\Web.Model\obj\Debug\net6.0\ref\Web.Model.dll
