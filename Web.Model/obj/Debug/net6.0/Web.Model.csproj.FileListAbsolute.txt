@@ -58,3 +58,15 @@ E:\Projects\Web\Web.Model\obj\Debug\net6.0\Web.Model.dll
 E:\Projects\Web\Web.Model\obj\Debug\net6.0\refint\Web.Model.dll
 E:\Projects\Web\Web.Model\obj\Debug\net6.0\Web.Model.pdb
 E:\Projects\Web\Web.Model\obj\Debug\net6.0\ref\Web.Model.dll
+D:\Projects\Main\Web\Web.Model\bin\Debug\net6.0\Web.Model.deps.json
+D:\Projects\Main\Web\Web.Model\bin\Debug\net6.0\Web.Model.dll
+D:\Projects\Main\Web\Web.Model\bin\Debug\net6.0\Web.Model.pdb
+D:\Projects\Main\Web\Web.Model\obj\Debug\net6.0\Web.Model.csproj.AssemblyReference.cache
+D:\Projects\Main\Web\Web.Model\obj\Debug\net6.0\Web.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Main\Web\Web.Model\obj\Debug\net6.0\Web.Model.AssemblyInfoInputs.cache
+D:\Projects\Main\Web\Web.Model\obj\Debug\net6.0\Web.Model.AssemblyInfo.cs
+D:\Projects\Main\Web\Web.Model\obj\Debug\net6.0\Web.Model.csproj.CoreCompileInputs.cache
+D:\Projects\Main\Web\Web.Model\obj\Debug\net6.0\Web.Model.dll
+D:\Projects\Main\Web\Web.Model\obj\Debug\net6.0\refint\Web.Model.dll
+D:\Projects\Main\Web\Web.Model\obj\Debug\net6.0\Web.Model.pdb
+D:\Projects\Main\Web\Web.Model\obj\Debug\net6.0\ref\Web.Model.dll

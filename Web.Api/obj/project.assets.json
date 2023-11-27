@@ -3748,11 +3748,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\Web\\Web.Api\\Web.Api.csproj",
+      "projectUniqueName": "D:\\Projects\\Main\\Web\\Web.Api\\Web.Api.csproj",
       "projectName": "Web.Api",
-      "projectPath": "E:\\Projects\\Web\\Web.Api\\Web.Api.csproj",
+      "projectPath": "D:\\Projects\\Main\\Web\\Web.Api\\Web.Api.csproj",
       "packagesPath": "C:\\Users\\KhoaHuynh\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\Web\\Web.Api\\obj\\",
+      "outputPath": "D:\\Projects\\Main\\Web\\Web.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\KhoaHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3769,14 +3769,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\Projects\\Web\\Web.Application\\Web.Application.csproj": {
-              "projectPath": "E:\\Projects\\Web\\Web.Application\\Web.Application.csproj"
+            "D:\\Projects\\Main\\Web\\Web.Application\\Web.Application.csproj": {
+              "projectPath": "D:\\Projects\\Main\\Web\\Web.Application\\Web.Application.csproj"
             },
-            "E:\\Projects\\Web\\Web.Domain\\Web.Domain.csproj": {
-              "projectPath": "E:\\Projects\\Web\\Web.Domain\\Web.Domain.csproj"
+            "D:\\Projects\\Main\\Web\\Web.Domain\\Web.Domain.csproj": {
+              "projectPath": "D:\\Projects\\Main\\Web\\Web.Domain\\Web.Domain.csproj"
             },
-            "E:\\Projects\\Web\\Web.Model\\Web.Model.csproj": {
-              "projectPath": "E:\\Projects\\Web\\Web.Model\\Web.Model.csproj"
+            "D:\\Projects\\Main\\Web\\Web.Model\\Web.Model.csproj": {
+              "projectPath": "D:\\Projects\\Main\\Web\\Web.Model\\Web.Model.csproj"
             }
           }
         }

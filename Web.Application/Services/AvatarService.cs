@@ -33,7 +33,7 @@ namespace Web.Application.Services
 
         public async Task<ServiceResult<AvatarResponseDto>> CreateAvatar(CreateAvatarRequestDto dto)
         {
-            PhotoSettings.SaveAvatarToUploads(dto.File);
+            await PhotoSettings.SaveAvatarToUploads(dto.File);
             var avatar = _mapper.Map<Avatar>(dto);
             _avatarRepository.Add(avatar);
             await _unitOfWork.CommitAsync();
