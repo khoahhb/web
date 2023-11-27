@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9XjVyP8pvjEcTAx63WxNMJwwSktAoRqP1+Pwoqjk1P8vUq3aWXZ0hQqyHq5/8Ex4pkdOEoJMHkAMzu5yT+I+VQ==",
+  "dgSpecHash": "fhn3oo70vvuVx7u0UcCXIJfBIa1GZPouO+Se7CP6BhhC4F++mvnkNEaMucrvcJ6CU1ATF4cmLTcn89A0AmPvAA==",
   "success": true,
-  "projectFilePath": "E:\\Projects\\Web\\Web.Infracturre\\Web.Infracturre.csproj",
+  "projectFilePath": "D:\\Projects\\Main\\Web\\Web.Infracturre\\Web.Infracturre.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\KhoaHuynh\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

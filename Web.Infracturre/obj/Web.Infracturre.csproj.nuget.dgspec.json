@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projects\\Web\\Web.Infracturre\\Web.Infracturre.csproj": {}
+    "D:\\Projects\\Main\\Web\\Web.Infracturre\\Web.Infracturre.csproj": {}
   },
   "projects": {
-    "E:\\Projects\\Web\\Web.Domain\\Web.Domain.csproj": {
+    "D:\\Projects\\Main\\Web\\Web.Domain\\Web.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\Web\\Web.Domain\\Web.Domain.csproj",
+        "projectUniqueName": "D:\\Projects\\Main\\Web\\Web.Domain\\Web.Domain.csproj",
         "projectName": "Web.Domain",
-        "projectPath": "E:\\Projects\\Web\\Web.Domain\\Web.Domain.csproj",
+        "projectPath": "D:\\Projects\\Main\\Web\\Web.Domain\\Web.Domain.csproj",
         "packagesPath": "C:\\Users\\KhoaHuynh\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\Web\\Web.Domain\\obj\\",
+        "outputPath": "D:\\Projects\\Main\\Web\\Web.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\KhoaHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Projects\\Web\\Web.Model\\Web.Model.csproj": {
-                "projectPath": "E:\\Projects\\Web\\Web.Model\\Web.Model.csproj"
+              "D:\\Projects\\Main\\Web\\Web.Model\\Web.Model.csproj": {
+                "projectPath": "D:\\Projects\\Main\\Web\\Web.Model\\Web.Model.csproj"
               }
             }
           }
@@ -95,14 +95,14 @@
         }
       }
     },
-    "E:\\Projects\\Web\\Web.Infracturre\\Web.Infracturre.csproj": {
+    "D:\\Projects\\Main\\Web\\Web.Infracturre\\Web.Infracturre.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\Web\\Web.Infracturre\\Web.Infracturre.csproj",
+        "projectUniqueName": "D:\\Projects\\Main\\Web\\Web.Infracturre\\Web.Infracturre.csproj",
         "projectName": "Web.Infracturre",
-        "projectPath": "E:\\Projects\\Web\\Web.Infracturre\\Web.Infracturre.csproj",
+        "projectPath": "D:\\Projects\\Main\\Web\\Web.Infracturre\\Web.Infracturre.csproj",
         "packagesPath": "C:\\Users\\KhoaHuynh\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\Web\\Web.Infracturre\\obj\\",
+        "outputPath": "D:\\Projects\\Main\\Web\\Web.Infracturre\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\KhoaHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -119,8 +119,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Projects\\Web\\Web.Domain\\Web.Domain.csproj": {
-                "projectPath": "E:\\Projects\\Web\\Web.Domain\\Web.Domain.csproj"
+              "D:\\Projects\\Main\\Web\\Web.Domain\\Web.Domain.csproj": {
+                "projectPath": "D:\\Projects\\Main\\Web\\Web.Domain\\Web.Domain.csproj"
               }
             }
           }
@@ -164,14 +164,14 @@
         }
       }
     },
-    "E:\\Projects\\Web\\Web.Model\\Web.Model.csproj": {
+    "D:\\Projects\\Main\\Web\\Web.Model\\Web.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\Web\\Web.Model\\Web.Model.csproj",
+        "projectUniqueName": "D:\\Projects\\Main\\Web\\Web.Model\\Web.Model.csproj",
         "projectName": "Web.Model",
-        "projectPath": "E:\\Projects\\Web\\Web.Model\\Web.Model.csproj",
+        "projectPath": "D:\\Projects\\Main\\Web\\Web.Model\\Web.Model.csproj",
         "packagesPath": "C:\\Users\\KhoaHuynh\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\Web\\Web.Model\\obj\\",
+        "outputPath": "D:\\Projects\\Main\\Web\\Web.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\KhoaHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",

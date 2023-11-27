@@ -3022,11 +3022,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\Web\\Web.Application\\Web.Application.csproj",
+      "projectUniqueName": "D:\\Projects\\Main\\Web\\Web.Application\\Web.Application.csproj",
       "projectName": "Web.Application",
-      "projectPath": "E:\\Projects\\Web\\Web.Application\\Web.Application.csproj",
+      "projectPath": "D:\\Projects\\Main\\Web\\Web.Application\\Web.Application.csproj",
       "packagesPath": "C:\\Users\\KhoaHuynh\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\Web\\Web.Application\\obj\\",
+      "outputPath": "D:\\Projects\\Main\\Web\\Web.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\KhoaHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3043,8 +3043,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\Projects\\Web\\Web.Infracturre\\Web.Infracturre.csproj": {
-              "projectPath": "E:\\Projects\\Web\\Web.Infracturre\\Web.Infracturre.csproj"
+            "D:\\Projects\\Main\\Web\\Web.Infracturre\\Web.Infracturre.csproj": {
+              "projectPath": "D:\\Projects\\Main\\Web\\Web.Infracturre\\Web.Infracturre.csproj"
             }
           }
         }

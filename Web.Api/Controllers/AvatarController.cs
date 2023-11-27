@@ -88,7 +88,7 @@ namespace Web.Api.Controllers
             };
         }
         /// <summary>
-        /// Get all avatar                     (Admin)
+        /// Get all avatar                     (Admin, Teacher)
         /// </summary>
         [Authorize(Roles = "Admin, Teacher")]
         [HttpGet("get_all")]

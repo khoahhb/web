@@ -393,11 +393,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projects\\Web\\Web.Model\\Web.Model.csproj",
+      "projectUniqueName": "D:\\Projects\\Main\\Web\\Web.Model\\Web.Model.csproj",
       "projectName": "Web.Model",
-      "projectPath": "E:\\Projects\\Web\\Web.Model\\Web.Model.csproj",
+      "projectPath": "D:\\Projects\\Main\\Web\\Web.Model\\Web.Model.csproj",
       "packagesPath": "C:\\Users\\KhoaHuynh\\.nuget\\packages\\",
-      "outputPath": "E:\\Projects\\Web\\Web.Model\\obj\\",
+      "outputPath": "D:\\Projects\\Main\\Web\\Web.Model\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\KhoaHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",

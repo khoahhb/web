@@ -76,7 +76,7 @@ namespace Web.Application.Services
             var profiles = _userProfileRepository.GetAll();
 
 
-            List<UserProfileResponseDto> response = profiles.AsEnumerable()
+            List<UserProfileResponseDto> response = profiles.ToList()
                                 .Select(u =>
                                 {
                                     var profile = new UserProfileResponseDto() 

@@ -161,32 +161,16 @@ namespace Web.Application.Services
             var current_UserId = _authorizedUserService.GetUserId();
             var current_Role = _authorizedUserService.GetUserRole();
 
-            var userList =  _userRepository.GetAll(u => u.UserProfile, u => u.Avatar).ToList();
             ExpressionStarter<User> predicate = PredicateBuilder.New<User>();
             predicate.Or(u => u.Id == current_UserId);
-
-            switch (current_Role)
+            if(current_Role == ProfileType.Teacher)
             {
-                case ProfileType.Admin:
-                    predicate.Or(u => u.UserProfile.Type == ProfileType.Teacher);
-                    predicate.Or(u => u.UserProfile.Type == ProfileType.Student);
-                    predicate.Or(u => u.UserProfile.Type == ProfileType.None);
-                    break;
-                case ProfileType.Teacher:
-                    predicate.Or(u => u.UserProfile.Type == ProfileType.Student);
-                    predicate.Or(u => u.UserProfile.Type == ProfileType.None);
-                    break;
-                case ProfileType.Student:
-                    predicate.Or(u => u.UserProfile.Type == ProfileType.None);
-                    break;
-                case ProfileType.None:
-                    predicate.Or(u => u.UserProfile.Type == ProfileType.None);
-                    break;
-                default:
-                    break;
+                predicate.Or(u => u.UserProfile.Type == ProfileType.Student);
+                predicate.Or(u => u.UserProfile.Type == ProfileType.None);
             }
+            var userList = _userRepository.GetAll(u => u.UserProfile, u => u.Avatar).Where(predicate).ToList();
 
-            List<UserResponseDto> response = userList.Where(predicate)
+            List<UserResponseDto> response = userList
                                 .Select(u =>
                                 {
                                     var user = new UserResponseDto()
