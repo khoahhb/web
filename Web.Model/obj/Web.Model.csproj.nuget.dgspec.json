@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\Main\\Web\\Web.Model\\Web.Model.csproj": {}
+    "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Model\\Web.Model.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\Main\\Web\\Web.Model\\Web.Model.csproj": {
+    "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Model\\Web.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Main\\Web\\Web.Model\\Web.Model.csproj",
+        "projectUniqueName": "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Model\\Web.Model.csproj",
         "projectName": "Web.Model",
-        "projectPath": "D:\\Projects\\Main\\Web\\Web.Model\\Web.Model.csproj",
-        "packagesPath": "C:\\Users\\KhoaHuynh\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Main\\Web\\Web.Model\\obj\\",
+        "projectPath": "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Model\\Web.Model.csproj",
+        "packagesPath": "C:\\Users\\khoa1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\KhoaHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\khoa1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }

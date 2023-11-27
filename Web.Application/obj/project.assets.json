@@ -3017,19 +3017,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\KhoaHuynh\\.nuget\\packages\\": {}
+    "C:\\Users\\khoa1\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\Main\\Web\\Web.Application\\Web.Application.csproj",
+      "projectUniqueName": "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Application\\Web.Application.csproj",
       "projectName": "Web.Application",
-      "projectPath": "D:\\Projects\\Main\\Web\\Web.Application\\Web.Application.csproj",
-      "packagesPath": "C:\\Users\\KhoaHuynh\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\Main\\Web\\Web.Application\\obj\\",
+      "projectPath": "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Application\\Web.Application.csproj",
+      "packagesPath": "C:\\Users\\khoa1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\KhoaHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\khoa1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3043,8 +3043,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Projects\\Main\\Web\\Web.Infracturre\\Web.Infracturre.csproj": {
-              "projectPath": "D:\\Projects\\Main\\Web\\Web.Infracturre\\Web.Infracturre.csproj"
+            "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Infracturre\\Web.Infracturre.csproj": {
+              "projectPath": "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Infracturre\\Web.Infracturre.csproj"
             }
           }
         }
@@ -3096,7 +3096,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }
