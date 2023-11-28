@@ -18,8 +18,8 @@ namespace Web.Api.SwaggerExamples
                 Phone = "0392954288",
                 Email = "username1@gmail.com",
                 Address = "Hau Giang",
-                AvatarId = Guid.Parse("7e42633e-d714-406f-98d6-81909a4502c9"),
-                UserProfileId = Guid.Parse("7284e6bc-5913-4dcf-8229-b86a5f52b565")
+                //AvatarId = Guid.Parse("7e42633e-d714-406f-98d6-81909a4502c9"),
+                //UserProfileId = Guid.Parse("7284e6bc-5913-4dcf-8229-b86a5f52b565")
             };
         }
     }

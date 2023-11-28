@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Infracturre\\Web.Infracturre.csproj": {}
+    "D:\\Projects\\Main\\Web\\Web.Infracturre\\Web.Infracturre.csproj": {}
   },
   "projects": {
-    "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Domain\\Web.Domain.csproj": {
+    "D:\\Projects\\Main\\Web\\Web.Domain\\Web.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Domain\\Web.Domain.csproj",
+        "projectUniqueName": "D:\\Projects\\Main\\Web\\Web.Domain\\Web.Domain.csproj",
         "projectName": "Web.Domain",
-        "projectPath": "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Domain\\Web.Domain.csproj",
-        "packagesPath": "C:\\Users\\khoa1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Domain\\obj\\",
+        "projectPath": "D:\\Projects\\Main\\Web\\Web.Domain\\Web.Domain.csproj",
+        "packagesPath": "C:\\Users\\KhoaHuynh\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\Main\\Web\\Web.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\khoa1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KhoaHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Model\\Web.Model.csproj": {
-                "projectPath": "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Model\\Web.Model.csproj"
+              "D:\\Projects\\Main\\Web\\Web.Model\\Web.Model.csproj": {
+                "projectPath": "D:\\Projects\\Main\\Web\\Web.Model\\Web.Model.csproj"
               }
             }
           }
@@ -91,21 +91,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Infracturre\\Web.Infracturre.csproj": {
+    "D:\\Projects\\Main\\Web\\Web.Infracturre\\Web.Infracturre.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Infracturre\\Web.Infracturre.csproj",
+        "projectUniqueName": "D:\\Projects\\Main\\Web\\Web.Infracturre\\Web.Infracturre.csproj",
         "projectName": "Web.Infracturre",
-        "projectPath": "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Infracturre\\Web.Infracturre.csproj",
-        "packagesPath": "C:\\Users\\khoa1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Infracturre\\obj\\",
+        "projectPath": "D:\\Projects\\Main\\Web\\Web.Infracturre\\Web.Infracturre.csproj",
+        "packagesPath": "C:\\Users\\KhoaHuynh\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\Main\\Web\\Web.Infracturre\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\khoa1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KhoaHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -119,8 +119,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Domain\\Web.Domain.csproj": {
-                "projectPath": "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Domain\\Web.Domain.csproj"
+              "D:\\Projects\\Main\\Web\\Web.Domain\\Web.Domain.csproj": {
+                "projectPath": "D:\\Projects\\Main\\Web\\Web.Domain\\Web.Domain.csproj"
               }
             }
           }
@@ -160,21 +160,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Model\\Web.Model.csproj": {
+    "D:\\Projects\\Main\\Web\\Web.Model\\Web.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Model\\Web.Model.csproj",
+        "projectUniqueName": "D:\\Projects\\Main\\Web\\Web.Model\\Web.Model.csproj",
         "projectName": "Web.Model",
-        "projectPath": "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Model\\Web.Model.csproj",
-        "packagesPath": "C:\\Users\\khoa1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\khoa1\\OneDrive - osakaka\\Desktop\\Work\\web\\Web.Model\\obj\\",
+        "projectPath": "D:\\Projects\\Main\\Web\\Web.Model\\Web.Model.csproj",
+        "packagesPath": "C:\\Users\\KhoaHuynh\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\Main\\Web\\Web.Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\khoa1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KhoaHuynh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -225,7 +225,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

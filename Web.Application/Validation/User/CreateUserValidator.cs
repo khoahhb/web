@@ -64,17 +64,17 @@ namespace Web.Application.Validation.User
                 .WithMessage("Email existed.")
                 .When(x => !string.IsNullOrEmpty(x.Email));
 
-            RuleFor(x => x.AvatarId)
-                .Must(CheckAvatarValid)
-                .WithMessage("Avatar Id is not published or do not exist.")
-                .When(x => x.AvatarId != null && x.AvatarId != Guid.Empty);
+            //RuleFor(x => x.AvatarId)
+            //    .Must(CheckAvatarValid)
+            //    .WithMessage("Avatar Id is not published or do not exist.")
+            //    .When(x => x.AvatarId != null && x.AvatarId != Guid.Empty);
 
-            RuleFor(x => x.UserProfileId)
-                .NotNull().WithMessage("UserProfile is required.")
-                .NotEmpty().WithMessage("UserProfile is required.")
-                .Must(CheckProfileExist)
-                .WithMessage("UserProfile do not exist.")
-                .When(x => x.UserProfileId != null || x.UserProfileId != Guid.Empty);
+            //RuleFor(x => x.UserProfileId)
+            //    .NotNull().WithMessage("UserProfile is required.")
+            //    .NotEmpty().WithMessage("UserProfile is required.")
+            //    .Must(CheckProfileExist)
+            //    .WithMessage("UserProfile do not exist.")
+            //    .When(x => x.UserProfileId != null || x.UserProfileId != Guid.Empty);
         }
 
         private bool CheckUsernameExist(string value)

@@ -12,7 +12,5 @@ namespace Web.Model.Dtos.User.Request
         public string? Phone { get; set; }
         public string? Email { get; set; }
         public string? Address { get; set; }
-        public Guid? AvatarId { get; set; }
-        public Guid? UserProfileId { get; set; }
     }
 }

@@ -61,6 +61,7 @@ namespace Web.Application.Services
         public async Task<ServiceResult<UserResponseDto>> SignUpUser(CreateUserRequestDto signUpRequestDto)
         {
             User user = _mapper.Map<User>(signUpRequestDto);
+            user.UserProfileId = Guid.Parse("7284e6bc-5913-4dcf-8229-b86a5f52b565");
             _userRepository.Add(user);
             await _unitOfWork.CommitAsync();
             var response = _mapper.Map<UserResponseDto>(user);
@@ -158,7 +159,6 @@ namespace Web.Application.Services
                 re.UserProfile.CreatedBy = GetUserFullname(Guid.Parse(re.UserProfile.CreatedBy));
                 re.UserProfile.UpdatedBy = GetUserFullname(Guid.Parse(re.UserProfile.UpdatedBy));
             }
-
         }
 
         public string GetUserFullname(Guid id)
